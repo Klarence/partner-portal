@@ -1,0 +1,437 @@
+<div>
+    <!--<div class="branding">-->
+        <!--<a href="//www.cisco.com">-->
+            <!--<img src="/img/logos/cisco-logo.svg" alt="Cisco Systems Logo">-->
+        <!--</a>-->
+    <!--</div>&lt;!&ndash; branding &ndash;&gt;-->
+    <!--<div>-->
+        <!--<i class=""></i>-->
+        <!--<span class="hamburger small-caps">Menu</span>-->
+    <!--</div>-->
+    <!--<nav>-->
+    <!--<ul>-->
+    <!--<li><a href="http://www.cisco.com/web/partners/index.html">Partners</a></li>-->
+    <!--<li data-ng-repeat=""><a></a></li>-->
+    <!--</ul>-->
+    <!--</nav>-->
+    </div>
+<!-- cisco blue banner -->
+    <!--<div ng-show="toggleMasterHeader" class="uix cisco-primary-header">-->
+    <div id="toggleMasterHeader" class="uix cisco-primary-header" style="display: none;">
+        <!-- self centered container - can be removed if desired -->
+        <div class="self-centered container">
+
+            <!-- state & closing + overlaying toggle -->
+            <input class="toggle-state" type="checkbox" aria-hidden="true" hidden="" id="cphToggleStateId">
+            <label class="closing overlaying toggle" for="cphToggleStateId"></label>
+            <!-- /state & closing + overlaying toggle -->
+
+            <!-- non collapsible section -->
+            <div class="non-collapsible">
+                <!-- opening toggle -->
+                <label class="opening toggle" for="cphToggleStateId">
+                    <span class="toggle-bar"></span>
+                    <span class="toggle-bar"></span>
+                    <span class="toggle-bar"></span>
+                </label>
+                <!-- /opening toggle -->
+
+                <!-- cisco logo -->
+                <div class="logo">
+                    <!--<a class="home-links-toggle" href="#">-->
+                        <!--<img alt="Cisco Systems" src="">-->
+                        <i class="cisco-logo-white"></i>
+                    <!--</a>-->
+                </div>
+                <!-- /cisco logo -->
+            </div>
+            <!-- /non collapsible section -->
+
+            <!-- collapsible section -->
+            <div class="collapsible">
+                <!-- user actions -->
+                <ul class="action-items">
+                    <li class="action-item user-information"><span class="action-text welcome-message">Welcome,</span>&nbsp;<span class="action-text user-name">John Doe</span><span class="action-text action-divider">|</span></li>
+                    <li class="action-item user-account"><a class="action-link" href="#">Account</a><span class="action-text action-divider">|</span><a class="action-link" href="#">Log Out</a></li>
+                    <li class="action-item language"><a class="action-link" href="#">Worldwide [change]</a></li>
+                    <li class="action-item my-cisco"><a class="action-link" href="#">My Cisco</a></li>
+                </ul>
+                <!-- /user actions -->
+
+                <!-- primary nav items -->
+                <ul class="navigation-items">
+                    <li class="navigation-item"><a href="#" class="navigation-link">Products &amp; Services</a></li>
+                    <li class="navigation-item"><a href="#" class="navigation-link">Support</a></li>
+                    <li class="navigation-item"><a href="#" class="navigation-link">How to Buy</a></li>
+                    <li class="navigation-item"><a href="#" class="navigation-link">Training &amp; Events</a></li>
+                    <li class="navigation-item"><a href="#" class="navigation-link">Partners</a></li>
+                </ul>
+                <!-- /primary nav items -->
+            </div>
+            <!-- /collapsible section -->
+        </div>
+        <!-- /self centered container -->
+    </div>
+<!-- cisco blue banner end-->
+  <!-- navigation -->
+  <nav class="navigation uix center aligned contained block" data-ng-class="{maxWidth : obj.toggleMaxWidth == true} ">
+          <!-- partner application-master-header -->
+          <div id="partnerAppMasterHeader"
+               data-ng-init="settingsFlag = true;">
+              <!-- title bar -->
+              <!--<a href="http://www.cisco.com">-->
+                  <!--<i ng-click="toggleMasterHeader = !toggleMasterHeader" class="WorkspaceIcon&#45;&#45;cisco-icon"></i>-->
+                  <i onclick="toggleVisibility('toggleMasterHeader')" class="WorkspaceIcon--cisco-icon"></i>
+              <!--</a>-->
+              <div class="Navbar__titlebar">
+                  <!-- headings -->
+                  <div class="ApplicationTitleSection">
+
+                      <h1 class="ApplicationTitle">
+                          <!--<i class="WorkspaceIcon Onboarding-icon" data-ng-click="NavListSpaces = !NavListSpaces"></i>-->
+                          <i class="WorkspaceIcon <%=IconClass%>" data-ng-click="NavListSpaces = !NavListSpaces"></i>
+                          <a href="<%= titleLink %>">
+                              <%= title %>
+                          </a>
+                          <i class="WorkspaceIcon Dropdown-icon"
+                             data-ng-click="NavListSpaces = !NavListSpaces"></i>
+                      </h1>
+                      <h4 class="ApplicationSubtitle"></h4>
+
+                  </div>
+                  <!-- /headings -->
+
+                  <!-- widget-toggles -->
+                  <div class="Navlist">
+                      <a id="navbarFold"
+                         class="Navbar__fold active"
+                         data-ng-class="{'active':navbarFlag==true}"
+                         data-ng-click="navbarFlag=!navbarFlag;">
+                          <i class="Navlist__item--icon-bars"></i>
+                      </a>
+                      <!--
+                 <a id="navbarFold"
+                     class="Navbar__fold active"
+                     data-ng-class="{'active':navbarFlag}"
+                     data-ng-click="navbarFlag=!navbarFlag;">
+                    Need to add a controller. http://plnkr.co/edit/EdiNmaQYbVSftTuvNVpG?p=preview
+                    <i class="icon-minus" data-ng-class="true: 'icon-minus', false: 'icon-plus'}[collapsible]"></i>
+                  </a>
+      -->
+                      <!-- settings-toggle - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="contenttrigger">
+                          <a href="#"
+                             ng-click="NavListSpaces = !NavListSpaces">
+                              <i class="Navlist__item--icon-spaces" data-ng-class="{'active':NavListSpaces}"></i>
+                          </a>
+
+                          <div class=" help-Support-info2 contentpanel3"
+                               id="contentswitchpanel"
+                               ng-show="NavListSpaces">
+                              <div id="contentclosebutton"></div>
+                              <!--   -->
+                              <div class="workspace-items"> <!--<ul>-->
+                                  <!-- for(var i=1; i<workspaceNav.length;i++){-->
+                                  <% for(var i=0; i<workspaceNav.length;i++){%>
+                                  <div class="workspace-item"> <!--<li>-->
+                                      <a href="<%=workspaceNav[i].Link%>"
+                                         class="closeswitch">
+                                          <i class="<%=workspaceNav[i].IconClass%>"></i><span class="workspacetitle"><%=workspaceNav[i].Text%></span></a>
+                                  </div>
+                                  <%}%>
+                              </div><!--</ul>-->
+                          </div>
+                      </div>
+                      <!--                <div id="ciscocirclestrigger" class="teamciscoicon hand contentnav"> <img src="images/teamciscoicon.png" width="26" height="26" alt="Team Cisco Icon" /> </div>-->
+                      <!-- /settings-toggle - widget-toggles -->
+
+                      <!--Start of Favourites (History) - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="favouritestrigger">
+                          <a href="#"
+                             ng-click="NavListFav = !NavListFav">
+                              <i class="Navlist__item--icon-history" data-ng-class="{'active':NavListFav}"></i>
+                          </a>
+                          <!--  <span class="fa fa-2x fa-star gold"></span>  -->
+                          <div class=" fav-info contentpanel3"
+                               id="favouritepanel"
+                               ng-show="NavListFav">
+                              <div id="favouriteclosebutton"
+                                   ng-click="NavListFav = !NavListFav"></div>
+                              <!--   -->
+                              <div class="commonFirstMenufav"
+                                   id="recentvisit"
+                                   style="float:right;">
+                                  <dl>
+                                      <dt>Recently Visited</dt>
+                                      <dd class="favoriteon"><span class="fa fa-star-o favoritetrigger"></span><a href="#">Registration
+                                                                                                                           Details</a>
+                                      </dd>
+                                      <dd class="favoriteon favoriteoff"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger gold"></span><a href="#">Registration
+                                                                                                                                  Details</a>
+                                      </dd>
+                                      <dd class="favoriteon2 favoriteoff2"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger2 gold"></span><a href="#">Location
+                                                                                                                                   Manager</a>
+                                      </dd>
+                                      <dd class="favoriteon2"><span class="fa fa-star-o favoritetrigger2"></span><a href="#">Location Manager</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star gold"></span><a href="#">Roles &amp; Responsibilities</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Leads &amp; Deals</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Contact Management</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Programs</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Locator</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star gold"></span><a href="#">My Training/Certification</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Accountable Contacts</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Reports</a>
+                                      </dd>
+
+                                  </dl>
+                              </div>
+                              <div class="commonFirstMenufav"
+                                   id="frequentvisit">
+                                  <dl>
+                                      <dt>Most Visited</dt>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Locator</a>
+                                      </dd>
+                                      <dd class="favoriteon2 favoriteoff2"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger2 gold"></span><a href="#">Location
+                                                                                                                                   Manager</a>
+                                      </dd>
+                                      <dd class="favoriteon2"><span class="fa fa-star-o favoritetrigger2"></span><a href="#">Location Manager</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star  gold"></span><a href="#">My Training/Certification</a>
+                                      </dd>
+                                      <dd class="favoriteon"><span class="fa fa-star-o favoritetrigger"></span><a href="#">Registration
+                                                                                                                           Details</a>
+                                      </dd>
+                                      <dd class="favoriteon favoriteoff"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger gold"></span><a href="#">Registration
+                                                                                                                                  Details</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star gold"></span><a href="#">Roles &amp; Responsibilities</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Leads &amp; Deals</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Contact Management</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Accountable Contacts</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Reports</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Programs</a>
+                                      </dd>
+                                  </dl>
+                              </div>
+                              <div class="commonLastMenufav"
+                                   id="favouritevisit">
+                                  <dl>
+                                      <dt>Favorites</dt>
+                                      <dd class="favoriteon favoriteoff"
+                                          style="display: none;">
+                                          <span class="fa fa-star  gold favoritetrigger"></span>
+                                          <a href="#">Registration Details</a>
+                                      </dd>
+                                      <dd class="favoriteon2 favoriteoff2"
+                                          style="display: none;">
+                                          <span class="fa fa-star  gold favoritetrigger2"></span>
+                                          <a href="#">Location Manager</a>
+                                      </dd>
+                                      <dd>
+                                          <span class="fa fa-star  gold"></span>
+                                          <a href="#">Roles &amp; Responsibilities</a>
+                                      </dd>
+                                      <dd>
+                                          <span class="fa fa-star  gold"></span>
+                                          <a href="#">My Training/Certification</a>
+                                      </dd>
+                                  </dl>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- End of Favourites - widget-toggles -->
+
+                      <!-- Start of Teamcisco - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="teamcisco-trigger"
+                           data-ng-class="{'active':selectedItem === 'STREAM'}">
+                          <a href="#"
+                             ng-click="selectedItem = 'STREAM'"
+                             id="streamtrigger">
+                              <i class="Navlist__item--icon-Info" data-ng-class="{'active':NavListTeamCisco}"></i>
+                          </a>
+                    <span id="streamcount"
+                          class="Navlist__item--count">3</span>
+                      </div>
+                      <!-- End of Teamcisco - widget-toggles -->
+
+                      <!-- Start of Navbar Help - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="help-trigger"
+                           data-ng-class="{'active':selectedItem === 'HELP'}">
+                          <a href="#"
+                             ng-click="NavListHelp = !NavListHelp"
+                             id="helptrigger2">
+                              <!--ng-click="selectedItem = 'HELP'"-->
+                              <i class="Icon__Question--circle" data-ng-class="{'active':NavListHelp}">
+                              </i>
+                          </a>
+                          <div class="uix helpbox2"
+                               id="helpboxbox"
+                               ng-show="NavListHelp">
+                              <p class="uix helptxt">
+                                  <span class="uix uparrow2"></span>
+                                  This navigation bar is a better way to navigate from one application to another for our partner users. You will only see the options relevant to you on navigation bar. In the near future more capabilities, applications, tools and processes will be added.
+                                  <br>
+                              </p>
+                              <!--<p class="uix helptxt">&nbsp;</p>-->
+                              <p class="uix helptxt">
+                                  <i class="uix fa fa-home fixed width home icon white"></i>
+                                  - The 'Home' icon will show all the activity streams from various applications to allow you to quickly view all the critical updates. Currently updates related to partner information have been enabled, soon in the same place you will see more updates from other process areas. </p>
+                              <!--<p class="uix helptxt">&nbsp;</p>-->
+                              <p class="uix helptxt"> Watch this space for information and new features soon.</p>
+							<span>
+								<button class="uix favclosebutton"
+                                        id="favclosebutton"
+                                        ng-click="NavListHelp = !NavListHelp">Close</button>
+							</span>
+                          </div>
+                      </div>
+                      <!-- End of Navbar Help - widget-toggles -->
+
+                      <!-- Start of Navbar ChangeLanguage  - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="changeLanguage-trigger"
+                           data-ng-class="{'active':selectedItem === 'CHANGELANGUAGE'}">
+                          <a href=""
+                             ng-click="obj.changeLanguage = !obj.changeLanguage;"
+                             id="changeLanguage-trigger2">
+                              <i class="Icon__ChangeLanguage" data-ng-class="{'active':obj.changeLanguage}">
+                              </i>
+                          </a>
+                          <div class="uix"
+                               id="changelanguagepanel"
+                               ng-show="obj.changeLanguage">
+                              <p><label>
+                                      Choose a Language
+                                      <br>
+                                      <select>
+                                          <option value="" disabled selected>Select One ...</option>
+                                          <% for(var l=0; l < languageList.length;l++){%>
+                                          <option value="<%= languageList[l].countryCode%>">
+                                              <%= languageList[l].title %>
+                                          </option>
+                                          <% } %>
+                                          <!--<option value="cs">Czech - Čeština</option>-->
+                                          <!--<option value="en" selected>English</option>-->
+                                          <!--<option value="fr">French - Français</option>-->
+                                          <!--<option value="fr-CA">French Canadian - Français</option>-->
+                                          <!--<option value="de">German - Deutsch</option>-->
+                                          <!--<option value="it">Italian - Italiano</option>-->
+                                          <!--<option value="ja">Japanese - 日本語e</option>-->
+                                          <!--<option value="ko">Korean - 한국어</option>-->
+                                          <!--<option value="pl">Polish - Polski</option>-->
+                                          <!--<option value="pt">português - Portuguese</option>-->
+                                          <!--<option value="ru">Russian - Русский</option>-->
+                                          <!--<option value="zh-Hans">Simplified Chinese - 简体中文</option>-->
+                                          <!--<option value="es">Spanish (LATAM) - Español</option>-->
+                                          <!--<option value="es">Spanish - Español</option>-->
+                                          <!--<option value="zh-Hant">Traditional Chinese - 繁體中文</option>-->
+                                          <!--<option value="tr">Turkish - Türkçe</option>-->
+                                          <!--<option value="vi">Vietnamese - Tiếng Việt</option>-->
+                                      </select>
+
+                                  </label></p>
+                        <span>
+                            <button class="uix primary button"
+                                    ng-click="">Apply</button>
+                            <button class="uix closebutton"
+                                    ng-click="obj.changeLanguage = !obj.changeLanguage">Close</button>
+                        </span>
+                          </div>
+                      </div>
+                      <!-- End of Navbar ChangeLanguage - widget-toggles -->
+
+                      <!-- Start of Navbar ChangeWidth - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="toggleMaxWidth-trigger"
+                           data-ng-class="{'active':selectedItem === 'TOGGLEWIDTH'}">
+                          <a href=""
+                             ng-click="obj.toggleMaxWidth = !obj.toggleMaxWidth;"
+                             id="toggleMaxWidth-trigger2">
+                              <i class="Icon__ToggleWidth" data-ng-class="{'active':obj.toggleMaxWidth}">
+                              </i>
+                          </a>
+                      </div>
+                      <!-- End of Navbar ChangeWidth - widget-toggles -->
+                  </div>
+                  <!-- /widget-toggles -->
+              </div>
+              <!-- /title bar -->
+
+              <!--TODO: Update PREG to be dynamic-->
+              <!-- navbar -->
+              <div class="Navbar unfolded"
+                   data-ng-class="{'unfolded':navbarFlag}"
+                   data-ng-init="selectedItem = 'PREG'"
+                   ng-hide="NavListMinimize">
+                  <div class="Navbar__items--home">
+                      <div class="Navbar__item--home"
+                           data-ng-class="{active: selectedItem === 'Home'}">
+                          <a href="#" id="hometrigger">
+                              <!--ng-click="NavListMinimize = !NavListMinimize"-->
+                              <i class="Navbar__item--icon-home"></i>
+                              <!--            <span class=".appheader__workspacetitle">Onboarding &amp; Administration</span>-->
+                          </a>
+                      </div>
+                      <!-- <li data-ng-class="{'active':selectedItem === 'STREAM'}" ><a href="#" ng-click="selectedItem = 'STREAM'" id="streamtrigger"><i class="uix fixed width info-circle icon" ></i></a>
+                          <span id="streamcount" class="">6</span>
+                        </li>-->
+                  </div>
+                  <div class="Navbar__items"><!--<ul>-->
+                      <% for(var p=0; p<partnerBar.length;p++){%>
+                      <div class="Navbar__item"
+                           data-ng-class="{'active':selectedItem === '<%=partnerBar[p].selectedClass%>'}"
+                           id="partinfosubtrigger"><!--<li>-->
+                              <i class="fa no-hover fa-chevron-right" data-ng-class="<%=partnerBar[p].id%> ? 'fa-chevron-down' : 'fa-chevron-right'" data-ng-click="<%=partnerBar[p].id%> = !<%=partnerBar[p].id%>"></i>
+                          <a href="<%=partnerBar[p].Link%>" title="<%=partnerBar[p].titleHover%>">
+                              <%=partnerBar[p].title%>
+                          </a><!--						<div class="commonSubNav" id="partnerinfoSubMenu" style="display: none;">-->
+
+                          <div class="Navbar__subitems" ng-show="<%=partnerBar[p].id%>"><!--<ul>-->
+                              <% for(var q=0; q<partnerBar[p].dropDowns.length;q++){%>
+                              <div class="<%=partnerBar[p].dropDowns[q].separator%>"></div>
+                              <div class="Navbar__subitem"><!--<li>-->
+                                  <a href="<%=partnerBar[p].dropDowns[q].Link%>"
+                                     data-ng-click="selectedItem = '<%=partnerBar[p].dropDowns[q].selectedClass%>'"
+                                     id="<%=partnerBar[p].dropDowns[q].id%>"><%=partnerBar[p].dropDowns[q].title%></a>
+                              </div>
+                              <%}%>
+                                                                                            <!--</li>-->
+                          </div>
+                                                   <!--</ul>-->
+                      </div>
+                      <%}%>
+                                             <!--</li>-->
+                                             <!-- /navbar -->
+
+                                             <!--        <div class="horizontal divider hidden" data-ng-class="{'hidden':navbarFlag}"></div>-->
+                  </div>
+                  <!--</ul>-->
+                  <!-- /partner application-master-header -->
+              </div>
+              <!-- /navbar -->
+              <!-- /UIX-Centered Box -->
+
+          </div>
+          <!-- partner application-master-header end -->
+  </nav><!-- navigation end -->

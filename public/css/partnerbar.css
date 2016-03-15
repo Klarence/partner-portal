@@ -1,0 +1,1653 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide {
+    display : none !important;
+    }
+
+ng\:form {
+    display : block;
+    }
+
+.ng-animate-block-transitions {
+    transition         : 0s all !important;
+    -webkit-transition : 0s all !important;
+    }
+
+/*.fancybox-margin {margin-right: 15px;}*/
+
+body {
+    margin : auto 0;
+    }
+
+.uix header {
+    clear: both;
+    }
+
+.uix.error.iconic.dismissible.message {
+    clear: both;
+    }
+
+.uix.center.aligned.contained.block,
+#partnerAppMasterHeaderContainer {
+    margin     : 0 auto 10px auto;
+    min-width  : 320px;
+    max-width  : 1024px;
+    display    : block;
+    box-sizing : border-box;
+    padding    : 0;
+    outline    : 0 none;
+    }
+
+#partnerAppMasterHeader {
+    /*    margin  : 0;*/
+    /*    padding : 0;*/
+    /*    width   : 100%;*/
+    clear : both;
+    }
+
+#partnerAppMasterHeader .Navbar__titlebar {
+    display       : block;
+    border-bottom : 1px solid #dddddd;
+    }
+
+#partnerAppMasterHeader .ApplicationTitleSection {
+    float          : left;
+    /*  width: 100%;*/
+
+    height         : 45px;
+    margin         : 0;
+    vertical-align : middle;
+    }
+
+#partnerAppMasterHeader .workspaceicon {
+    background-repeat : no-repeat;
+    width             : 36px;
+    height            : 36px;
+    float             : left;
+    margin-right      : 10px;
+    }
+
+#partnerAppMasterHeader .WorkspaceIcon--cisco-icon {
+    /*display : none;*/
+    background   : url("../img/logos/cisco-logo.svg") no-repeat;
+
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Dropdown-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : right;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Dropdown-icon:before {
+    font-family : "FontAwesome";
+    /*content     : "\f0d7";*/
+    /*content     : "\f078";*/
+    content     : "\f107";
+    font-size   : 16px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.PartnerPortal-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.PartnerPortal-icon:before {
+    font-family : "FontAwesome";
+    /*content     : "\f085";*/
+    content     : "\f015";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Commerce-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Commerce-icon:before {
+    font-family : "FontAwesome";
+    content     : "\f07a";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Onboarding-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Onboarding-icon:before {
+    font-family : "FontAwesome";
+    /*content     : "\f085";*/
+    content     : "\f07c";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Software-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Software-icon:before {
+    font-family : "FontAwesome";
+    content     : "\f0c7";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.SalesConnect-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.SalesConnect-icon:before {
+    font-family : "FontAwesome";
+    content     : "\f0b1";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.SalesMarketing-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.SalesMarketing-icon:before {
+    font-family : "FontAwesome";
+    content     : "\f080";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Programs-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Programs-icon:before {
+    font-family : "FontAwesome";
+    content     : "\f0d6";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Disti-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Disti-icon:before {
+    font-family : "FontAwesome";
+    content     : "\f0d1";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Internal-icon {
+    width        : 36px;
+    height       : 36px;
+    float        : left;
+    font-style   : normal;
+    /*margin-right : 10px;*/
+    margin-right : 0;
+    box-sizing   : border-box;
+    /*
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle i.WorkspaceIcon.Internal-icon:before {
+    font-family : "FontAwesome";
+    content     : "\f085";
+    font-size   : 24px;
+    color       : #049fd9;
+    /* vertical-align: middle; */
+    /* margin-top: 0px; */
+    line-height : 1.5;
+    margin-left : 4px;
+    }
+
+#partnerAppMasterHeader .ApplicationTitle {
+    font-family   : "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    /*  color: #1e76c7;*/
+    display       : block;
+    font-weight   : 200;
+    line-height   : 2;
+    margin        : 0;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    font-size     : 18px;
+    padding       : 7px 0;
+    /*
+
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    display:box;
+    box-pack:center;
+    box-align:center;
+  */
+    }
+
+#partnerAppMasterHeader .ApplicationTitle a {
+    text-decoration : none;
+    /*color           : #9e9ea2;*/
+    color           : #58585b;
+    }
+
+/*#partnerAppMasterHeader .ApplicationTitle a {*/
+/*color : #1e76c7;*/
+/*}*/
+
+.ApplicationSubtitle {
+    font-family : "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    margin      : 0;
+    font-size   : 16px;
+    font-weight : 400;
+    padding     : 0 0 .25em 0;
+    line-height : 1;
+    color       : #444444;
+    }
+
+.ApplicationSubtitle:empty {
+    display : none;
+    }
+
+#partnerAppMasterHeader .Navlist {
+    display     : block;
+    float       : right;
+    /*  margin-top: 14px;*/
+
+    padding-top : 14px;
+    /*  min-height: 40px;*/
+
+    width       : auto;
+    }
+
+#partnerAppMasterHeader .Navlist .Navbar__fold {
+    font-size     : 24px;
+    /*  height: 2.25em;*/
+    /*  display: table;*/
+
+    float         : right;
+    padding-right : 0;
+    text-align    : center;
+    color         : #007fc5;
+    }
+
+#partnerAppMasterHeader .Navlist__item,
+#partnerAppMasterHeader .Navlist__item:visited {
+    float                   : right;
+    color                   : #007fc5;
+    padding-right           : 10px;
+    display                 : inline-block;
+    font-family             : FontAwesome;
+    font-style              : normal;
+    font-weight             : normal;
+    line-height             : 1;
+    -webkit-font-smoothing  : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+    list-style-type         : none;
+    width                   : auto;
+    position                : relative;
+    }
+
+/*TODO: make icons gray, when active color will change to blue*/
+#partnerAppMasterHeader .Navlist__item i,
+#partnerAppMasterHeader .Navlist__item i:before,
+#partnerAppMasterHeader .Navlist__item i:visited::before {
+    color : #9e9ea2;
+    }
+
+#partnerAppMasterHeader .Navlist__item:active i:before,
+#partnerAppMasterHeader .Navlist__item i:active::before,
+#partnerAppMasterHeader .Navlist__item.active i:before,
+#partnerAppMasterHeader .Navlist__item i.active::before {
+    color : #006FAE;
+    }
+
+#partnerAppMasterHeader .Navlist__item p {
+    /*margin: 0 0 20px 0;*/
+    margin          : 0 0 1.25rem 0;
+    padding         : 0;
+    line-height     : 1.25;
+    /*font-size: 14px;*/
+    font-size       : 0.875rem;
+    font-style      : normal;
+    font-weight     : normal;
+    text-decoration : none;
+    /*color: #525252;*/
+    color           : #333;
+    }
+
+.Navlist__item--icon-bars:before {
+    content                 : "\f0c9";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 3px 0 0 0;
+    font-family             : FontAwesome;
+    /*  font-size: 1.4em;*/
+    font-style              : normal;
+    font-weight             : 400;
+    line-height             : 0.6em;
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*  width: 2em;*/
+    color                   : #006FAE;
+    border-left             : 1px solid #333;
+    padding                 : 0 2px 0 10px;
+    vertical-align          : top;
+    }
+
+/*
+    .Navlist__item--icon-bars:after {
+      content:'goodbye';
+      visibility: visible;
+      display: block;
+    }
+    */
+
+/*TODO: remove color and set specific font size*/
+.Navlist__item--icon-spaces:before {
+    content                 : "\f00a";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0;
+    font-family             : FontAwesome;
+    font-size               : 1.4em;
+    font-style              : normal;
+    font-weight             : 400;
+    /*  line-height: 0.6em;*/
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*width                   : 2em;*/
+    color                   : #006FAE;
+    }
+
+.Navlist__item--icon-history:before {
+    content                 : "\f1da";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0;
+    font-family             : FontAwesome;
+    font-size               : 1.4em;
+    font-style              : normal;
+    font-weight             : 400;
+    /*  line-height: 0.6em;*/
+
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*width                   : 2em;*/
+    color                   : #006FAE;
+    }
+
+.Navlist__item--icon-Info:before {
+    /*content                 : "\f05a";*/
+    content                 : "\f086";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0;
+    font-family             : FontAwesome;
+    font-size               : 1.4em;
+    font-style              : normal;
+    font-weight             : 400;
+    /*  line-height: 0.6em;*/
+
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*width :                 2em;*/
+    color                   : #006FAE;
+    }
+
+/*
+	#streamcount {
+		background-color: #c00;
+		border-radius: 10px;
+		color: #fff;
+		font-size: 9px;
+		font-weight: bold;
+		height: 10px;
+		padding: 2px 0px 2px 1px;
+		position: absolute;
+		text-align: center;
+		top: -10px;
+		width: 15px;
+		right: 2px;
+		z-index: 1001;
+		}
+*/
+
+#partnerAppMasterHeader .Navlist__item--count {
+    background-color : #c00;
+    border-radius    : 10px;
+    color            : #fff;
+    font-size        : 9px;
+    font-weight      : bold;
+    height           : 14px;
+    padding          : 2px 0 2px 1px;
+    position         : absolute;
+    text-align       : center;
+    top              : -8px;
+    width            : 15px;
+    right            : 3px;
+    box-sizing       : border-box;
+    z-index          : 1001;
+    font-family      : "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    }
+
+#favouritestrigger img {
+    padding-top : 2px;
+    }
+
+#teamcisco-trigger {
+    position : relative;
+    }
+
+.Icon__ToggleWidth:before {
+    content                 : "\f07e";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0;
+    font-family             : FontAwesome;
+    font-size               : 1.4em;
+    font-style              : normal;
+    font-weight             : 400;
+    /*  line-height: 0.6em;*/
+
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*width                   : 2em;*/
+    color                   : #006FAE;
+    }
+
+.Icon__ChangeLanguage:before {
+    content                 : "\f1ab";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0;
+    font-family             : FontAwesome;
+    font-size               : 1.4em;
+    font-style              : normal;
+    font-weight             : 400;
+    /*  line-height: 0.6em;*/
+
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*width                   : 2em;*/
+    color                   : #006FAE;
+    }
+
+.Icon__Question--circle:before {
+    content                 : "\f059";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0;
+    font-family             : FontAwesome;
+    font-size               : 1.4em;
+    font-style              : normal;
+    font-weight             : 400;
+    /*  line-height: 0.6em;*/
+
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*width                   : 2em;*/
+    color                   : #006FAE;
+    }
+
+#partnerAppMasterHeader .Navbar.unfolded {
+    display : block;
+    }
+
+#partnerAppMasterHeader .Navbar {
+    /*font-size        : 14px;*/
+    font-size        : 16px;
+    /*text-align       : center;*/
+    text-align       : left;
+    /*    border-radius    : 0.25em;*/
+    position         : relative;
+    width            : 100%;
+    /*	overflow: hidden;*/
+    clear            : both;
+    background-color : #f5f5f5;
+    border-style     : solid;
+    border-color     : #dddddd;
+    display          : none;
+    border-width     : 2px 0 2px 0;
+    }
+
+/*
+#partnerAppMasterHeader .Navbar__Section {
+	color: #666;
+}
+*/
+/*
+#partnerAppMasterHeader .Navbar__Section > .Navbar__item--home {
+    border-color : #dddddd;
+    border-style : solid;
+    border-width : 1px 0;
+	color: #666;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	font-weight: 500;
+    }
+*/
+
+#partnerAppMasterHeader .Navbar__items {
+    /*      border: 1px solid #666;*/
+    /*    display : table;*/
+    display        : table;
+    width          : 100%;
+    font-size      : 14px;
+    font-weight    : 500;
+    padding-left   : 0;
+    margin-top     : 0;
+    margin-bottom  : 0;
+    border-top     : 1px solid #ccc;
+    vertical-align : top;
+
+    }
+
+#partnerAppMasterHeader .Navbar__items--home {
+    height : 31px;
+    }
+
+#partnerAppMasterHeader .Navbar__item--home {
+    list-style-type : none;
+    padding-top     : 6px;
+    padding-bottom  : 2px;
+    }
+
+#partnerAppMasterHeader .Navbar__item--home:before {
+    float           : left;
+    /*  border-right: 1px solid #333;*/
+    /*width           : 40px;*/
+    width           : 3em;
+    min-width       : 3em;
+    margin          : 0;
+    padding-right   : 0;
+    padding-left    : 10px;
+    text-align      : left;
+    opacity         : 1;
+    font-size       : 20px;
+    position        : relative;
+    top             : 2px;
+    text-decoration : none;
+    }
+
+/*TODO: Make navbar keyboard accessible*/
+/*http://webaim.org/techniques/keyboard/*/
+#partnerAppMasterHeader .Navbar__item--home:hover,
+#partnerAppMasterHeader .Navbar__item--home:focus {
+    background-color   : #c5e4f6;
+    -webkit-transition : all 0.2s ease-in-out 0s;
+    -o-transition      : all 0.2s ease-in-out 0s;
+    transition         : all 0.2s ease-in-out 0s;
+    }
+
+#partnerAppMasterHeader .Navbar__item--home:active,
+#partnerAppMasterHeader .Navbar__item--home.active {
+    box-shadow         : 0 0 7px 1px #1a6797 inset;
+    background-color   : #0096d6 !important;
+    -webkit-transition : all 0.2s ease-in-out 0s;
+    -o-transition      : all 0.2s ease-in-out 0s;
+    transition         : all 0.2s ease-in-out 0s;
+    }
+
+#partnerAppMasterHeader .Navbar__item--home a {
+    text-decoration : none;
+    /*
+        padding: 0.455em 0 0.7em;
+        padding: 0.7em 0;
+    */
+    }
+
+#partnerAppMasterHeader .Navbar__item--icon,
+#partnerAppMasterHeader .Navbar__item--icon-home {
+    font-family     : FontAwesome;
+    content         : "\f015";
+    width           : 3em;
+    min-width       : 3em;
+    padding-right   : 0;
+    padding-left    : 10px;
+    text-align      : left;
+    /*    border-bottom    : 1px solid #333;*/
+    text-decoration : none !important;
+    font-style      : normal;
+    font-size       : 20px;
+    color           : #666;
+    }
+
+#partnerAppMasterHeader .Navbar__item--home:active .Navbar__item--icon-home,
+#partnerAppMasterHeader .Navbar__item--home.active .Navbar__item--icon-home {
+    color : #fff;
+    }
+
+#partnerAppMasterHeader .Navbar__item--icon-home:before {
+    content : "\f015";
+    }
+
+#partnerAppMasterHeader .workspace-items .workspace-item i.ciscoicon {
+    display    : block;
+    background : url("../img/logos/cisco_logo_blue.svg") no-repeat;
+    width      : 36px;
+    height     : 32px;
+    /*position: relative;*/
+    margin-top : -12px;
+    /*top: -55px;*/
+    /*float        : left;*/
+    /*border-right : 1px solid #b9b9b9;*/
+    /*margin       : 10px 10px 0 10px;*/
+    /*padding: 10px 10px 10px 10px;*/
+    box-sizing : border-box;
+    }
+
+#partnerAppMasterHeader .partnerportalicon:before {
+    content : "\f015";
+    }
+
+#partnerAppMasterHeader .onboardicon:before {
+    content : "\f07c";
+    }
+
+/*
+		#partnerAppMasterHeader .Navbar__item--icon-home:after {
+			content : "  Home";
+			}
+*/
+
+#partnerAppMasterHeader .Navbar__item {
+    position           : relative;
+    /*font-size       : 13px;*/
+    float              : left;
+    /*color           : #000000;*/
+    padding-left       : 0;
+    text-align         : left;
+    min-width          : 3em;
+    padding-right      : 0;
+    /*    width: 3em;*/
+    text-decoration    : none;
+    list-style         : outside none none;
+    margin             : 0;
+    line-height        : 1.25;
+    box-sizing         : border-box;
+    outline            : 0 none;
+    font-style         : italic;
+    /*display         : table-cell;*/
+    display            : block;
+    width              : 100%;
+    /*  padding-left: 10px;*/
+    font-size          : 14px;
+    font-weight        : 500;
+    -webkit-transition : all 0.2s ease-in-out 0s;
+    -o-transition      : all 0.2s ease-in-out 0s;
+    transition         : all 0.2s ease-in-out 0s;
+
+    }
+
+#partnerAppMasterHeader .Navbar__item:hover > a,
+#partnerAppMasterHeader .Navbar__item:focus > a,
+#partnerAppMasterHeader .Navbar__subitem:hover > a,
+#partnerAppMasterHeader .Navbar__subitem:focus > a {
+    background-color   : #c5e4f6;
+    -webkit-transition : all 0.2s ease-in-out 0s;
+    -o-transition      : all 0.2s ease-in-out 0s;
+    transition         : all 0.2s ease-in-out 0s;
+    }
+
+
+/*#partnerAppMasterHeader .Navbar__item:active a,*/
+/*#partnerAppMasterHeader .Navbar__item.active a{*/
+/*box-shadow         : 0 0 7px 1px #1a6797 inset;*/
+/*background-color   : #0096d6 !important;*/
+/*-webkit-transition : all 0.2s ease-in-out 0s;*/
+/*-o-transition      : all 0.2s ease-in-out 0s;*/
+/*transition         : all 0.2s ease-in-out 0s;*/
+/*}*/
+
+#partnerAppMasterHeader .Navbar__item:active > a,
+#partnerAppMasterHeader .Navbar__item.active > a {
+    box-shadow         : 0 0 7px 1px #1a6797 inset;
+    background-color   : #0096d6 !important;
+    -webkit-transition : all 0.2s ease-in-out 0s;
+    -o-transition      : all 0.2s ease-in-out 0s;
+    transition         : all 0.2s ease-in-out 0s;
+    color              : #fff;
+    text-shadow        : 0 1px 0 #666;
+    }
+
+#partnerAppMasterHeader .Navbar__item + .Navbar__item {
+    border            : 0 solid #dddddd;
+    border-left-width : 1px;
+    }
+
+#partnerAppMasterHeader .Navbar__item a {
+    display         : block;
+    text-shadow     : 0 1px 0 #fff;
+    text-decoration : none;
+    color           : #666;
+    font-weight     : bold;
+    font-size       : 13px;
+    font-style      : normal;
+    white-space     : nowrap;
+    padding         : 0.7em 0 0.7em 10px;
+    /*border-top : 1px solid #C0BFBF;*/
+    /*font-family: Helvetica, sans-serif;*/
+    font-family     : "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    }
+
+#partnerAppMasterHeader .Navbar__item > a {
+    border-bottom : 1px solid #dfdfdf;
+    }
+
+#partnerAppMasterHeader .Navbar__item:last-child > a {
+    border-bottom : none;
+    }
+
+#partnerAppMasterHeader .Navbar__item i {
+    padding   : 9px 18px 0 18px;
+    font-size : 18px;
+    /* line-height: 1; */
+    float     : left;
+    color     : #666;
+    font-style: normal;
+    }
+
+div#toggleMaxWidth-trigger.Navlist__item {
+    display : none;
+    }
+
+#partnerAppMasterHeader .Navbar__subitems {
+    -moz-border-bottom-colors : none;
+    -moz-border-left-colors   : none;
+    -moz-border-right-colors  : none;
+    -moz-border-top-colors    : none;
+    background                : none repeat scroll 0 0 #F4F4F4;
+    border-image              : none;
+    /*border : 1px solid #C0BFBF;*/
+
+    position                  : relative;
+    /*    top: 60px;*/
+    z-index                   : 9000;
+    font-weight               : bolder;
+    white-space               : nowrap;
+    font-size                 : 12px;
+    overflow                  : visible;
+    text-align                : left;
+    width                     : 100%;
+    }
+
+#partnerAppMasterHeader .Navbar__subitem:hover,
+#partnerAppMasterHeader .Navbar__subitem:focus {
+    background-color : #c5e4f6;
+    }
+
+#partnerAppMasterHeader .Navbar__subitem a {
+    padding-left  : 60px;
+    font-size     : 12px;
+    border-bottom : 1px solid #ededed;
+    /*padding-left: 24px;*/
+    }
+
+.icon-minus {
+    content                 : "/f146";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0 8px;
+    font-family             : FontAwesome;
+    /*  font-size: 1.4em;*/
+    font-style              : normal;
+    font-weight             : 400;
+    line-height             : 0.6em;
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*  width: 2em;*/
+    color                   : #006FAE;
+    }
+
+.icon-plus {
+    content                 : "/f0fe";
+    outline                 : 0;
+    display                 : inline-block;
+    margin                  : 0;
+    padding                 : 0 8px;
+    font-family             : FontAwesome;
+    /*  font-size: 1.4em;*/
+    font-style              : normal;
+    font-weight             : 400;
+    line-height             : 0.6em;
+    text-decoration         : none;
+    text-align              : center;
+    opacity                 : 0.75;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    box-sizing              : border-box;
+    /*  width: 2em;*/
+    color                   : #006FAE;
+    }
+
+/*.width-auto {*/
+/*width: auto;*/
+/*}*/
+
+/*.width-1024 {*/
+/*width: 1024px;*/
+/*}*/
+
+/* Hide Subitems */
+
+.Navbar__items .Navbar__subitems {
+    /*display : none;*/
+    display : block;
+    }
+
+/*.Navbar__items .Navbar__items:hover {*/
+/*/!*display : block;*!/*/
+/*}*/
+
+/*
+.Navbar__items {
+	background: #efefef;
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	padding: 0 20px;
+	border-radius: 10px;
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+*/
+
+.Navbar__items:after {
+    content : "";
+    clear   : both;
+    display : block;
+    }
+
+#changelanguagepanel, #contentswitchpanel, #favouritepanel, #helpboxbox {
+    text-decoration : none;
+    list-style      : none outside none;
+    text-align      : left;
+    float           : right;
+    line-height     : 1em;
+    position        : absolute;
+    right           : 0;
+    width           : auto;
+    /*min-width       : 360px;*/
+    background      : none repeat scroll 0 0 #f4f4f4;
+    /*padding         : 10px;*/
+    /*border-radius: 0 0 5px 5px;*/
+    border-radius   : 5px;
+    /*  	border-right: 1px solid #cacaca;*/
+    border          : 1px solid #cacaca;
+    border-bottom   : 4px solid #3b97e0;
+    box-shadow      : 1px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+#changelanguagepanel {
+    z-index   : 9990;
+    min-width : 210px;
+    padding   : 10px;
+    }
+
+#contentswitchpanel {
+    z-index   : 9999;
+    min-width : 300px;
+    /*right: 649px;*/
+    }
+
+#favouritepanel {
+    z-index   : 9990;
+    min-width : 360px;
+    padding   : 10px;
+    }
+
+#helpboxbox {
+    z-index   : 9998;
+    /*max-width: 330px;*/
+    width     : 330px;
+    min-width : 280px;
+    padding   : 10px;
+    }
+
+#contentswitchpanel ul, #favouritepanel ul {
+    padding : 0;
+    margin  : 5px;
+    }
+
+/*#contentswitchpanel ul li, #favouritepanel ul li {*/
+/*list-style-type: none;*/
+/*line-height: 1em;*/
+/*color: #000;*/
+/*font-size: 12px;*/
+/*margin-bottom: 10px;*/
+/*}*/
+
+#contentswitchpanel .workspace-items {
+    padding : 0;
+    margin  : 0;
+    }
+
+#contentswitchpanel .workspace-items .workspace-item {
+    list-style-type : none;
+    line-height     : 2.5em;
+    color           : #000;
+    font-size       : 12px;
+    /*margin-bottom   : 10px;*/
+    padding         : 10px;
+    /*margin-bottom: 20px;*/
+    border-bottom   : 1px solid #cacaca;
+    position        : relative;
+    }
+
+#contentswitchpanel .workspace-items .workspace-item:hover,
+#contentswitchpanel .workspace-items .workspace-item:focus,
+#contentswitchpanel .workspace-items .workspace-item .active {
+    background : #cfe8fa none repeat scroll 0 0;
+    }
+
+
+#contentswitchpanel .workspace-items .workspace-item a {
+    display         : block;
+    font-family     : "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    list-style-type : none;
+    text-decoration : none;
+    box-sizing      : border-box;
+    color           : #333;
+    font-size       : 13px;
+    /*margin-top : 15px;*/
+    font-weight     : 500;
+    vertical-align  : middle;
+    }
+
+#contentswitchpanel .workspace-items .workspace-item i {
+    display        : block;
+    /*float : left;*/
+    margin-right   : 6px;
+    padding-right  : 12px;
+    font-style     : normal;
+    font-size      : 32px;
+    vertical-align : middle;
+    position       : absolute;
+    top            : 50%;
+    margin-top     : -15px;
+    }
+
+#contentswitchpanel .workspacetitle {
+    display     : block;
+    line-height : 1;
+    /*font-weight : bold;*/
+    /*font-size   : 16px;*/
+    padding     : 10px 4px;
+    margin-left : 40px;
+    }
+
+#favouritepanel ul li a {
+    list-style-type : none;
+    text-decoration : none;
+    box-sizing      : border-box;
+    /*color           : #006FAE;*/
+    }
+
+#contentswitchpanel .workspace-items .workspace-item i:before {
+    color : #049fd9;
+    }
+
+#contentswitchpanel .partnerportalicon:before {
+    content     : "\f015";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .commerceicon:before {
+    content     : "\f07a";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .marketingicon:before {
+    content     : "\f080";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .paymentsicon:before {
+    content     : "\f0d6";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .salesicon:before {
+    content     : "\f0b1";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .softwareicon:before {
+    content     : "\f0c7";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color       : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .onboardicon:before {
+    /*content     : "\f085";*/
+    /*content     : "\f238"; Train */
+    content     : "\f07c";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .distiicon:before {
+    content     : "\f0d1";
+    /*	content: "/f0b1";*/
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#contentswitchpanel .internalicon:before {
+    /*content     : "\f234";*/
+    content     : "\f085";
+    font-family : FontAwesome;
+    /*padding-right : 8px;*/
+    /*font-size     : 24px;*/
+    /*color         : #006FAE;*/
+    /*color : #049fd9;*/
+    }
+
+#favouritepanel h6 {
+    margin        : 3px 0;
+    border-bottom : 1px solid;
+    font-size     : 12px;
+    font-weight   : bold;
+    overflow      : hidden;
+    white-space   : nowrap;
+    text-overflow : ellipsis;
+    }
+
+.favoritetrigger, #favoritetrigger {
+    padding-right : 5px;
+    }
+
+/*
+.gold {
+	color: #fc0;
+}
+*/
+
+.fa-star:before {
+    content       : "\f005";
+    color         : #fc0;
+    padding-right : 5px;
+    }
+
+.fa-star-o:before {
+    content       : "\f006";
+    color         : #999;
+    padding-right : 5px;
+    }
+
+#helpboxbox {
+    position : absolute;
+    }
+
+#favouritepanel dt {
+    margin        : 3px 20px;
+    border-bottom : 1px solid;
+    font-size     : 12px;
+    font-weight   : bold;
+    overflow      : hidden;
+    white-space   : nowrap;
+    text-overflow : ellipsis;
+    }
+
+#favouritepanel dl a {
+    font-size       : 13px;
+    text-decoration : none;
+    color           : #006FAE;
+    line-height     : 1.5em;
+    }
+
+#favouritepanel dd {
+    /*margin-left : 0;*/
+    margin : 0;
+    }
+
+@media (min-width : 769px) {
+
+    #partnerAppMasterHeader .ApplicationTitleSection {
+        float          : left;
+        /*  width: 100%;*/
+        height         : 50px;
+        margin         : 0;
+        vertical-align : middle;
+        }
+
+    #partnerAppMasterHeader .ApplicationTitle {
+        font-size : 20px;
+        }
+
+    #contenttrigger {
+        padding-right : 0;
+        }
+
+    #partnerAppMasterHeader .Navbar__fold {
+        display : none;
+        float   : right;
+        }
+
+    #partnerAppMasterHeader .Navbar__titlebar {
+        border-bottom : 0;
+        }
+
+    #partnerAppMasterHeader .commonSubNav {
+        -moz-border-bottom-colors : none;
+        -moz-border-left-colors   : none;
+        -moz-border-right-colors  : none;
+        -moz-border-top-colors    : none;
+        background                : none repeat scroll 0 0 #f4f4f4;
+        border-bottom             : 3px solid #1e76c7 !important;
+        border-image              : none;
+        border-left               : 1px solid #c0bfbf;
+        border-radius             : 0 0 5px 5px;
+        border-right              : 1px solid #c0bfbf;
+        border-top                : medium none !important;
+        box-shadow                : 0 2px 4px #999;
+
+        padding                   : 10px 10px;
+        position                  : absolute;
+        top                       : 36px;
+        z-index                   : 7000;
+        width                     : auto;
+
+        font-weight               : bolder;
+        white-space               : nowrap;
+        font-size                 : 12px;
+        overflow                  : visible;
+        }
+
+    #partnerAppMasterHeader .commonFirstMenu {
+        float : left;
+        }
+
+    #partnerAppMasterHeader .commonFirstMenu ul {
+        list-style   : none;
+        padding-left : 0;
+        font-size    : 10px;
+        }
+
+    #partnerAppMasterHeader .commonFirstMenu ul li a {
+        color : #666;
+        }
+
+    #partnerAppMasterHeader .commonFirstMenu ul li a:hover,
+    #partnerAppMasterHeader .commonFirstMenu ul li a:focus {
+        color : #007fc5;
+        }
+
+    #partnerAppMasterHeader .commonSeperator {
+        /*background: url("../images/sep.jpg") repeat-x scroll center top rgba(0, 0, 0, 0);*/
+        border-bottom : 1px solid #ccc;
+        clear         : both;
+        height        : 1px;
+        margin        : 10px 0 8px;
+        }
+
+    /*Navbar*/
+    #partnerAppMasterHeader .Navbar,
+    #partnerAppMasterHeader .Navbar.unfolded {
+        /*		  border: 1px solid #333;*/
+        /*    display : table;*/
+        display       : table;
+        table-layout  : auto;
+        width         : 100%;
+        border-width  : 1px;
+        border-radius : 3px;
+        float         : none;
+        }
+
+    #partnerAppMasterHeader .Navbar__items {
+        /*  border: 1px solid #666;*/
+        /*    display : table;*/
+        display    : table-cell;
+        margin     : 0;
+        padding    : 0;
+        /*		padding-left: 0;*/
+        width      : 100%;
+        /*
+                font-size: 14px;
+                font-weight: 500;
+        /*		margin-top: 5px;*/
+        float      : none;
+        border-top : 0 none;
+        }
+
+    #partnerAppMasterHeader .Navbar .Navbar__items--home {
+        display : table;
+        width   : 40px;
+        margin  : 0;
+        padding : 0;
+        float   : left;
+        }
+
+    #partnerAppMasterHeader .Navbar__item--home {
+        list-style    : none;
+        display       : table-cell;
+        border-bottom : none;
+        border-right  : 1px solid #ccc;
+        padding       : 6px 8px 0 0;
+        width         : 40px;
+        text-align    : left;
+        float         : none;
+        height        : 26px;
+        }
+
+    #partnerAppMasterHeader .Navbar__item--home:before {
+        float           : left;
+        /*  border-right: 1px solid #333;*/
+        /*width           : 40px;*/
+        width           : 3em;
+        min-width       : 3em;
+        margin          : 0;
+        padding-right   : 0;
+        padding-left    : 10px;
+        text-align      : left;
+        opacity         : 1;
+        font-size       : 20px;
+        position        : relative;
+        top             : 2px;
+        text-decoration : none;
+        }
+
+    #partnerAppMasterHeader .Navbar__item--home a {
+        text-decoration : none;
+        /*
+            padding: 0.455em 0 0.7em;
+            padding: 0.7em 0;
+        */
+        }
+
+    #partnerAppMasterHeader .Navbar__item {
+        position           : relative;
+        min-width          : 1%;
+        display            : table-cell;
+        width              : 1%;
+        float              : none;
+        text-align         : center;
+        /*font-size       : 13px;*/
+        /*    float           : left;*/
+        /*color           : #000000;*/
+        padding-left       : 0;
+        padding-right      : 0;
+        /*    width: 3em;*/
+        /*    display         : block;*/
+        text-decoration    : none;
+        list-style         : outside none none;
+        margin             : 0;
+        line-height        : 1.25;
+        box-sizing         : border-box;
+        outline            : 0 none;
+        font-style         : italic;
+        /*  padding-left: 10px;*/
+        font-size          : 14px;
+        font-weight        : 500;
+        -webkit-transition : all 0.2s ease-in-out 0s;
+        -o-transition      : all 0.2s ease-in-out 0s;
+        transition         : all 0.2s ease-in-out 0s;
+        }
+
+    .cisco-logo-white {
+        display : block;
+        background   : url("../img/logos/cisco-logo-white.png") no-repeat;
+        width        : 65px;
+        height: 38px;
+        position: relative;
+        top: -55px;
+        /*float        : left;*/
+        /*border-right : 1px solid #b9b9b9;*/
+        /*margin       : 10px 10px 0 10px;*/
+        /*padding: 10px 10px 10px 10px;*/
+        box-sizing   : border-box;
+        }
+    #partnerAppMasterHeader .WorkspaceIcon--cisco-icon {
+        display      : block;
+        background   : url("../img/logos/cisco_logo_blue.svg") no-repeat;
+        /*background   : url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/50px-Cisco_logo.svg.png") no-repeat;*/
+        width        : 65px;
+        height       : 30px;
+        float        : left;
+        border-right : 1px solid #b9b9b9;
+        margin       : 10px 10px 0 10px;
+        /*padding: 10px 10px 10px 10px;*/
+        box-sizing   : border-box;
+        }
+
+    #partnerAppMasterHeader .Navbar__item:hover,
+    #partnerAppMasterHeader .Navbar__item:focus  {
+        background-color   : #c5e4f6;
+        -webkit-transition : all 0.2s ease-in-out 0s;
+        -o-transition      : all 0.2s ease-in-out 0s;
+        transition         : all 0.2s ease-in-out 0s;
+        }
+
+    /*#partnerAppMasterHeader .Navbar__item:active,*/
+    /*#partnerAppMasterHeader .Navbar__item.active {*/
+    /*box-shadow         : 0 0 7px 1px #1a6797 inset;*/
+    /*background-color   : #0096d6 !important;*/
+    /*-webkit-transition : all 0.2s ease-in-out 0s;*/
+    /*-o-transition      : all 0.2s ease-in-out 0s;*/
+    /*transition         : all 0.2s ease-in-out 0s;*/
+    /*}*/
+    #partnerAppMasterHeader .Navbar__item:active > a,
+    #partnerAppMasterHeader .Navbar__item.active > a {
+        box-shadow         : 0 0 7px 1px #1a6797 inset;
+        background-color   : #0096d6 !important;
+        -webkit-transition : all 0.2s ease-in-out 0s;
+        -o-transition      : all 0.2s ease-in-out 0s;
+        transition         : all 0.2s ease-in-out 0s;
+        color              : #fff;
+        text-shadow        : 0 1px 0 #666;
+        white-space        : nowrap;
+        text-decoration    : none;
+        display            : block;
+        }
+
+    #partnerAppMasterHeader .Navbar__item + .Navbar__item {
+        border            : 0 solid #dddddd;
+        border-left-width : 1px;
+        }
+
+    #partnerAppMasterHeader .Navbar__item a {
+        display         : block;
+        /*  padding: 0.7em 0;*/
+        text-shadow     : 0 1px 0 #fff;
+        text-decoration : none;
+        color           : #666;
+        font-weight     : bold;
+        font-size       : 13px;
+        font-style      : normal;
+        white-space     : nowrap;
+        /*padding    : 10px 10px 6px;*/
+        padding         : 8px;
+
+        /*font-family: Helvetica, sans-serif;*/
+        font-family     : "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+        }
+
+    #partnerAppMasterHeader .Navbar__subitems {
+        position      : absolute;
+        /*padding                   : 10px;*/
+        border-bottom : 3px solid #1E76C7 !important;
+        box-shadow    : 0 2px 4px #999;
+        border-radius : 0 0 5px 5px;
+        width         : auto;
+        border-top    : 1px solid #ccc;
+        }
+
+    #partnerAppMasterHeader .Navbar__item:last-child .Navbar__subitems {
+        right : 0;
+        }
+
+    #partnerAppMasterHeader .Navbar__subitem a {
+        padding       : 8px 8px 8px 12px;
+        font-size     : 12px;
+        border-bottom : none;
+        }
+
+    #partnerAppMasterHeader .Navbar__item > a {
+        border-bottom : none;
+        }
+
+    .no-hover {
+        display : none;
+        }
+
+    .Navbar__items .Navbar__subitems {
+        display : none;
+        /*display: block;*/
+        }
+
+    /*TODO: Add dropdown visibility when using keyboard to navigate*/
+
+    .Navbar__items .Navbar__item:hover > .Navbar__subitems,
+    .Navbar__items .Navbar__item:focus > .Navbar__subitems,
+    .Navbar__items .Navbar__item:hover > .Navbar__subitems.ng-hide,
+    .Navbar__items .Navbar__item:focus > .Navbar__subitems.ng-hide,
+    .Navbar__items .Navbar__item a:focus > .Navbar__subitems,
+    .Navbar__items .Navbar__item a:focus > .Navbar__subitems.ng-hide {
+        display : block !important;
+        }
+
+
+    }
+
+@media (min-width : 1025px) {
+    div#toggleMaxWidth-trigger.Navlist__item {
+        display : inline-block;
+        }
+
+    /*	#partnerAppMasterHeader {max-width: 1024px;}*/
+    /*	#partnerAppMasterHeader {max-width: 1280px;}*/
+    .maxWidth {
+        max-width     : 1680px !important;
+        padding-left  : .675em !important;
+        padding-right : .675em !important;
+        }
+
+    #contenttrigger.Navlist__item {
+        padding-right : 0;
+        }
+
+    #partnerAppMasterHeader .WorkspaceIcon--cisco-icon {
+        /*margin-left : 0;*/
+        }
+    }

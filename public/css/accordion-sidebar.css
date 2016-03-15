@@ -1,0 +1,401 @@
+/*--------------------------------------------------------------*\
+    #ACCORDION
+\*--------------------------------------------------------------*/
+
+/*Derived from Bootstrap.css*/
+
+.collapse {
+    display : none;
+    }
+
+.collapse.in {
+    display : block;
+    }
+
+.collapsing {
+    position           : relative;
+    height             : 0;
+    overflow           : hidden;
+    -webkit-transition : height .35s ease;
+    -o-transition      : height .35s ease;
+    transition         : height .35s ease;
+    }
+
+.panel {
+    margin-bottom      : 20px;
+    background-color   : #fff;
+    border             : 1px solid transparent;
+    border-radius      : 4px;
+    -webkit-box-shadow : 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow         : 0 1px 1px rgba(0, 0, 0, .05);
+    }
+
+.panel-body {
+    padding : 15px;
+    }
+
+.panel-heading {
+    padding                 : 10px 15px;
+    border-bottom           : 1px solid transparent;
+    border-top-left-radius  : 3px;
+    border-top-right-radius : 3px;
+    }
+
+.panel-title {
+    margin-top    : 0;
+    margin-bottom : 0;
+    font-size     : 16px;
+    color         : inherit;
+    }
+
+.panel-title > a {
+    color : inherit;
+    }
+
+.panel-group {
+    margin-bottom : 20px;
+    }
+
+.panel-group .panel {
+    margin-bottom : 0;
+    border-radius : 4px;
+    }
+
+.panel-group .panel + .panel {
+    margin-top : 5px;
+    }
+
+#leftSidebarNav {
+    height       : 100%;
+    float        : none;
+    margin-top   : 1.75em;
+    /* padding-right: 3px; */
+    border-right : 1px solid #ccc;
+    margin-right : 14px;
+    }
+
+#mainContentArea {
+    display      : table-cell;
+    table-layout : fixed;
+    float        : none;
+    width        : auto;
+    max-width    : 100%;
+    }
+
+body {
+    display      : table;
+    table-layout : fixed;
+    width        : 100%;
+    }
+
+#toggleLeftSidebar {
+    height   : 0;
+    display  : table-cell;
+    position : relative;
+    /*top: 11px;*/
+    /*left: -25px;*/
+    }
+
+#toggleLeftSidebar > i {
+    border           : 1px solid #ccc;
+    border-radius    : 0;
+    padding          : 1px;
+    position         : relative;
+    left             : -15px;
+    top              : 15px;
+    background-color : #fff;
+    z-index          : 1001;
+    font-style       : normal;
+    }
+
+#toggleLeftSidebar > .fa-chevron-right {
+    border           : 1px solid #ccc;
+    border-radius    : 0;
+    padding          : 1px;
+    position         : fixed;
+    left             : 0;
+    top              : 191px;
+    background-color : #fff;
+    z-index          : 1001;
+    }
+
+i.uix.fa.btn.fa-chevron-right {
+    }
+
+.select-lang {
+    padding-top : 5px;
+    float       : right;
+    }
+
+.select-lang i {
+    float         : right;
+    font-size     : 13px;
+    padding-right : 3px;
+    }
+
+.select-lang select {
+    float : right;
+    width : 20px;
+
+    }
+
+@media only screen and (min-width : 1068px) {
+    #toggleLeftSidebar {
+        height   : 0;
+        display  : table-cell;
+        position : relative;
+        /*top: 11px;*/
+        /*left: -25px;*/
+        }
+
+    #toggleLeftSidebar > .fa-chevron-right {
+        border           : 1px solid #ccc;
+        border-radius    : 0;
+        padding          : 1px;
+        position         : relative;
+        left             : -15px;
+        top              : 15px;
+        background-color : #fff;
+        z-index          : 1001;
+        }
+    }
+
+#quickNav {
+
+    }
+
+.quicknav + .dropdown-menu {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    float: left;
+    min-width: 160px;
+    max-width: 600px;
+    position: absolute;
+    text-align: left;
+    z-index: 1000;
+    }
+
+.quicknav + .dropdown-menu > li {
+    width: auto;
+    }
+.dropdown-menu > li > a {
+
+    }
+.quicknav + .dropdown-menu > li > a {
+    clear: both;
+    display: block;
+    /*font-weight: 400;*/
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+    color: #333;
+    font-weight: normal;
+    }
+
+.quicknav + .dropdown-menu > .active > a, .quicknav + .dropdown-menu > .active > a:hover, .quicknav + .dropdown-menu > .active > a:focus {
+    background-color: #337ab7;
+    color: #fff;
+    outline: 0 none;
+    text-decoration: none;
+    }
+
+input.quicknav {
+    width         : 82%;
+    /*left: 9px;*/
+    position      : relative;
+    min-height    : 24px;
+    font-size     : 13px;
+    border-radius : 3px;
+    border        : 1px solid #ccc;
+    padding       : 1px 3px;
+    /*margin-top: 5px;*/
+    }
+
+#quickNav i {
+    font-size : 16px;
+    }
+
+#quickNav button {
+    font-size     : 13px;
+    border-radius : 3px;
+    padding       : 4px;
+    line-height   : normal;
+    height        : 24px;
+    /*margin-bottom: 4px;*/
+    }
+
+.accordion > a {
+    display : block;
+    width   : 100%;
+    }
+
+#leftSidebar {
+    width  : 220px;
+    height : auto;
+    float  : left;
+    }
+
+#leftSidebarNav .accordion {
+    background-color : transparent;
+    }
+
+.panel {
+    border : 0;
+    }
+
+.panel-default > .panel-heading {
+    color            : #333;
+    background-color : transparent;
+    border           : 0;
+    }
+
+#leftSidebar .panel-heading {
+    padding                 : 0;
+    /*border-bottom: 1px solid transparent;*/
+    border-top-left-radius  : 0;
+    border-top-right-radius : 0;
+    }
+
+.panel-body {
+    padding : 4px 0 4px 0;
+    }
+
+#leftSidebarNav .accordion .panel-group .panel {
+    border           : 0;
+    background-color : #fff;
+    }
+
+#leftSidebarNav .accordion .panel-default > .panel-heading {
+    color            : #333;
+    background-color : #fff;
+    border           : 0;
+    }
+
+#leftSidebar .uix ul li, #leftSidebar ol li {
+    font-size   : 11px;
+    line-height : 1;
+    display     : inline;
+    float       : left;
+    padding     : 6px 0 6px 10px;
+    margin      : 0;
+    width       : 100%;
+    }
+
+#leftSidebar .uix ul li:hover, #leftSidebar ol li:hover, #leftSidebar .uix h4:hover {
+    background-color : #e8f5fc;
+    }
+
+.uix i {
+    font-style  : normal;
+    line-height : inherit;
+    }
+
+.accordion > .active {
+    position    : relative;
+    z-index     : 1;
+    margin      : 0 -2px 2px 0;
+    background  : #e8f5fc url(https://cisco-apps.cisco.com/web/fw/tools/commerce/ngws_Q1FY15/images/activeSelectedLeft.png) no-repeat right -12px !important;
+    font-weight : bold;
+    color  : #333;
+    }
+
+#mainContentArea {
+    width : 1024px;
+    }
+
+#leftSidebar .uix h3 {
+    font-size     : 18px;
+    padding       : 10px 0 5px 0;
+    border-bottom : 1px solid #ccc;
+    }
+
+#leftSidebar .uix h3, #leftSidebar .uix h3 a {
+    color : #46a040;
+    /*color: #1A9B00;*/
+    /*edit*/
+
+    }
+
+#leftSidebar .uix h4 {
+    font-size : 13px;
+    color     : #333;
+    }
+
+/*for demo*/
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top    : 15px;
+    margin-bottom : 10px;
+    }
+
+h1 {
+    margin         : 1.5%;
+    font-size      : 26px;
+    padding-bottom : 4px;
+    /*edit*/
+    }
+
+h4.panel-title {
+    padding     : 10px 0 10px 5px;
+    font-weight : bold;
+    width       : auto;
+    /*min-width: 195px;*/
+    /*edit*/
+    }
+
+.news {
+    background-color : #F6F6F6;
+    border           : 1px solid #dadada;
+    border-radius    : 3px;
+    }
+
+.news h5 {
+    font-weight : bold;
+    }
+
+.news ul li, .news ol li {
+    padding-left : 8px;
+    }
+
+.nav, .pagination, .carousel, .panel-title a {
+    cursor : pointer;
+    }
+
+@media only screen and (max-width : 768px) {
+    #toggleLeftSidebar > .fa-chevron-left {
+        position : fixed;
+        left     : 0;
+        top      : 55px;
+        z-index  : 1001;
+        }
+
+    #leftSidebar .uix h3 {
+        text-align : center;
+        }
+
+    #leftSidebarNav {
+        z-index            : 1001;
+        background-color   : #fff;
+        width              : 90%;
+        position           : absolute;
+        height             : auto;
+        top                : 120px;
+        bottom             : 0;
+        overflow           : auto;
+        -webkit-transition : top 0.2s linear;
+        -moz-transition    : top 0.2s linear;
+        -o-transition      : top 0.2s linear;
+        transition         : top 0.2s linear;
+        -webkit-transition : bottom 0.2s linear;
+        -moz-transition    : bottom 0.2s linear;
+        -o-transition      : bottom 0.2s linear;
+        transition         : bottom 0.2s linear;
+        }
+
+    }
+#var {
+    width: 210px;
+    float: left;
+    }

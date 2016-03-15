@@ -1,0 +1,190 @@
+<section id="streamComponent" class="uix chatter">
+    <!-- Stream Component/Widget -->
+    <div class="divided grid">
+        <div class="row">
+            <div id="ngActivitiesApp" class="column ng-scope"><!-- Post Block [width:75%] -->
+
+                <div class="clear" find_width=""><!-- Recent Activities - Title/Search Block -->
+                                                 <!-- plug'n'play directive gets container max-width for responsive truncate filter on posts/replies. directive goes in the direct child element of the "socket" container. (use in "streamComponent" section/div in production) -->
+
+                    <div class="row">
+                        <div class="fluid column">
+                            <h1 class="title"> Recent&nbsp;Activities </h1>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div><!-- End Title/Search Block -->
+
+                    <div class="posts ng-scope" data-ng-controller="GetActvitiesCtrl" data-ng-init="getActivityInit()" data-ng-class="{'chg-cursor': busy}">
+                        <div class="preloaderOverlay" id="preloaderOverlayId" style="visibility: hidden;"><div class="preLoader"><img src="//www.cisco.com/web/fw/tools/onepx/common/images/preloader.gif "></div></div>
+
+                        <div id="activityDiv" style="visibility: visible;">
+                            <!-- ngRepeat: post in  activityResponse --><div class="post ng-scope" ng-repeat="post in  activityResponse" id="post3169834">
+                            <div class="avatar tips">
+
+                                <div style="margin-top:30px;" class="fa fa-info-circle fa-2x successtext" ng-class="{'fa fa-exclamation-circle fa-2x actiontext':'Requested Reports have been Emailed'
+																			==='Company Registration','fa fa-info-circle successtext':'Requested Reports have been Emailed'==='Cisco Technology Mitigation program' || 'Requested Reports have been Emailed'==='New User Association' || 'Requested Reports have been Emailed'==='Lead Assignment' || 'Requested Reports have been Emailed'==='User Removal' || 'Requested Reports have been Emailed'==='Value Incentive Program 25' || 'Requested Reports have been Emailed'==='Global Partner Network','fa fa-exclamation-triangle fa-2x warningtext':'Requested Reports have been Emailed'===''}"></div>
+
+                                <div class="floating pointing black label ng-binding ng-hide" data-ng-show="!obscure">
+                                    <br>
+
+                                </div>
+                            </div>
+                            <div class="content gradient">
+                                <div class="stats"><!-- "stats" is a more appropriate class name at this point -->
+                                                   &nbsp;<span ng-show="post.updated_min_hrs == 'NONE'" class="ng-binding">2015-Jun-09 04:50:30 AM </span>
+                                    <span ng-show="post.updated_min_hrs!='NONE'" class="ng-binding ng-hide">NONE </span>
+                                    <i class="remove sign icon obscure" data-ng-init="obscure=true"></i>
+                                </div>
+
+                                <div class="author bold tips authorfont" data-ng-init="postAffiliatebtntip=false" data-ng-mouseenter="postAffiliatebtntip=true" data-ng-mouseleave="postAffiliatebtntip=false">
+                                    <span class="bold ng-binding">Performance Metrics</span>
+                                </div>
+                                <br>
+                                <div class="text" resize="">
+                                    <div class="more">
+                                        <span class="bold ng-binding">Requested Reports have been Emailed</span> -
+                                        <span class="ng-binding">Metric Detail Report requested from the Scorecard for CDW - 44 Cisco Services Partner Program APR 2015 </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div><!-- end ngRepeat: post in  activityResponse --><div class="post ng-scope" ng-repeat="post in  activityResponse" id="post3145170">
+                            <div class="avatar tips">
+
+                                <div style="margin-top:30px;" class="fa fa-info-circle fa-2x successtext" ng-class="{'fa fa-exclamation-circle fa-2x actiontext':'Requested Reports have been Emailed'
+																			==='Company Registration','fa fa-info-circle successtext':'Requested Reports have been Emailed'==='Cisco Technology Mitigation program' || 'Requested Reports have been Emailed'==='New User Association' || 'Requested Reports have been Emailed'==='Lead Assignment' || 'Requested Reports have been Emailed'==='User Removal' || 'Requested Reports have been Emailed'==='Value Incentive Program 25' || 'Requested Reports have been Emailed'==='Global Partner Network','fa fa-exclamation-triangle fa-2x warningtext':'Requested Reports have been Emailed'===''}"></div>
+
+                                <div class="floating pointing black label ng-binding ng-hide" data-ng-show="!obscure">
+                                    <br>
+
+                                </div>
+                            </div>
+                            <div class="content gradient">
+                                <div class="stats"><!-- "stats" is a more appropriate class name at this point -->
+                                                   &nbsp;<span ng-show="post.updated_min_hrs == 'NONE'" class="ng-binding">2015-Jun-07 04:22:28 AM </span>
+                                    <span ng-show="post.updated_min_hrs!='NONE'" class="ng-binding ng-hide">NONE </span>
+                                    <i class="remove sign icon obscure" data-ng-init="obscure=true"></i>
+                                </div>
+
+                                <div class="author bold tips authorfont" data-ng-init="postAffiliatebtntip=false" data-ng-mouseenter="postAffiliatebtntip=true" data-ng-mouseleave="postAffiliatebtntip=false">
+                                    <span class="bold ng-binding">Performance Metrics</span>
+                                </div>
+                                <br>
+                                <div class="text" resize="">
+                                    <div class="more">
+                                        <span class="bold ng-binding">Requested Reports have been Emailed</span> -
+                                        <span class="ng-binding">Requested Report is Available for Download</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div><!-- end ngRepeat: post in  activityResponse --><div class="post ng-scope" ng-repeat="post in  activityResponse" id="post3145163">
+                            <div class="avatar tips">
+
+                                <div style="margin-top:30px;" class="fa fa-info-circle fa-2x successtext" ng-class="{'fa fa-exclamation-circle fa-2x actiontext':'Requested Reports have been Emailed'
+																			==='Company Registration','fa fa-info-circle successtext':'Requested Reports have been Emailed'==='Cisco Technology Mitigation program' || 'Requested Reports have been Emailed'==='New User Association' || 'Requested Reports have been Emailed'==='Lead Assignment' || 'Requested Reports have been Emailed'==='User Removal' || 'Requested Reports have been Emailed'==='Value Incentive Program 25' || 'Requested Reports have been Emailed'==='Global Partner Network','fa fa-exclamation-triangle fa-2x warningtext':'Requested Reports have been Emailed'===''}"></div>
+
+                                <div class="floating pointing black label ng-binding ng-hide" data-ng-show="!obscure">
+                                    <br>
+
+                                </div>
+                            </div>
+                            <div class="content gradient">
+                                <div class="stats"><!-- "stats" is a more appropriate class name at this point -->
+                                                   &nbsp;<span ng-show="post.updated_min_hrs == 'NONE'" class="ng-binding">2015-Jun-07 03:44:28 AM </span>
+                                    <span ng-show="post.updated_min_hrs!='NONE'" class="ng-binding ng-hide">NONE </span>
+                                    <i class="remove sign icon obscure" data-ng-init="obscure=true"></i>
+                                </div>
+
+                                <div class="author bold tips authorfont" data-ng-init="postAffiliatebtntip=false" data-ng-mouseenter="postAffiliatebtntip=true" data-ng-mouseleave="postAffiliatebtntip=false">
+                                    <span class="bold ng-binding">Performance Metrics</span>
+                                </div>
+                                <br>
+                                <div class="text" resize="">
+                                    <div class="more">
+                                        <span class="bold ng-binding">Requested Reports have been Emailed</span> -
+                                        <span class="ng-binding">Requested Report is Available for Download</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div><!-- end ngRepeat: post in  activityResponse --><div class="post ng-scope" ng-repeat="post in  activityResponse" id="post3145157">
+                            <div class="avatar tips">
+
+                                <div style="margin-top:30px;" class="fa fa-info-circle fa-2x successtext" ng-class="{'fa fa-exclamation-circle fa-2x actiontext':'Requested Reports have been Emailed'
+																			==='Company Registration','fa fa-info-circle successtext':'Requested Reports have been Emailed'==='Cisco Technology Mitigation program' || 'Requested Reports have been Emailed'==='New User Association' || 'Requested Reports have been Emailed'==='Lead Assignment' || 'Requested Reports have been Emailed'==='User Removal' || 'Requested Reports have been Emailed'==='Value Incentive Program 25' || 'Requested Reports have been Emailed'==='Global Partner Network','fa fa-exclamation-triangle fa-2x warningtext':'Requested Reports have been Emailed'===''}"></div>
+
+                                <div class="floating pointing black label ng-binding ng-hide" data-ng-show="!obscure">
+                                    <br>
+
+                                </div>
+                            </div>
+                            <div class="content gradient">
+                                <div class="stats"><!-- "stats" is a more appropriate class name at this point -->
+                                                   &nbsp;<span ng-show="post.updated_min_hrs == 'NONE'" class="ng-binding">2015-Jun-07 01:00:23 AM </span>
+                                    <span ng-show="post.updated_min_hrs!='NONE'" class="ng-binding ng-hide">NONE </span>
+                                    <i class="remove sign icon obscure" data-ng-init="obscure=true"></i>
+                                </div>
+
+                                <div class="author bold tips authorfont" data-ng-init="postAffiliatebtntip=false" data-ng-mouseenter="postAffiliatebtntip=true" data-ng-mouseleave="postAffiliatebtntip=false">
+                                    <span class="bold ng-binding">Performance Metrics</span>
+                                </div>
+                                <br>
+                                <div class="text" resize="">
+                                    <div class="more">
+                                        <span class="bold ng-binding">Requested Reports have been Emailed</span> -
+                                        <span class="ng-binding">Metric Detail Report requested from the Scorecard for CDW - 44 Cisco Services Partner Program JAN 2015 </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div><!-- end ngRepeat: post in  activityResponse --><div class="post ng-scope" ng-repeat="post in  activityResponse" id="post3133877">
+                            <div class="avatar tips">
+
+                                <div style="margin-top:30px;" class="fa fa-info-circle fa-2x successtext" ng-class="{'fa fa-exclamation-circle fa-2x actiontext':'Requested Reports have been Emailed'
+																			==='Company Registration','fa fa-info-circle successtext':'Requested Reports have been Emailed'==='Cisco Technology Mitigation program' || 'Requested Reports have been Emailed'==='New User Association' || 'Requested Reports have been Emailed'==='Lead Assignment' || 'Requested Reports have been Emailed'==='User Removal' || 'Requested Reports have been Emailed'==='Value Incentive Program 25' || 'Requested Reports have been Emailed'==='Global Partner Network','fa fa-exclamation-triangle fa-2x warningtext':'Requested Reports have been Emailed'===''}"></div>
+
+                                <div class="floating pointing black label ng-binding ng-hide" data-ng-show="!obscure">
+                                    <br>
+
+                                </div>
+                            </div>
+                            <div class="content gradient">
+                                <div class="stats"><!-- "stats" is a more appropriate class name at this point -->
+                                                   &nbsp;<span ng-show="post.updated_min_hrs == 'NONE'" class="ng-binding">2015-Jun-06 10:48:37 PM </span>
+                                    <span ng-show="post.updated_min_hrs!='NONE'" class="ng-binding ng-hide">NONE </span>
+                                    <i class="remove sign icon obscure" data-ng-init="obscure=true"></i>
+                                </div>
+
+                                <div class="author bold tips authorfont" data-ng-init="postAffiliatebtntip=false" data-ng-mouseenter="postAffiliatebtntip=true" data-ng-mouseleave="postAffiliatebtntip=false">
+                                    <span class="bold ng-binding">Performance Metrics</span>
+                                </div>
+                                <br>
+                                <div class="text" resize="">
+                                    <div class="more">
+                                        <span class="bold ng-binding">Requested Reports have been Emailed</span> -
+                                        <span class="ng-binding">Admin Summary Report for CSPP APR 2015</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div><!-- end ngRepeat: post in  activityResponse --><!-- End Post 1 -->
+
+                            <div class="fluid button ng-pristine ng-untouched ng-valid" data-ng-model="actPageNumber" data-ng-click="showMoreActivities(actPageNumber); actPageNumber=actPageNumber+1" data-ng-show="activityResponse.length<totalCount">
+                                <span class="bold">Show more</span>
+                            </div>
+                            <div class="post" id="noActivityDiv" style="visibility:hidden;">
+                                <div class="content static">
+                                    <div class="text">
+                                        No Posts have been made to view at this moment
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></div></section>

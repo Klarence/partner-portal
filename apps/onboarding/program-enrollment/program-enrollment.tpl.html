@@ -1,0 +1,2463 @@
+<div id="framework-content-titles" style="width:920px;">
+    <!--googleon: index-->
+
+    <!-- ***SECTION TITLE*** -->
+    <h1 class="title-section"></h1>
+    <!-- ***END SECTION TITLE*** -->
+
+    <!-- ***PAGE TITLE*** -->
+    <h2 class="title-page">PARTNER PROGRAM ENROLLMENT (PPE)</h2>
+    <!-- ***END PAGE TITLE*** -->
+
+</div>
+
+
+
+<div class="icw deal">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="/WWChannels/PPP/j/icw.tabs.js"></script>
+    <script type="text/javascript" src="j/jquery-calendar.js"></script>
+    <script language="javascript" type="text/javascript" src="j/datetimepicker.js"></script>
+
+
+    <script type="text/javascript">
+        var CONTEXT_PATH = "/WWChannels/PPP";
+        var JS_LABEL_CURRENT_LANG = "Current Language";
+        var JS_LABEL_NEW_LANG = "New Language";
+        var JS_INFO_CHANGE_LANG = "Change the language to show the page in your preferred language.You will still be required to complete all forms in English.";
+        var count="";
+        var successFlag ="";
+
+        var JS_MESSAGE_PROXY_REMOVE_ALERT= "Please select atleast one entry to remove.";
+        var JS_MESSAGE_SUPER_ADMIN_ALERT = "Please select a ccoid and then click Go"
+        var JS_MESSAGE_PROXY_REMOVED = "Proxy Removed Successfully.";
+        var JS_MESSAGE_PROXY_UPDATED = "Proxy Updated Successfully.";
+        var JS_YES="Edit";
+        var JS_NO="Read Only";
+        var CC_JS_YES="Yes";
+        var CC_JS_NO="No";
+        var JS_MESSAGE_PROXY_DUPLICATE_ALERT= "This CCO-Id is already present, Please try again." ;
+        var JS_MESSAGE_PROXY_NULL_ALERT = "Please enter the CCO-Id and Start Date then click on the Add Proxy Button." ;
+        var JS_MESSAGE_PROXY_STARTDT_NULL_ALERT = "Please select the Start Date and then click on the Add Proxy Button." ;
+        var JS_MESSAGE_PROXY_ADDED = "Proxy Added Successfully." ;
+        var JS_MESSAGE_PROXY_UPDATE_ALERT = "Please select atleast one entry to update.";
+        var JS_MESSAGE_INVALID_EMAIL = "Invalid E-mail ID";
+        var JS_MESSAGE_REPORT_CONTAINT="Special characters not allowed in comment text.";
+
+        var checkClick=0;
+        function submitForm(next){
+            icw.progressBar.showDialog();
+            icw.progressBar.loadSequence({name:"uploadingBar",label:"Loading on enrollment details..."});
+            window.location.href=next;
+        }
+
+        function fnShow(obj){
+            var hrf=obj.value;
+            if(hrf!=""){
+                if(hrf=='#')
+                    myReport();
+                else
+                    window.location.href=hrf;
+            }
+        }
+
+        function collapseprogram(id){
+            var id = id;
+            id = "#"+id;
+            $(id).hide();
+            var showId = id+"show";
+            var hideId = id+"hide";
+            $("a").filter(showId).show();
+            $("a").filter(hideId).hide();
+        }
+
+        function expandprogram(id){
+            var id = id;
+            id = "#"+id;
+            $(id).show();
+            var showId = id+"show";
+            var hideId = id+"hide";
+            $("a").filter(showId).hide();
+            $("a").filter(hideId).show();
+        }
+
+        function setSelectedLangValue(modal, lang){
+            var inValue = lang.value ;
+            $(modal).find("input[name='selectedLang']").val(inValue.substring(0,inValue.indexOf("|")));
+            $(modal).find("input[name='selectedLangName']").val(inValue.substring(inValue.indexOf("|")+1));
+        }
+
+        function RepopulateRptCountryGroupList(thearerCd){
+            clearList("cgpFilter1");
+            clearList("ctryFilter1");
+            if(thearerCd != '0'){
+                var z=document.createElement('option');
+                z.text='All';
+                z.value="0";
+                document.getElementById("ctryFilter1").options.add(z);
+                var y=document.createElement('option');
+                y.text='Select';
+                y.value="0";
+                document.getElementById("cgpFilter1").options.add(y);
+                $.post("home.do", {'actionType':'getValueList','listName':'countryGroup','theaterCd':thearerCd}, function(cntryGrpStr) {
+                    if(cntryGrpStr!=""){
+                        var tmpArr=cntryGrpStr.split("#");
+                        for(i=0;i<tmpArr.length;i++){
+                            var tmpOption=tmpArr[i].split(":");
+                            var optionElement = document.createElement("OPTION");
+                            optionElement.text = tmpOption[1];
+                            optionElement.value = tmpOption[0];
+                            //if(selectedVal !="" && tmpOption[0]==selectedVal)
+                            //optionElement.selected="selected";
+                            document.getElementById("cgpFilter1").options.add(optionElement);
+                        }
+                    }
+                });
+            }else{
+                var y=document.createElement('option');
+                y.text='All';
+                y.value="0";
+                document.getElementById("cgpFilter1").options.add(y);
+                var z=document.createElement('option');
+                z.text='All';
+                z.value="0";
+                document.getElementById("ctryFilter1").options.add(z);
+            }
+        }
+
+        function RepopulateRptCountryList(ctryGrpCd){
+            clearList('ctryFilter1');
+            if(ctryGrpCd != '0'){
+                var y=document.createElement('option');
+                y.text='All';
+                y.value="0";
+                document.getElementById('ctryFilter1').options.add(y);
+                $.post("home.do", {'actionType':'getValueList','listName':'country','ctryGrpCd':ctryGrpCd}, function(cntryGrpStr) {
+                    if(cntryGrpStr!=""){
+                        var tmpArr=cntryGrpStr.split("#");
+                        for(i=0;i<tmpArr.length;i++){
+                            var tmpOption=tmpArr[i].split(":");
+                            var optionElement = document.createElement("OPTION");
+                            optionElement.text = tmpOption[1];
+                            optionElement.value = tmpOption[0];
+                            //if(selectedVal !="" && tmpOption[0]==selectedVal)
+                            //optionElement.selected="selected";
+                            document.getElementById('ctryFilter1').options.add(optionElement);
+                        }
+                    }
+                });
+            }else{
+                var y=document.createElement('option');
+                y.text='All';
+                y.value="0";
+                document.getElementById('ctryFilter1').options.add(y);
+            }
+        }
+        function getReport(modal){
+            var reportForm = $("#reportForm");
+            reportForm.action = "home.do?actionType=getReport";
+            reportForm.submit();
+            icw.modal.hide(modal);
+        }
+        function myReport() {
+            icw.modal.show({
+                anchor :$("a")[0],
+                content  : $(".icwMyReports"),
+                mode     : "modal",
+                align    : "top",
+                callback : function(modal) {
+
+                    $(modal).find("#cancelRptId").unbind("click");
+                    $(modal).find("#cancelRptId").click(function () {
+                        icw.modal.hide(modal);
+                    });
+
+                    $(modal).find("#getRptId").unbind("click");
+                    $(modal).find("#getRptId").click(function () {
+                        getReport(modal);
+                        return false;
+                    });
+
+                    $(modal).find(".icwCloseModal").unbind("click");
+                    $(modal).find(".icwCloseModal").click(function () {
+                        icw.modal.hide(modal);
+                    });
+                }
+            });
+            return false;
+        }
+
+
+        $(document).ready(function(){
+
+            $("#proxyAssignId").click(
+                    function() {
+                        icw.modal.show({
+                            anchor   : this,
+                            content  : $(".icwProxy"),
+                            mode     : "modal",
+                            align    : "top",
+                            width    : 700,
+                            height   : 500,
+                            callback : function(modal) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "home.do",
+                                    data: "actionType=getProxyList",
+                                    async: true,
+                                    success: function(str){
+                                        $("#contactDetails").html(str);
+                                        if(checkClick==0){;
+                                            if((document.getElementById("setProxyFlag"))){
+                                            }
+                                            else{
+                                                $("#errorMsg").html('');
+                                                insOnPage();
+                                                insFromBasePage();
+                                                checkClick++;
+                                            }
+                                        }else{
+                                            $("#errorMsg").html('');
+                                            insFromBasePage();
+                                        }
+
+                                        $(modal).find("#chkAllProxy").click(function () {
+                                            if(document.getElementById("chkAllProxy").checked){
+                                                var i=0;
+                                                while(document.getElementById(i)){
+                                                    document.getElementById(i).checked=true;
+                                                    i++;
+                                                }
+                                            }else{
+                                                var j=0;
+                                                while(document.getElementById(j)){
+                                                    document.getElementById(j).checked=false;
+                                                    j++;
+                                                }
+                                            }
+                                        });
+                                        $(modal).find("#icwButtonAdd").unbind("click");
+                                        $(modal).find("#icwButtonAdd").click(function () {
+                                            $("#errorMsg").html('');
+                                            icw.progressBar.initLoading(document.getElementById("progressId"),true);
+                                            var ccoId=$(modal).find("#proxyEmailId").val();
+                                            var startDate=$(modal).find("#proxyStartDate").val();
+                                            var endDate=$(modal).find("#proxyEndDate").val();
+                                            var ccEmail=$(modal).find("#ccEmail").val();
+                                            var ccInEmail=$(modal).find("#ccInEmail").val();
+                                            if(ccoId!='' && startDate!=''){
+                                                if(!chkFromBasePage()){
+                                                    if(dateValidationAdd(getFormatedDate(startDate),getFormatedDate(endDate))){
+                                                        $.ajax({
+                                                            type: "POST",
+                                                            url: "home.do",
+                                                            data: "actionType=add&ccoId="+ccoId+"&startDate="+startDate+"&endDate="+endDate+"&ccEmail="+ccEmail+"&ccInEmail="+ccInEmail,
+                                                            async: true,
+                                                            success: function(jsonString){
+                                                                //if(jsonString.substring(0,9)!='exception'){
+                                                                if(!jsonString.exceptionDtl){
+                                                                    var contactDetails =  jsonString ;
+                                                                    insProxyAddRow(modal, contactDetails.ccoId, contactDetails.contactName,contactDetails.emailId,contactDetails.ccInEmail);
+                                                                    var innerHtmlData = "<div class='icwMessage icwMessageGuiding' ><p>"+JS_MESSAGE_PROXY_ADDED+"</p></div>";
+                                                                    $("#errorMsg").html(innerHtmlData);
+                                                                }else{
+                                                                    var data = "<div class=icwModalOnly>";
+                                                                    data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                                                                    data+="<p> <span class=\"icwDetails\">"+jsonString.exceptionDtl.substring(9)+"</span></p>";
+                                                                    data+=	"</div></div> ";
+                                                                    $("#errorMsg").html(data);
+                                                                    $("#proxyEmailId").val('');
+                                                                    $("#proxyStartDate").val('');
+                                                                    $("#proxyEndDate").val('');
+                                                                    $("#ccEmail").val('NOTIFICATION');
+                                                                }
+                                                                icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                            }
+                                                        });
+                                                    }else{
+                                                        icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                    }
+                                                }else{
+                                                    $("#proxyEmailId").val('');
+                                                    $("#proxyStartDate").val('');
+                                                    $("#proxyEndDate").val('');
+                                                    $("#ccEmail").val('NOTIFICATION');
+                                                    var data = "<div class=icwModalOnly>";
+                                                    data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                                                    data+="<p> <span class=\"icwDetails\">"+JS_MESSAGE_PROXY_DUPLICATE_ALERT+"</span></p>";
+                                                    data+=	"</div></div> ";
+                                                    $("#errorMsg").html(data);
+                                                    icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                }
+                                            }else{
+                                                var data = "<div class=icwModalOnly>";
+                                                data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                                                data+="<p> <span class=\"icwDetails\">"+JS_MESSAGE_PROXY_NULL_ALERT+"</span></p>";
+                                                data+=	"</div></div> ";
+                                                $("#errorMsg").html(data);
+                                                $("#proxyEmailId").val('');
+                                                $("#proxyStartDate").val('');
+                                                $("#proxyEndDate").val('');
+                                                $("#ccEmail").val('NOTIFICATION');
+                                                icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                            }
+                                            return false;
+                                        });
+                                        $(modal).find("#icwButtonUpdate").unbind("click");
+                                        $(modal).find("#icwButtonUpdate").click(function () {
+                                            icw.progressBar.initLoading(document.getElementById("progressId"),true);
+                                            $("#errorMsg").html('');
+                                            var selectedCcMail = '';
+                                            var selectedCcInMail = '';
+                                            var startDate='';
+                                            var endDate='';
+                                            var selectedIds='';
+                                            var count=0;
+                                            var ccIds = '';
+                                            var allIds='';
+                                            var first = true;
+                                            $(modal).find(".checkedProxy").each(function () {
+                                                if ($(this).attr("checked")) {
+                                                    if(first){
+                                                        selectedIds =  $(this).val() ;
+                                                        first = false ;
+                                                    }else{
+                                                        selectedIds = selectedIds + "," +  $(this).val();
+                                                    }
+                                                }
+                                            });
+                                            var selectedIdss=selectedIds.split(",");
+                                            var count=0;
+                                            for(k=0;k<selectedIdss.length;k++)
+                                            {
+                                                var fromBasePage = $("#appendToDiv").html();
+                                                var traverse=fromBasePage.split(";");
+                                                var emailIndex= new Array(traverse.length);
+                                                var ccoIndex= new Array(traverse.length);
+                                                var nameIndex= new Array(traverse.length);
+                                                var ccmailIndex= new Array(traverse.length);
+                                                var ccInmailIndex= new Array(traverse.length);
+                                                var startIndex= new Array(traverse.length);
+                                                var endIndex= new Array(traverse.length);
+                                                for(i=0;i<traverse.length-1;i++){
+                                                    var j=0;
+                                                    var traverseSplit=traverse[i].split(",");
+                                                    emailIndex[i]=traverseSplit[j++];
+                                                    ccoIndex[i]=traverseSplit[j++];
+                                                    nameIndex[i]=traverseSplit[j++];
+                                                    ccmailIndex[i]=traverseSplit[j++];
+                                                    ccInmailIndex[i]=traverseSplit[j++];
+                                                    startIndex[i]=$.trim(traverseSplit[j++]);
+                                                    endIndex[i]=$.trim(traverseSplit[j++]);
+                                                    if($.trim(selectedIdss[k])==$.trim(ccoIndex[i])){
+                                                        ccIds = ccIds+","+ccoIndex[i];
+                                                        $(modal).find(".icwEmailId1").each(function(){
+                                                            if($(this).val()==emailIndex[i]){
+                                                                allIds=allIds+","+$(this).val();
+                                                            }
+                                                        });
+                                                        var startDate1="startDate"+i;
+                                                        var endDate1 = "endDate"+i;
+                                                        $(modal).find(".icwOutTextDate1").each(function(){
+                                                            if($(this).attr("id")== startDate1 ) {
+                                                                if($(this).val()==''){
+                                                                    startDate=startDate+","+' ';
+                                                                }else{
+                                                                    startDate=startDate+","+$(this).val();
+                                                                }
+                                                            }
+                                                        });
+
+                                                        $(modal).find(".icwOutTextDate2").each(function(){
+                                                            if($(this).attr("id")== endDate1 ) {
+                                                                if($(this).val()==''){
+                                                                    endDate=endDate+","+' ';
+                                                                }else{
+                                                                    endDate=endDate+","+$(this).val();
+                                                                }
+                                                            }
+                                                        });
+
+                                                        var actionType1 = "actionType"+i;
+                                                        $(modal).find(".emailNotifications").each(function(){
+                                                            if($(this).attr("id")== actionType1 ) {
+                                                                selectedCcMail=selectedCcMail+","+$(this).val();
+                                                                count++;
+                                                            }
+                                                        });
+
+                                                        var ccinemail1 = "ccInEmail"+i;
+                                                        $(modal).find(".ccInEmail").each(function(){
+                                                            if($(this).attr("id")== ccinemail1 ) {
+                                                                selectedCcInMail=selectedCcInMail+","+$(this).val();
+                                                                count++;
+                                                            }
+                                                        });
+
+                                                    }
+
+                                                }
+                                            }
+                                            if(selectedIds!=''){
+                                                if(validateUpdate(selectedCcMail,selectedCcInMail,startDate,endDate,allIds,ccIds)){
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url: "home.do",
+                                                        data: "actionType=update&checkedIds="+allIds+"&selectedCcMail="+selectedCcMail+"&selectedCcInMail="+selectedCcInMail+"&startDate="+startDate+"&endDate="+endDate+"&ccIds="+ccIds,
+                                                        async: true,
+                                                        success: function(msg){
+                                                            if(msg.substring(0,9)!='exception'){
+                                                                insOnPageAfterUpdate(selectedCcMail,selectedCcInMail,startDate,endDate,allIds,ccIds);
+                                                                var innerHtmlData = "<div class='icwMessage icwMessageGuiding' ><p>"+JS_MESSAGE_PROXY_UPDATED+"</p></div>";
+                                                                $("#errorMsg").html(innerHtmlData);
+                                                                icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                            }else{
+                                                                var data = "<div class=icwModalOnly>";
+                                                                data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                                                                data+="<p> <span class=\"icwDetails\">"+msg.substring(9)+"</span></p>";
+                                                                data+=	"</div></div> ";
+                                                                $("#errorMsg").html(data);
+                                                                icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                            }
+                                                        }
+                                                    });
+                                                }else{
+                                                    icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                }
+                                            }else{
+                                                var data = "<div class=icwModalOnly>";
+                                                data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                                                data+="<p> <span class=\"icwDetails\">"+JS_MESSAGE_PROXY_UPDATE_ALERT+"</span></p>";
+                                                data+=	"</div></div> ";
+                                                $("#errorMsg").html(data);
+                                                icw.progressBar.loadingComplete(document.getElementById("progressId"));
+
+                                            }
+                                            return false;
+                                        });
+                                        $(modal).find("#icwButtonRemoveSelected").unbind("click");
+                                        $(modal).find("#icwButtonRemoveSelected").click(function() {
+                                            icw.progressBar.initLoading(document.getElementById("progressId"),true);
+                                            $("#errorMsg").html('');
+                                            var selectedIds='';
+                                            var first = true;
+                                            $(modal).find(".checkedProxy").each(function () {
+                                                if ($(this).attr("checked")) {
+                                                    if(first){
+                                                        selectedIds =  $(this).val() ;
+                                                        first = false ;
+                                                    }else{
+                                                        selectedIds = selectedIds + "," +  $(this).val();
+                                                    }
+                                                }
+                                            });
+                                            if(selectedIds!=''){
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "home.do",
+                                                    data: "actionType=remove&proxyIds="+selectedIds,
+                                                    async: true,
+                                                    success: function(msg){
+                                                        if(msg.substring(0,9)!='exception'){
+                                                            insOnPageAfterRemove(selectedIds);
+                                                            var innerHtmlData = "<div class='icwMessage icwMessageGuiding' ><p>"+JS_MESSAGE_PROXY_REMOVED+"</p></div>";
+                                                            $("#errorMsg").html(innerHtmlData);
+                                                            icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                        }else{
+                                                            var data = "<div class=icwModalOnly>";
+                                                            data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                                                            data+="<p> <span class=\"icwDetails\">"+msg.substring(9)+"</span></p>";
+                                                            data+=	"</div></div> ";
+                                                            $("#errorMsg").html(data);
+                                                            icw.progressBar.loadingComplete(document.getElementById("progressId"));
+                                                        }
+                                                    }
+                                                });
+                                            }else{
+                                                var data = "<div class=icwModalOnly>";
+                                                data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                                                data+="<p> <span class=\"icwDetails\">"+JS_MESSAGE_SUPER_ADMIN_ALERT+"</span></p>";
+                                                data+=	"</div></div> ";
+                                                $("#errorMsg").html(data);
+                                            }
+                                            return false;
+                                        });
+                                        $(modal).find("#cancelProxyId").unbind("click");
+                                        $(modal).find("#cancelProxyId").click(function () {
+                                            icw.modal.hide(modal);
+                                        });
+                                        $(modal).find(".icwCloseModal").unbind("click");
+                                        $(modal).find(".icwCloseModal").click(function () {
+                                            icw.modal.hide(modal);
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                        return false;
+                    }
+            );
+
+            $("#aChangeLangSecond").unbind("click").click(function(){
+                var self = this;
+                $.ajax(
+                        { url: "jsp/common/langSelector.jsp",  type:"POST",  data: "1=1",  async: true,
+                            error: function(){
+                                //icw.modal.hide(modal);
+                            } ,
+                            success: function(jsonString){
+                                var chgLang = $(".changeLang").clone().get(0);
+                                icw.common.uncomment(chgLang);
+                                $(chgLang).html(jsonString);
+                                icw.modal.show({
+                                    anchor	: self,
+                                    width : 400,
+                                    content  : $(chgLang),
+                                    mode     : "modal",
+                                    align    : "top",
+                                    callback : function(modal) {
+                                        $(modal).find("input[type='radio']").unbind("click").click(function(){
+                                            setSelectedLangValue(modal, this);
+                                        });
+                                        $("#icwModal_langChange").unbind("click").click(function(){
+                                            icw.progressBar.initLoading(modal);
+                                            var selLang = document.getElementById("icwModal_selectedLang").value;
+                                            var selLangName = document.getElementById("icwModal_selectedLangName").value;
+                                            var oldLangName = document.getElementById("icwModal_oldLangName").value;
+                                            $("#langSelectForm").hide();
+                                            var aObj = $(modal).find("icwInnerModalContent");
+                                            var d = new Date();
+                                            aObj.html("<table class='reportTableNoBorder' cellspacing='0' cellpadding='0' width='100%' ><tr class='justifiedLabels' ><td ><b style='color: #00CC00'>"+JS_LABEL_CURRENT_LANG+"&nbsp;"+oldLangName + "&nbsp; "+JS_LABEL_NEW_LANG +"&nbsp;"+ selLangName+"</b></td></tr></table>" );
+                                            $.ajax({
+                                                url: "home.do?actionType=changeLanguage&locale="+selLang+"&time="+d.getTime(),
+                                                async : true,
+                                                type : 'POST',
+                                                success: function(o) {
+                                                    icw.modal.hide(modal);
+                                                    window.location.href = "home.do?actionType=home";
+                                                },
+                                                failure: function(o) {
+                                                    aObj.html(JS_UPDATE_FAILED);
+                                                    theObj.setContentInited(false);
+                                                }
+                                            });
+
+                                        });
+                                        $("#icwModal_closeLangChange").unbind("click").click(function(){
+                                            icw.modal.hide(modal);
+                                        });
+                                    }
+                                })
+                            }
+                        });
+            });
+
+
+        });
+
+    </script>
+
+
+
+    <table width="100%" style="margin-top:0.5em;">
+        <tbody><tr>
+            <td width="55%">
+                <div class="icwLeftColumn icwThreeQuarters icwHeaderInfo" style="margin-top:0px;margin-bottom:18px;margin-left : 1em;">
+
+                    Welcome, <strong>Venkateswara&nbsp;!</strong><br><br>You are now ready to enroll and manage multiple&nbsp;Cisco Channel Partner Programs through this integrated  platform.
+
+                </div>
+            </td>
+            <td width="5%">&nbsp;</td>
+            <td width="40%">
+                <table>
+                    <tbody><tr>
+                        <td width="70%">
+                            <table>
+
+
+                                <tbody><tr><td><b>Preferred Language: English</b></td></tr>
+                                <tr><td><a href="#" id="aChangeLangSecond" title="Region/Language Selector">Change Language</a></td></tr>
+                                <tr><td>&nbsp;</td></tr>
+                                <tr><td><font color="red">Disclaimer: This application accepts input in English only</font></td></tr>
+
+                                </tbody></table>
+                        </td>
+                        <td width="30%">
+                            <table>
+
+                                <tbody><tr><td><a id="faqs" name="faqs" href="home.do?actionType=getfaqDocument"><b>FAQs</b></a></td></tr>
+                                <tr><td>&nbsp;</td></tr>
+                                <tr><td><b>Tool Links</b></td></tr>
+                                <tr><td>
+                                    <select onchange="fnShow(this)" style="width:170px;">
+                                        <option value="">Select Link</option>
+
+
+
+
+                                        <option title="Cisco Commerce Workspace" value="https://tools.cisco.com/PDR/home.do?actionType=create">Cisco Commerce Workspace</option>
+
+
+
+
+                                        <option title="Colt Assessment" value="http://wwwin.cisco.com/learning/tools/colt/">Colt Assessment</option>
+
+
+
+
+                                        <option title="CSApp - CISCO" value="http://tools.cisco.com/WWChannels/cpapp/home.do">CSApp - CISCO</option>
+
+
+
+
+                                        <option title="My Reports" value="#">My Reports</option>
+
+
+
+
+                                        <option title="Partner Program Intelligence" value=" https://tools.cisco.com/mbrprv/saw.dll?Dashboard">Partner Program Intelligence</option>
+
+
+
+
+                                        <option title="Support" value="https://www.cisco.com/go/prt">Support</option>
+
+
+
+
+                                        <option title="Training" value="https://www.cisco.com/web/partners/events/ppp_et.html">Training</option>
+
+
+
+
+                                        <option title="TS Audit" value="http://www.cisco.com/go/cspp">TS Audit</option>
+
+
+
+                                    </select>
+                                </td></tr>
+                                </tbody></table>
+                        </td>
+                    </tr>
+                    </tbody></table>
+            </td>
+        </tr>
+        </tbody></table>
+
+
+
+
+
+
+    <div class="icwTabs icwClear" style="margin-left:1em;">
+        <ul>
+            <li class="icwSelected"><span>Enrollment Dashboard</span></li>
+
+
+        </ul>
+    </div>
+
+    <div id="commonMessage"></div>
+    <div class="changeLang">
+        <div class="icwModalOnly">
+            <!--
+                <h4 class="icwModalTitle">TEST</h4>
+                <div class="icwInnerModalContent"></div>
+            -->
+        </div>
+    </div>
+
+    <div class="clearFloat">
+        <div class="icwProxy">
+            <div class="icwModalOnly">
+                <!--<h4 class="icwModalTitle">Proxy</h4>
+
+                <div class="icwInnerModalContent">
+
+                <h3><span class="icwOrderName"></span></h3>
+                <form name="myProxyForm" action="#linkTBD" class="icwShareForm">
+                        <div id="errorMsg"></div>
+                        <label for="selIntendedUse">Below you can see your current profile and manage proxy access to PPP.You may add or remove proxy access for other users, set a date range for this access.</label>
+
+                        <table cellpadding="0" cellspacing="0" border="0" class="icwTable">
+                            <caption><br><strong>User profile</strong></caption>
+                            <thead>
+                                <tr>
+                                    <th class="icwContact">Cisco.com User id</th>
+                                    <th class="icwContact">First Name</th>
+                                    <th class="icwContact">Last Name</th>
+                                    <th class="icwContact">Email Address</th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="icwContact">vduggine</td>
+                                    <td class="icwContact">Venkateswara</td>
+                                    <td class="icwContact">Duggineni</td>
+                                    <td class="icwContact">vduggine@cisco.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+
+                            <div id="progressId"></div>
+                            <table cellpadding="0" cellspacing="0" border="0" class="icwTable">
+                            <caption><strong>Add Proxy User</strong></caption>
+                                <thead>
+                                    <tr>
+                                        <th>Cisco.com User id</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Action Type</th>
+                                        <th>CC on emails ?</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <input type="button" id="icwButtonAdd" class="pppButton" value='Add proxy' />
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" name="proxyEmailId" id="proxyEmailId" size="10" value=''/></td>
+                                        <td>
+                                            <input type="text" size="10" name="proxyStartDate" id="proxyStartDate" />
+                                            <input class="icwButton icwButtonCalendar" id="proxyStartDateCalendarBtn" type="button" value="Calendar" onclick="NewCal('proxyStartDate','MMDDYYYY')" />
+                                        </td>
+                                        <td>
+                                            <input type="text" size="10" name="proxyEndDate" id="proxyEndDate" />
+                                            <input class="icwButton icwButtonCalendar" id="proxyEndDateCalendarBtn" type="button" value="Calendar" onclick="NewCal('proxyEndDate','MMDDYYYY')" />
+                                        </td>
+                                        <td>
+                                            <select class='emailNotifications1' id="ccEmail" style="width:auto;" >
+
+                                                <option value='EDIT'>Edit</option>
+                                                <option value='NOTIFICATION' selected>Read Only</option>
+
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class='emailNotifications1' id="ccInEmail">
+                                                <option value='Y'>Yes</option>
+                                                <option value='N' selected>No</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        <br>
+
+                            <table cellpadding="0" cellspacing="0" border="0" class="icwTable" id="proxyTable">
+                                <caption><strong>List of people who can proxy for you</strong></caption>
+                                <thead>
+                                    <tr>
+                                        <th  class="checkAllBox"><input type="checkbox" id="chkAllProxy" name="chkAllProxy" value="" /></th>
+                                       <th>Cisco.com User id</th>
+                                        <th>Contact</th>
+                                        <th width="10%">Action Type</th>
+                                        <th>CC on emails ?</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2">
+                                            <input type="button" id="icwButtonRemoveSelected" class="pppButton"  value= 'Remove Selected' /></td>
+                                        </td>
+                                        <td colspan="4">
+                                            <input type="button" id="icwButtonUpdate" class="pppButton" value='Update' />
+                                        </td>
+                                        <td colspan="1">&nbsp;</td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                </tbody>
+                            </table>
+
+
+
+
+                        <br>
+                        <table cellpadding="0" cellspacing="0" border="0" class="icwTable">
+                        <caption><strong>List of users you can be proxy for</strong></caption>
+                        <thead>
+                            <tr>
+                                <th>Cisco.com User id</th>
+                                <th>E-mail ID</th>
+                                <th>Contact</th>
+                                <th>Action Type</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+
+                         </tbody>
+                    </table>
+                    <div class="icwModalSubmit icwClearFloat">
+                    </div>
+                    <input type="button" id="cancelProxyId" class="pppButton" value='Cancel' />
+                    <div class="icwModalTitleIcons">
+                        <div class="icwIconCloseModal"><a href="#linkTBD" class="icwCloseModal">Close</a></div>
+                    </div>
+
+                <div class="clearFloat">
+                    <div id="contactDetails" style="display:none"></div>
+                </div>
+                </form>
+                -->
+            </div>
+        </div>
+    </div>
+
+    <div class="clearFloat">
+        <div id="icwLoadingPage" class="icwLoadingPage">
+            <div class="">
+                <div class="icwModalOnly">
+                    <!--
+                        <div class="icwModalTitle">Loading Page</div>
+                        <div class="icwInnerModalContent">
+                                    <div class="dealSum" id="content"></div>
+                                        <div class="pageSubmit">
+                                            <img align="center" src="/WWChannels/PPP/i/icn/loading_panel.gif" alt="loading Page">
+                                        </div>
+                                            </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearFloat">
+        <div class="icwMyReports deal">
+            <div class="">
+                <div class="icwModalOnly">
+                    <!--
+                        <div class="icwModalTitle">Reports</div>
+                        <div class="icwInnerModalContent">
+                            <label>Please select program and Geography to generate the reports</label>
+                    <p/>
+                    <div id="reportErrorMsg"></div>
+                    <div class="icwModalSubmit icwClearFloat">
+                    </div>
+                    <form name="enrollmentSearchForm" method="post" action="/WWChannels/PPP/home.do?actionType=getReport" id="reportForm">
+                    <table width="100%">
+                    <tr>
+                        <td style="vertical-align: top">Program Name</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+
+                                            <select name="programName" onchange="RepopulateTrackList(this.value,'rptTrackFilter');" id="prgfilter" style="width:auto"><option value="0">Select</option>
+                                                <option value="21">APAC Avant Garde Initiative</option>
+        <option value="335">Architecture Partnership Program</option>
+        <option value="106">AIP</option>
+        <option value="66">Avant Garde</option>
+        <option value="460">Avant Garde - FY12</option>
+        <option value="142">Avant Garde PLUS</option>
+        <option value="3">Avant Garde Plus</option>
+        <option value="144">Avant Garde START FY11</option>
+        <option value="768">CCRE-old</option>
+        <option value="796">CMSP</option>
+        <option value="898">CMSP Cloud Comp FastStart MOU</option>
+        <option value="1015">CMSP Cloud Compensation</option>
+        <option value="783">CMSP Simplified Pricing</option>
+        <option value="93">CSI7</option>
+        <option value="1228">CSR_BEGEO</option>
+        <option value="85">CSSP</option>
+        <option value="858">CUWP-ECS</option>
+        <option value="578">Challenge and Reward -2</option>
+        <option value="42">CRP</option>
+        <option value="41">CR</option>
+        <option value="1116">Channel Financing</option>
+        <option value="1348">Channel Financing FY16</option>
+        <option value="680">Cisco Build and Price</option>
+        <option value="780">Cisco Certified Refurbished Equipment</option>
+        <option value="22">CEIP</option>
+        <option value="50">CSI6</option>
+        <option value="1426">Cisco Intercloud Services Partner Resale</option>
+        <option value="1337">Cisco One Partner Accelerator Program</option>
+        <option value="1315">Cisco OpenStack Private Cloud</option>
+        <option value="1218">Cisco Referral Program</option>
+        <option value="440">Cisco Rewards - APAC</option>
+        <option value="437">Cisco Rewards - Euro</option>
+        <option value="441">Cisco Rewards - US</option>
+        <option value="570">Cisco Rewards Canada</option>
+        <option value="438">Cisco Rewards Emerging</option>
+        <option value="439">Cisco Rewards GC Company Managed</option>
+        <option value="434">Cisco Rewards JP</option>
+        <option value="511">Cisco Rewards JP Company Managed</option>
+        <option value="512">Cisco Rewards LATAM</option>
+        <option value="513">Cisco Rewards LATAM Company Managed</option>
+        <option value="232">Cisco Services Incentive CSI8 Program</option>
+        <option value="405">CSPP</option>
+        <option value="990">Cisco Services Software Partner Prgm Plt</option>
+        <option value="484">Cisco Shared Support Program</option>
+        <option value="754">Cisco Smart Care Services</option>
+        <option value="4">TMP</option>
+        <option value="57">CUWP</option>
+        <option value="1197">Cloud Aggregator</option>
+        <option value="461">Cloud Partner Program - App Integrator</option>
+        <option value="463">Cloud Partner Program - Cloud Builder</option>
+        <option value="523">Cloud Provider</option>
+        <option value="744">Cloud Provider MDF</option>
+        <option value="622">Cloud Services Reseller</option>
+        <option value="821">Collaboration Enterprise Agreement</option>
+        <option value="48">Commercial Partner Development Funds</option>
+        <option value="566">Consultant Referral Program</option>
+        <option value="722">Content Security Rebate Program 2</option>
+        <option value="528">Content Security Rebate Program-Ironport</option>
+        <option value="29">CAP-APAC</option>
+        <option value="26">CAP-CANADA</option>
+        <option value="23">CAP-EM</option>
+        <option value="24">CAP-EU</option>
+        <option value="25">CAP-JAPAN</option>
+        <option value="14">CAP-US</option>
+        <option value="1393">Customer Financing Incentive Program</option>
+        <option value="133">Data Center Accelerator</option>
+        <option value="27">DMR Incentive Program</option>
+        <option value="941">DMR Volume Buying Program</option>
+        <option value="229">DC Accelerator US CAN </option>
+        <option value="75">Distributor Profitability Program - APAC</option>
+        <option value="79">Distributor Profitability Program - EM</option>
+        <option value="78">Distributor Profitability Program - EU</option>
+        <option value="77">Distributor Profitability Program -Japan</option>
+        <option value="341">Distributor Profitability Program-GCHINA</option>
+        <option value="76">Distributor Profitability Program-US_CAN</option>
+        <option value="72">ELD</option>
+        <option value="902">Enterprise License Agreement</option>
+        <option value="1291">FIRP</option>
+        <option value="31">GPN</option>
+        <option value="30">GSA</option>
+        <option value="413">Global IAS</option>
+        <option value="414">Global IAS - Invitation </option>
+        <option value="5">GPN Host Agent</option>
+        <option value="809">HCS Migration Program</option>
+        <option value="1226">HCS Partner Pricing Program</option>
+        <option value="1335">HCS WebEx Subscriptions</option>
+        <option value="1164">Integrated Infrastructure Pilot</option>
+        <option value="1145">Intercloud Partner Enrollment Program</option>
+        <option value="1046">IoT MBO Program</option>
+        <option value="170">Japan Public Sector Partner Program</option>
+        <option value="1353">LTE as a Service Promotion</option>
+        <option value="631">Leads and Prospects</option>
+        <option value="443">Learning Partner Lab Promotion</option>
+        <option value="445">Legacy Tandberg Pricing Agreements</option>
+        <option value="410">Local IAS</option>
+        <option value="487">MSCP</option>
+        <option value="221">MSCP Next Gen FY11</option>
+        <option value="58">MSCP-Next Gen</option>
+        <option value="1261">MSR_BEGEO</option>
+        <option value="39">Managed Services Channel Program</option>
+        <option value="740">Managed Services Reseller</option>
+        <option value="1431">Metapod</option>
+        <option value="411">Multinational IAS</option>
+        <option value="412">Multinational IAS - Invitation</option>
+        <option value="231">Not For Resale NFR Program</option>
+        <option value="83">OIP</option>
+        <option value="1">OSCP</option>
+        <option value="234">PDF Cash Back</option>
+        <option value="239">PDF Cash Back Accelerator </option>
+        <option value="235">PDF Commercial UC</option>
+        <option value="236">PDF Plus</option>
+        <option value="1127">POE-Growth Acceleration Program</option>
+        <option value="321">PSPP JPY</option>
+        <option value="572">Partner 2 Partner</option>
+        <option value="467">Partner Development Funds</option>
+        <option value="621">Partner Plus FY12</option>
+        <option value="677">Partner Plus FY13</option>
+        <option value="678">Partner Plus FY13 LATAM-EMEAR</option>
+        <option value="824">Partner Plus FY14</option>
+        <option value="829">Partner Plus FY14 LATAM-EMEAR</option>
+        <option value="1101">Partner Plus FY15 Aspire</option>
+        <option value="1102">Partner Plus FY15 Aspire LATAM EMEAR</option>
+        <option value="1092">Partner Plus FY15 Elite</option>
+        <option value="1093">Partner Plus FY15 Elite LATAM EMEAR</option>
+        <option value="1094">Partner Plus FY15 Prestige</option>
+        <option value="1095">Partner Plus FY15 Prestige LATAM EMEAR</option>
+        <option value="1376">Partner Plus FY16 Aspire</option>
+        <option value="1381">Partner Plus FY16 Aspire LATAM EMEAR</option>
+        <option value="1363">Partner Plus FY16 Elite</option>
+        <option value="1371">Partner Plus FY16 Elite LATAM EMEAR</option>
+        <option value="1374">Partner Plus FY16 Prestige</option>
+        <option value="1375">Partner Plus FY16 Prestige LATAM EMEAR</option>
+        <option value="865">Partner Support Service</option>
+        <option value="56">PFP</option>
+        <option value="509">Prolific Migration</option>
+        <option value="8">PSPP</option>
+        <option value="86">RSA</option>
+        <option value="444">Remote Lab Partner Promotion</option>
+        <option value="45">SB PDF Cash Back Accelerator I</option>
+        <option value="46">SB PDF Cash Back Accelerator II</option>
+        <option value="18">SBPA</option>
+        <option value="9">SIP</option>
+        <option value="747">SP Incentive Program - Collaboration</option>
+        <option value="900">SP Incentive Program - Ent Networking</option>
+        <option value="595">SP Incentive Program</option>
+        <option value="857">SP Technology Plus FY14-FY15</option>
+        <option value="1364">SP Technology Plus FY16</option>
+        <option value="13">SP Video Sales Promotion</option>
+        <option value="649">SPRTF Pilot Promotion</option>
+        <option value="1212">SaaS Subscription Resale Program</option>
+        <option value="1311">Security Demo Unit Promotion</option>
+        <option value="1409">Security Incumbency Renewal Promotion</option>
+        <option value="650">Service Offers</option>
+        <option value="1354">Simplified test</option>
+        <option value="43">Small Business PDF Cash Back Basic</option>
+        <option value="47">Small Business PDF Core</option>
+        <option value="49">Small Business PDF Pro</option>
+        <option value="233">Small Business Service Promotion</option>
+        <option value="479">Small Business Svc Promotion</option>
+        <option value="835">Smart Care</option>
+        <option value="813">System 1</option>
+        <option value="795">TIP</option>
+        <option value="136">Not For Resale</option>
+        <option value="609">Technology Adoption Program</option>
+        <option value="430">Telepresense Healthcare</option>
+        <option value="16">TPAP</option>
+        <option value="369">Try And Buy</option>
+        <option value="1080">US Federal Authorization</option>
+        <option value="712">US Public Sector Services Value Exchange</option>
+        <option value="852">VIP 22 90-day grace period</option>
+        <option value="1048">VIP 23 90-day grace Incremental</option>
+        <option value="978">VIP 23 90-day grace period</option>
+        <option value="472">VIP-Express</option>
+        <option value="473">VIP-Expess Cash Back Accelerator</option>
+        <option value="371">Value Incentive Program</option>
+        <option value="147">Value Incentive Program 16</option>
+        <option value="471">Value Incentive Program 18</option>
+        <option value="574">Value Incentive Program 19</option>
+        <option value="696">Value Incentive Program 20</option>
+        <option value="765">Value Incentive Program 21</option>
+        <option value="827">Value Incentive Program 22</option>
+        <option value="972">Value Incentive Program 23</option>
+        <option value="1078">Value Incentive Program 24</option>
+        <option value="1062">Value Incentive Program 24 90 Day</option>
+        <option value="1068">Value Incentive Program 24 90 Day Incr</option>
+        <option value="1210">Value Incentive Program 25</option>
+        <option value="1358">Value Incentive Program 26</option>
+        <option value="1017">Virtual Engineering - Canada</option>
+        <option value="20">WebEx Collaborative Resale Program</option>
+        <option value="6">Webex Commission Program</option>
+        <option value="114">Webex Strategic Alliance</option>
+        <option value="1051">easylease 0 Percent Financing EMEAR</option>
+        <option value="871">easylease Low Rate Finance</option>
+        <option value="1430">nancy test</option>
+        <option value="742">PSPP Emerging</option>
+        <option value="7">PSP</option>
+        <option value="1161">PSPP EMEAR</option>
+        <option value="500">N90 Days Extended Payment Terms</option>
+        <option value="169">Consulting Rewards Program</option>
+        <option value="415">Consulting Referral Program</option></select>
+
+                        </td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td style="vertical-align: top">Track Name / Solution Name</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+                        <select name="trackName" id="rptTrackFilter"><option value="0">Select</option></select>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="vertical-align: top">Theater</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+
+                                            <select name="theater" onchange="RepopulateRptCountryGroupList(this.value);" id="thtrfilter"><option value="0">All</option>
+                                                <option value="AMERICAS">AMERICAS</option>
+        <option value="APJ">APJ</option>
+        <option value="EMEAR">EMEAR</option>
+        <option value="GC">GC</option></select>
+
+                        </td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td style="vertical-align: top">Country Group</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td><select name="countryGroup" onchange="RepopulateRptCountryList(this.value);" id="cgpFilter1"><option value="0">All</option></select></td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td style="vertical-align: top">Country</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td><select name="country1" id="ctryFilter1"><option value="0">All</option></select></td>
+                    </tr>
+                    </table>
+                     </form>
+                     <div class="icwModalSubmit icwClearFloat">
+                         <input type="button" id="getRptId" name="getRpt" class="pppButton"   value="Get Report"  >
+                         <input type="button" id="cancelRptId" name="cancelRpt"  class="pppButton" value="Cancel" >
+                     </div>
+                         <div class="icwModalTitleIcons">
+                <div class="icwIconCloseModal"><a href="#linkTBD" class="icwCloseModal">Close</a></div>
+            </div>			</div>
+                -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="appendToDiv" style="display:none">
+    </div>
+    <div id="tempDiv" style="display:none">
+    </div>
+
+    <script>
+
+        function chkFromBasePage(){
+            var fromBasePage = $("#appendToDiv").html();
+            var traverse=fromBasePage.split(";");
+            var emailIndex= new Array(traverse.length);
+            var ccoIndex= new Array(traverse.length);
+            var addFlag=false;
+            for(i=0;i<traverse.length-1;i++){
+                var j=0;
+                var traverseSplit=traverse[i].split(",");
+                emailIndex[i]=traverseSplit[j++];
+                ccoIndex[i]=traverseSplit[j++];
+                if(ccoIndex[i]==$("#proxyEmailId").val())
+                    addFlag=true;
+            }
+            return addFlag;
+        }
+
+        function insOnPage(){
+            var contactDetails = $("#contactDetails").html();
+            if($.trim(contactDetails)!=''){
+                while(contactDetails!=(contactDetails.replace("!","&")))
+                {
+                    contactDetails =contactDetails.replace("!","&");
+                }
+                contactDetails =contactDetails.replace("&","")
+                contactDetails = $.trim(contactDetails);
+                var traverse=contactDetails.split("&");
+                var emailIndex= new Array(traverse.length);
+                var ccoIndex= new Array(traverse.length);
+                var nameIndex= new Array(traverse.length);
+                var ccmailIndex= new Array(traverse.length);
+                var ccInmailIndex= new Array(traverse.length);
+                var startIndex= new Array(traverse.length);
+                var endIndex= new Array(traverse.length);
+
+
+                for(i=0;i<traverse.length;i++){
+                    var j=0;
+                    var traverseSplit=traverse[i].split(",");
+                    emailIndex[i]=traverseSplit[j++];
+                    ccoIndex[i]=traverseSplit[j++];
+                    var nameIndexSplit=traverseSplit[j++].split(";");
+                    nameIndex[i]=nameIndexSplit[0]+' '+nameIndexSplit[1];
+                    ccmailIndex[i]=traverseSplit[j++];
+                    ccInmailIndex[i]=traverseSplit[j++];
+                    startIndex[i]=traverseSplit[j++];
+                    endIndex[i]=traverseSplit[j++];
+
+                    $("#tempDiv").append(emailIndex[i]+","+ccoIndex[i]+","+nameIndex[i]+","+ccmailIndex[i]+","+ccInmailIndex[i]+","+startIndex[i]+","+endIndex[i]+";");
+
+                }
+            }
+            var tempString=$("#tempDiv").html();
+            $("#appendToDiv").html(tempString);
+            $("#tempDiv").html('')
+        }
+
+        function insFromBasePage(){
+            var testRowLength = document.getElementById('proxyTable').getElementsByTagName('tr').length;
+            for(i=2;i<testRowLength;i++){
+                document.getElementById('proxyTable').deleteRow(testRowLength-i);
+            }
+            var fromBasePage = $("#appendToDiv").html();
+            var traverse=fromBasePage.split(";");
+            var count=0;
+            var emailIndex= new Array(traverse.length);
+            var ccoIndex= new Array(traverse.length);
+            var nameIndex= new Array(traverse.length);
+            var ccmailIndex= new Array(traverse.length);
+            var ccInMailIndex= new Array(traverse.length);
+            var startIndex= new Array(traverse.length);
+            var endIndex= new Array(traverse.length);
+            for(i=0;i<traverse.length-1;i++){
+                var j=0;
+                var traverseSplit=traverse[i].split(",");
+                emailIndex[i]=traverseSplit[j++];
+                ccoIndex[i]=traverseSplit[j++];
+                nameIndex[i]=traverseSplit[j++];
+                ccmailIndex[i]=traverseSplit[j++];
+                ccInMailIndex[i]=traverseSplit[j++];
+                startIndex[i]=traverseSplit[j++];
+                endIndex[i]=traverseSplit[j++];
+                var rowLength = document.getElementById('proxyTable').getElementsByTagName('tr').length;
+                var x=document.getElementById('proxyTable').insertRow(rowLength-1);
+                var a=x.insertCell(0);
+                var b=x.insertCell(1);
+                var c=x.insertCell(2);
+                var d=x.insertCell(3);
+                var e=x.insertCell(4);
+                var f=x.insertCell(5);
+                var g=x.insertCell(6);
+                var emailId = emailIndex[i];
+                var emailName = "emailId"+i;
+                var ccId = ccoIndex[i];
+                var ccName = "ccId"+i;
+                var actionType = "actionType"+i;
+                var editFlag =ccmailIndex[i].replace(/^\s+|\s+$/g, '') ;
+                var ccInEmail = "ccInEmail"+i;
+                var ccInEmailFlag =ccInMailIndex[i].replace(/^\s+|\s+$/g, '') ;
+
+                if(editFlag=='EDIT'){
+
+                    emailCode="<select class='emailNotifications' id=\'"+actionType+"\'><option value='EDIT' selected>"+JS_YES+"</option><option value='NOTIFICATION'>"+JS_NO+"</option></select>";
+
+                }else{
+
+                    emailCode="<select class='emailNotifications' id=\'"+actionType+"\'><option value='EDIT'>"+JS_YES+"</option><option value='NOTIFICATION' selected>"+JS_NO+"</option></select>";
+
+                }
+
+                if(ccInEmailFlag=='Y'){
+                    ccInEmailCode="<select class='ccInEmail' id=\'"+ccInEmail+"\' style='width:auto;'><option value='Y' selected>"+CC_JS_YES+"</option><option value='N'>"+CC_JS_NO+"</option></select>";
+                }else{
+                    ccInEmailCode="<select class='ccInEmail' id=\'"+ccInEmail+"\' style='width:auto;'><option value='Y'>"+CC_JS_YES+"</option><option value='N' selected>"+CC_JS_NO+"</option></select>";
+                }
+                a.innerHTML="<input type=checkbox class=checkedProxy id="+i+" name=proxySharer value="+ccoIndex[i]+"><input type='hidden'  class='icwCCId1'  value='"+ccId+"' name=\'"+ccName+"\' id=\'"+ccName+"\' /> <input type='hidden'  class='icwEmailId1'  value='"+emailId+"' name=\'"+emailName+"\' id=\'"+emailName+"\' />";
+                b.innerHTML=ccoIndex[i];
+                c.innerHTML=nameIndex[i];
+                d.innerHTML=emailCode;
+                e.innerHTML=ccInEmailCode;
+                var startDate="startDate"+i;
+                var startDateButton="startDate"+i+"CalendarBtn";
+                var endDate="endDate"+i;
+                var endDateButton="endDate"+i+"CalendarBtn";
+                startIndex[i] = $.trim(startIndex[i]);
+                endIndex[i]=$.trim(endIndex[i]);
+                var start=startIndex[i];
+                var end=endIndex[i];
+                var script_st = "NewCal(\'"+startDate+"\',\'MMDDYYYY\')";
+                var script_et = "NewCal(\'"+endDate+"\',\'MMDDYYYY\')";
+                var script_date_validation = "dateValidationInner("+i+")";
+                f.innerHTML="<input type='text' size='"+10+"' class='icwOutTextDate1' name=\'"+startDate+"\' id=\'"+startDate+"\'  value='"+start+"' /><input class='icwButton icwButtonCalendar' id="+startDateButton+" type='button' value='Open Calendar' onclick=\""+script_st+"\"/>" ;
+                g.innerHTML="<input type='text' size='"+10+"' class='icwOutTextDate2' name=\'"+endDate+"\' id=\'"+endDate+"\' value='"+end+"' onBlur=\""+script_date_validation+"\"/><input class='icwButton icwButtonCalendar' id="+endDateButton+" type='button' value='Open Calendar' onclick=\""+script_et+"\"/>";
+
+            }
+            $("#proxyEmailId").val('');
+            $("#proxyStartDate").val('');
+            $("#proxyEndDate").val('');
+            $("#ccEmail").val('N');
+        }
+
+        function validateUpdate(selectedCcMail,selectedCcInMail,startDate,endDate,allIds,ccoIds)
+        {
+            document.getElementById("chkAllProxy").checked=false;
+            var ccMailTokenizer=selectedCcMail.split(",");
+            var ccInMailTokenizer=selectedCcInMail.split(",");
+            var startDateTokenizer=startDate.split(",");
+            var endDateTokenizer=endDate.split(",");
+            var checkedIdsTokenizer=allIds.split(",");
+            var checkedccoids = ccoIds.split(",");
+            var l=0;
+            var count=0;
+
+            var fromBasePage = $("#appendToDiv").html();
+            var traverse=fromBasePage.split(";");
+
+            var emailIndex= new Array(traverse.length);
+            var ccoIndex= new Array(traverse.length);
+            var nameIndex= new Array(traverse.length);
+            var ccmailIndex= new Array(traverse.length);
+            var ccInmailIndex= new Array(traverse.length);
+            var startIndex= new Array(traverse.length);
+            var endIndex= new Array(traverse.length);
+            var countSave=0;
+            ++countSave;
+            for(i=0;i<traverse.length-1;i++){
+                var j=0;
+                var traverseSplit=traverse[i].split(",");
+                emailIndex[i]=traverseSplit[j++];
+                ccoIndex[i]=traverseSplit[j++];
+                nameIndex[i]=traverseSplit[j++];
+                ccmailIndex[i]=traverseSplit[j++];
+                ccInmailIndex[i]=traverseSplit[j++];
+                startIndex[i]=traverseSplit[j++];
+                endIndex[i]=traverseSplit[j++];
+
+                var updatedStDate='';
+                var updatedEDate='';
+                var updatedCcMail='';
+                var updatedCcInMail='';
+
+                if($.trim(checkedccoids[countSave])==$.trim(ccoIndex[i])){
+                    updatedStDate = startDateTokenizer[countSave];
+                    updatedEDate = endDateTokenizer[countSave];
+                    updatedCcMail = ccMailTokenizer[countSave];
+                    updatedCcInMail = ccInMailTokenizer[countSave];
+                    if(!dateValidationUpdate(getFormatedDate(getDate(updatedStDate)),getFormatedDate(getDate(updatedEDate)),checkedccoids[countSave])){
+                        return false;
+                    }
+                    ++countSave;
+                }
+            }
+            return true;
+        }
+
+        function getDate(strDate){
+            if(strDate==null || strDate==''){
+                strDate='';
+            }else{
+                var dateSplit=strDate.split("-");
+                if(dateSplit[1]=='Jan'){
+                    strDate = 1+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Feb'){
+                    strDate = 2+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Mar'){
+                    strDate = 3+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Apr'){
+                    strDate = 4+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='May'){
+                    strDate = 5+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Jun'){
+                    strDate = 6+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Jul'){
+                    strDate = 7+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Aug'){
+                    strDate = 8+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Sep'){
+                    strDate = 9+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Oct'){
+                    strDate = 10+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Nov'){
+                    strDate = 11+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }else if(dateSplit[1]=='Dec'){
+                    strDate = 12+"-"+dateSplit[0]+"-"+dateSplit[2];
+                }
+            }
+            return strDate;
+        }
+
+        function getFormatedDate(strDate){
+            if(strDate==null || strDate==''){
+                strDate='';
+            }else{
+                var dateSplit=strDate.split("-");
+                strDate= dateSplit[0]+"/"+dateSplit[1]+"/"+dateSplit[2];
+            }
+            return strDate;
+        }
+
+        function dateValidationInner(index){
+            var fromDate = document.getElementById("startDate"+index).value;
+            var toDate = document.getElementById("endDate"+index).value;
+            if(fromDate == null || fromDate == '' ){
+                alert("Please enter Start Date");
+                document.getElementById("startDate"+index).focus();
+                return false;
+            }
+            if (Date.parse(fromDate) > Date.parse(toDate)) {
+                alert("Invalid Date Range! Start Date cannot be after End Date!")
+                return false;
+            }
+        }
+
+        function dateValidationAdd(fromDate,toDate){
+            if(toDate!=null || toDate != ''){
+                if (Date.parse(fromDate) > Date.parse(toDate)) {
+                    var data = "<div class=icwModalOnly>";
+                    data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                    data+="<p> <span class=\"icwDetails\">"+"Invalid Date Range! Start Date cannot be after End Date!"+"</span></p>";
+                    data+=	"</div></div> ";
+                    $("#errorMsg").html(data);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function dateValidationUpdate(fromDate,toDate,row){
+            if(toDate!=null || toDate != ''){
+                if(fromDate == null || fromDate == '' ){
+                    var data = "<div class=icwModalOnly>";
+                    data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                    data+="<p> <span class=\"icwDetails\">"+"Update failed: Please enter Start Date for Row:"+row+"</span></p>";
+                    data+=	"</div></div> ";
+                    $("#errorMsg").html(data);
+                    return false;
+                }
+                if (Date.parse(fromDate) > Date.parse(toDate)) {
+                    var data = "<div class=icwModalOnly>";
+                    data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                    data+="<p> <span class=\"icwDetails\">"+"Update failed: Row "+row+" Invalid Date Range! Start Date cannot be after End Date!"+"</span></p>";
+                    data+=	"</div></div> ";
+                    $("#errorMsg").html(data);
+                    return false;
+                }
+            }else{
+                if(fromDate == null || fromDate == '' ){
+                    var data = "<div class=icwModalOnly>";
+                    data+=	"<div class=\"icwMessage icwMessageError\" > ";
+                    data+="<p> <span class=\"icwDetails\">"+"Update failed: Please enter Start Date for Row:"+row+"</span></p>";
+                    data+=	"</div></div> ";
+                    $("#errorMsg").html(data);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function insOnPageAfterRemove(selectedIds){
+            document.getElementById("chkAllProxy").checked=false;
+            var selectedIdss=selectedIds.split(",");
+            var count=0;
+            for(k=0;k<selectedIdss.length;k++){
+                var fromBasePage = $("#appendToDiv").html();
+                var traverse=fromBasePage.split(";");
+                if(count==1)
+                {
+                    $("#appendToDiv").html($("#tempDiv").html());
+                    $("#tempDiv").html('');
+                    fromBasePage = $("#appendToDiv").html();
+                    traverse=fromBasePage.split(";");
+                }
+                var emailIndex= new Array(traverse.length);
+                var ccoIndex= new Array(traverse.length);
+                var nameIndex= new Array(traverse.length);
+                var ccmailIndex= new Array(traverse.length);
+                var ccInMailIndex= new Array(traverse.length);
+                var startIndex= new Array(traverse.length);
+                var endIndex= new Array(traverse.length);
+                for(i=0;i<traverse.length-1;i++){
+                    var j=0;
+                    var traverseSplit=traverse[i].split(",");
+                    emailIndex[i]=traverseSplit[j++];
+                    ccoIndex[i]=traverseSplit[j++];
+                    nameIndex[i]=traverseSplit[j++];
+                    ccmailIndex[i]=traverseSplit[j++];
+                    ccInMailIndex[i]=traverseSplit[j++];
+                    startIndex[i]=$.trim(traverseSplit[j++]);
+                    endIndex[i]=$.trim(traverseSplit[j++]);
+                    if($.trim(selectedIdss[k])!=$.trim(ccoIndex[i])){
+                        $("#tempDiv").append(emailIndex[i]+","+ccoIndex[i]+","+nameIndex[i]+","+ccmailIndex[i]+","+ccInMailIndex[i]+","+startIndex[i]+","+endIndex[i]+";");
+                        count=1;
+                    }
+                }
+            }
+            $("#appendToDiv").html($("#tempDiv").html());
+            $("#tempDiv").html('');
+            insFromBasePage();
+        }
+
+        function insOnPageAfterUpdate(selectedCcMail,selectedCcInMail,startDate,endDate,allIds,ccoIds){
+            document.getElementById("chkAllProxy").checked=false;
+            var ccMailTokenizer=selectedCcMail.split(",");
+            var ccInMailTokenizer=selectedCcInMail.split(",");
+            var startDateTokenizer=startDate.split(",");
+            var endDateTokenizer=endDate.split(",");
+            var checkedIdsTokenizer=allIds.split(",");
+            var checkedccoids = ccoIds.split(",");
+            var l=0;
+            var count=0;
+            var fromBasePage = $("#appendToDiv").html();
+            var traverse=fromBasePage.split(";");
+            var emailIndex= new Array(traverse.length);
+            var ccoIndex= new Array(traverse.length);
+            var nameIndex= new Array(traverse.length);
+            var ccmailIndex= new Array(traverse.length);
+            var ccInmailIndex= new Array(traverse.length);
+            var startIndex= new Array(traverse.length);
+            var endIndex= new Array(traverse.length);
+            var countSave=0;
+            ++countSave;
+            for(i=0;i<traverse.length-1;i++){
+                var j=0;
+                var traverseSplit=traverse[i].split(",");
+                emailIndex[i]=traverseSplit[j++];
+                ccoIndex[i]=traverseSplit[j++];
+                nameIndex[i]=traverseSplit[j++];
+                ccmailIndex[i]=traverseSplit[j++];
+                ccInmailIndex[i]=traverseSplit[j++];
+                startIndex[i]=traverseSplit[j++];
+                endIndex[i]=traverseSplit[j++];
+                var updatedStDate='';
+                var updatedEDate='';
+                var updatedCcMail='';
+                var updatedCcInMail='';
+                if($.trim(checkedccoids[countSave])==$.trim(ccoIndex[i])){
+                    updatedStDate = startDateTokenizer[countSave];
+                    updatedEDate = endDateTokenizer[countSave];
+                    updatedCcMail = ccMailTokenizer[countSave];
+                    updatedCcInMail = ccInMailTokenizer[countSave];
+                    ++countSave;
+                }else{
+                    updatedStDate = startIndex[i];
+                    updatedEDate  = endIndex[i];
+                    updatedCcMail = updatedCcMail[i];
+                    updatedCcInMail = updatedCcInMail[i];
+                }
+                var emailCode='';
+                $("#tempDiv").append(emailIndex[i]+","+ccoIndex[i]+","+nameIndex[i]+","+updatedCcMail+","+updatedCcInMail+","+updatedStDate+","+updatedEDate+";");
+            }
+            $("#appendToDiv").html($("#tempDiv").html());
+            $("#tempDiv").html('');
+            insFromBasePage();
+        }
+
+        function insProxyAddRow(modal, contactName, ccoId ,Id,ccInEmail){
+            var emailId=$(modal).find("#proxyEmailId").val();
+            var startDate=$(modal).find("#proxyStartDate").val();
+            var endDate=$(modal).find("#proxyEndDate").val();
+            var ccEmail=$(modal).find("#ccEmail").val();
+            var emailCode=null;
+            if(startDate==null || startDate==''){
+                startDate=JS_SYSDATE;
+                var dateSplit=startDate.split("-");
+                startDate= dateSplit[0]+" "+dateSplit[1]+" "+dateSplit[2];
+            }
+            $("#appendToDiv").append(Id+","+emailId+","+ccoId+","+ccEmail+","+ccInEmail+","+startDate+","+endDate+";");
+            insFromBasePage();
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- This is needed in order to accomplish the dynamic 'more' / 'less' functionality for each message. -->
+    <script type="text/javascript" src="/WWChannels/PPP/j/1_0_workspace_home.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--  modal stuff starts here -->
+    <link rel="stylesheet" type="text/css" href="c/icw.css">
+    <link rel="stylesheet" type="text/css" href="c/icw.skin.css">
+    <link rel="stylesheet" type="text/css" href="c/icw.deal.css">
+    <link rel="stylesheet" type="text/css" href="c/icw.portlets.css">
+    <link rel="stylesheet" type="text/css" href="c/icw.utilities.css">
+    <link rel="stylesheet" type="text/css" href="c/icw.address.css">
+    <link rel="stylesheet" type="text/css" href="c/icw.joined.css">
+
+    <script type="text/javascript">
+
+        var JS_MESSAGE_PROXY_REMOVE_ALERT= "Please select atleast one entry to remove.";
+        var JS_SELECT="Select";
+        var count="";
+        var successFlag ="0";
+
+        function expand(id){
+            var id = id;
+            id = "#"+id;
+            $("tr").filter(id).show();
+            var showId = id+"show";
+            var hideId = id+"hide";
+            $("a").filter(showId).hide();
+            $("a").filter(hideId).show();
+        }
+
+        function collapse(id){
+            var id = id;
+            id = "#"+id;
+            $("tr").filter(id).hide();
+            var showId = id+"show";
+            var hideId = id+"hide";
+            $("a").filter(showId).show();
+            $("a").filter(hideId).hide();
+        }
+
+        function deSelect(selName, multiSelect){
+            var selObj = document.getElementById(selName) ;
+            if(selObj){
+                if(multiSelect)
+                    selObj.selectedIndex = -1;
+                else
+                    selObj.selectedIndex = 0;
+            }
+        }
+
+        //this is not working. check tomorrow.
+        function advancedReset(){
+            deSelect("esafilter",false);
+            deSelect("pnafilter",false);
+            deSelect("trkFilter",false);
+            document.getElementById("startDate").value="";
+            if(document.getElementById("enrollmentId")){
+                document.getElementById("enrollmentId").value="";
+            }
+            document.getElementById("endDate").value="";
+            if(document.getElementById("partnerName")){
+                document.getElementById("partnerName").value = "";
+            }
+            document.getElementById("prgfilter").selectedIndex="0";
+            deSelect("stattusfilter",false);
+            deSelect("thtrfilter",false);
+            deSelect("cgpFilter",false);
+            deSelect("ctryFilter",false);
+        }
+
+        function advancedsearch(){
+            document.getElementById("advancedsearch").submit();
+        }
+
+        function dealConsumptionDivContentSetter(content){
+            $("#icwDealConsumptionDiv").html(content);
+            icw.modal.show({
+                anchor   : $(".icwRequired"),
+                content  : $("#icwDealConsumptionDiv"),
+                mode     : "modal",
+                align    : "center"
+            });
+        }
+
+        function anchorBind() {
+            $.post("dealConsumption.do",null,dealConsumptionDivContentSetter);
+        }
+
+        function gotolink(){
+            window.location.href = document.getElementById('quickLinks').value;
+        }
+
+        function goCreate(){
+            window.location.href = "/WWChannels/PPP/home.do?actionType=create";
+        }
+
+        function deleteEnroll(){
+            $("#ErrorBox").empty();
+            var str="";
+            var comment ="";
+            comment = document.getElementById("comm").value;
+            for(i=0;i< count;i++){
+                if(null != document.getElementById("check"+i)){ //Condition added by dekollip FDEV YEP 2010
+                    if(document.getElementById("check"+i).checked){
+                        var tempStr = document.getElementById("check"+i).value;
+                        tempStr = tempStr.split("|");
+                        var str=str+tempStr[0];
+                        str+=",";
+                    }
+                }
+            }
+            if(str=="")
+            //alert("Please Select Enrollment to delete");
+                $("#ErrorBox").html("<div class=\"icwMessage icwMessageError\" ><p>"+ENROLLMENT_NOT_SELECTED+"</div>");
+            else{
+                var strLen = str.length;
+                var str1 = str.slice(0,strLen-1);
+                if(confirm(DELETING_ENROLLMENTS +" : "+str1+"\n"+SAME_ID_ENROLLMENTS))
+                    deleteEnrollments(str,comment, "N");
+                else{}
+            }
+            document.getElementById("comm").value ="";
+        }
+
+        function optOut(){
+            $("#ErrorBox").empty();
+            var str="";
+            var comment ="";
+            comment = document.getElementById("comm").value;
+            for(i=0;i< count;i++){
+                if(null != document.getElementById("check"+i)){ //Condition added by dekollip FDEV YEP 2010
+                    if(document.getElementById("check"+i).checked){
+                        var tempStr = document.getElementById("check"+i).value;
+                        tempStr = tempStr.split("|");
+                        var str=str+tempStr[0];
+                        str+=",";
+                    }
+                }
+            }
+
+            var strLen = str.length;
+            var str1 = str.slice(0,strLen-1);
+
+            if(str1=="")
+            //alert("Please Select Enrollment to Opt Out");
+                $("#ErrorBox").html("<div class=\"icwMessage icwMessageError\" ><p>"+ENROLLMENT_NOT_SELECTED+"</div>");
+            else{
+                var strLen = str.length;
+                var str1 = str.slice(0,strLen-1);
+                if(comment==""){
+                    //alert("Please provide opt out reason");
+                    $("#ErrorBox").html("<div class=\"icwMessage icwMessageError\" ><p>"+OPTOUT_REASON_NOT_PROVIDED+"</div>");
+                }
+                else{
+                    if(confirm(DELETING_ENROLLMENTS +" : "+str1+"\n"+SAME_ID_ENROLLMENTS))
+                        deleteEnrollments(str,comment,"Y");
+                    else{}
+                }
+            }
+            document.getElementById("comm").value ="";
+        }
+
+        function updateStartDate(){
+            $("#ErrorBox").empty();
+            var enrId = "";
+
+            var overrideDate = "";
+            for(i=0;i< count;i++){
+                if(null != document.getElementById("check"+i)){
+                    if(document.getElementById("check"+i).checked){
+                        var tempStr = document.getElementById("check"+i).value;
+                        tempStr = tempStr.split("|");
+                        var enrId=enrId+tempStr[0];
+                        enrId+=",";
+                    }
+                }
+            }
+            var strLen = enrId.length;
+            var str1 = enrId.slice(0,strLen-1);
+            if(str1 == ""){
+                //alert("Please Select Enrollment");
+                $("#ErrorBox").html("<div class=\"icwMessage icwMessageError\" ><p>"+ENROLLMENT_NOT_SELECTED+"</div>");
+            }
+            else{
+                if(document.getElementById("orStartDate") != null && document.getElementById("orStartDate").value != ''){
+                    overrideDate = document.getElementById("orStartDate").value;
+                }
+                else{
+                    //alert('Please select Override Start Date');
+                    $("#ErrorBox").html("<div class=\"icwMessage icwMessageError\" ><p>"+OVERRIDE_DATE_NOT_SELECTED+"</div>");
+                }
+
+                if(overrideDate != ""){
+                    orStartDt = document.getElementById("orStartDate").value;
+                    icw.progressBar.initLoading(document.getElementById("documen"),true);
+                    $.ajax(
+                            { url: "home.do",
+                                type:"POST",
+                                data:"actionType=search&orDateFlag=Y&orStartDt="+orStartDt+"&enrId="+str1,
+                                async: true,
+                                error: function(){
+                                    icw.modal.hide(modal);
+                                },
+                                success: function(string){
+                                    $("tbody").filter("#docContent").empty();
+                                    if(string.indexOf('<tr id="testId"')==-1){
+                                        $("#docContent").html(string);
+                                        $("#myId").html('');
+                                    }else{
+                                        $("#docContent").html(string);
+                                        var lString=string.substring(string.indexOf('<tr id="testId"'),string.length);
+                                        lString=lString.substring(lString.indexOf('<td'),lString.lastIndexOf('</tr>'));
+                                        $("#myId").html(lString);
+                                    }
+                                    var mytable = $("#rowCount").val();
+                                    for(var cou=0; cou < mytable; cou++){
+                                        collapse(cou);
+                                    }
+                                    icw.progressBar.loadingComplete(document.getElementById("documen"));
+                                    if(successFlag==0){
+                                        $("#ErrorBox").html("<div class=\"icwMessage icwMessageOkay\"><p>"+ENROLLMENTS_UPDATE_SUCCESSFUL+"</div>");
+                                        document.getElementById("orStartDate").value = "";
+                                    }
+                                    else if(successFlag==2){
+                                        $("#ErrorBox").html("<div class=\"icwMessage icwMessageError\"><p>"+ENROLLMENTS_UPDATED_PARTIALLY+"</div>");
+                                        document.getElementById("orStartDate").value = "";
+                                    }
+                                    else {
+                                        $("#ErrorBox").html("<div class=\"icwMessage icwMessageError\"><p>"+ENROLLMENTS_NOT_UPDATED+"</div>");
+                                        document.getElementById("orStartDate").value
+                                    }
+                                }
+                            });
+                }
+            }
+        }
+
+        function setFlag(count1, success ){
+            count=count1;
+            successFlag=success;
+        }
+
+
+        $(document).ready(function(){
+
+            if ( $.browser.msie ) {
+                $("#id1").css('margin-top', '14');
+                $("#id2").css('width', '100.9%');
+                $(".icwSearchAndEditPortlet").css("width", "99.5%");
+            } else {
+                $("#id1").css('margin-top', '0em');
+                $("#id2").css( "width","98.7%" );
+                $(".icwSearchAndEditPortlet").css( "width","97.5%" );
+            }
+
+
+
+
+            $("div").filter(".icwSimpleSearch").show("fast");
+            $("div").filter(".simple").show("fast");
+            $("div").filter(".icwAdvancedSearch").hide();
+            $("div").filter(".advanced").hide();
+
+
+
+            $("a").filter(".advSearchLink").click(function() {
+                $("div").filter(".icwAdvancedSearch").show("fast");
+                $("div").filter(".advanced").show("fast");
+                $("div").filter(".icwSimpleSearch").hide("fast");
+                $("div").filter(".simple").hide("fast");
+            });
+
+            $("a").filter(".basicSearchLink").click(function() {
+                $("div").filter(".icwSimpleSearch").show("fast");
+                $("div").filter(".simple").show("fast");
+                $("div").filter(".icwAdvancedSearch").hide("fast");
+                $("div").filter(".advanced").hide("fast");
+                advancedReset();
+                getBasicSearchList('1');
+            });
+
+
+            $("div").filter(".icwSimpleSearch").show("fast");
+            $("div").filter(".simple").show("fast");
+            $("div").filter(".icwAdvancedSearch").hide("fast");
+            $("div").filter(".advanced").hide("fast");
+
+        });
+        var ENROLLMENT_NOT_SELECTED = "Please select enrollment.";
+        var OVERRIDE_DATE_NOT_SELECTED = "Please provide Override Start Date.";
+        var OPTOUT_REASON_NOT_PROVIDED = "Please provide Opt out Reason.";
+        var ENROLLMENTS_UPDATE_SUCCESSFUL = "Enrollment(s) updated successfully.";
+        var ENROLLMENTS_UPDATED_PARTIALLY = "Some of the enrollments are not updated as the date is not failing in date range.";
+        var ENROLLMENTS_NOT_UPDATED = "Enrollment(s) are not updated.";
+        var ENROLLMENTS_DELETE_SUCCESSFUL = "Enrollment(s) are deleted successfully.";
+        var ENROLLMENTS_NOT_DELETED = "Enrollment(s) are not deleted.";
+        var SAME_ID_ENROLLMENTS = "All enrollments of the same enrollment ID will be deleted.";
+        var DELETING_ENROLLMENTS = "Deleting Enrollments";
+    </script>
+
+
+    <!--  modal stuff ends here -->
+
+
+    <!-- This is needed in order to accomplish the dynamic 'more' / 'less' functionality for each message. -->
+    <script type="text/javascript" src="/WWChannels/PPP/j/1_0_workspace_home.js"></script>
+    <div id="framework-content-main" style="margin-top:0;">
+
+        <!-- Begin Main Content -->
+
+        <div class="icw">
+            <div class="icwWrapper icwOrder">
+
+                <script>
+                    browserApp();
+                    function browserApp()
+                    {
+                        var browser=navigator.appName;
+                        if(browser == 'Netscape'){
+                            document.write("&nbsp;");
+                        }
+                    }
+                </script>&nbsp;
+
+            </div></div>
+
+        <div class="icwSkin icwClear" id="id1" style="margin-top: 0em;">
+            <div class="icwSkinHeader"><div class="icwSkinHeader1">
+                <div class="icwSkinHeader2 icwClear" id="id2" style="width: 98.7%;">
+                    <div class="icwSkinTitle">Search</div>
+                    <ul class="icwSkinControls">
+                        <li class="icwSkinControl icwSkinControlMinMax">
+                            <a href="#linkTBD">Minimize View</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div class="icwSkinContent" style="float: left; clear: right;"><div><div>
+                <div class="icw">
+                    <div class="icwSearchPortlet icwSearchAndEditPortlet " style="width: 97.5%;">
+                        <ul class="icwSearchToggle" style="width: 30%;">
+                            <div class="simple" style="">
+                                <li class="icwSearchToggleBasic">Basic</li>
+                                <li class="icwSearchToggleAdvanced"><a href="#" class="advSearchLink">Advanced</a></li>
+                            </div>
+                            <div class="advanced" style="display: none;"><li class="icwSearchToggleBasic"><a href="#" class="basicSearchLink">Basic</a></li><li class="icwSearchToggleAdvanced">Advanced</li></div>
+                        </ul>
+
+                        <div class="icwSimpleSearch" style="margin-top: 0px;">
+
+                            <input type="hidden" name="actionType" value="search">
+                            <input type="hidden" name="searchType" value="basic">
+                            <fieldset>
+                                <legend>Search fields</legend>
+                                <div class="icwBasicSearchField">
+                                    <table>
+                                        <tbody><tr>
+                                            <td>
+                                                <label for="SearchFieldDropDown">Enrollment Status</label>
+
+                                                <select name="enrollmentStatus" id="esbfilter"><option value="" selected="selected">Show all items</option>
+                                                    <option value="APPROVAL-IN-PROGRESS">Approval In Progress</option>
+                                                    <option value="APPROVED">Approved</option>
+                                                    <option value="EXPIRED">Expired</option>
+                                                    <option value="NEED-MORE-INFO">More Information Required</option>
+                                                    <option value="NOT-SUBMITTED">Not Submitted</option>
+                                                    <option value="OPTOUT">Opted Out</option>
+                                                    <option value="OUT-OF-COMPLIANCE">Out Of Compliance</option>
+                                                    <option value="DENIED">Reject / Denied</option>
+                                                    <option value="REJECTED">Rejected</option>
+                                                    <option value="SUBMITTED">Submitted</option></select>
+
+                                            </td>
+                                            <td>&nbsp;&nbsp;&nbsp;</td>
+
+                                            <td>
+                                                <label for="SearchFieldDropDown">Enrollment Id</label>
+                                                <input type="text" name="enrollmentId" size="24" id="basicSearchEnrollmentId" class="text">
+                                            </td>
+                                            <td>&nbsp;&nbsp;&nbsp;</td>
+
+                                            <td><label for="SearchFieldDropDown">&nbsp;</label>
+                                                &nbsp;<input class="pppButton" type="button" value="Search" onclick="getBasicSearchList('1')">
+                                            </td>
+                                        </tr>
+                                        </tbody></table>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                        <div class="icwAdvancedSearch" style="display: none;">
+                            <form name="enrollmentSearchForm" method="post" action="/WWChannels/PPP/home.do?actionType=search&amp;type=advance" id="advancedsearch">
+                                <style>
+                                    table.valign tr td {
+                                        vertical-align:middle;
+                                        }
+                                    table.valign form {
+                                        display:inline;
+                                        }
+                                </style>
+                                <input type="hidden" name="actionType" value="search">
+                                <input type="hidden" name="searchType" value="advanced">
+                                <input type="hidden" name="dealViewBasic" value="">
+                                <input type="hidden" name="dealStatusBasic" value="">
+                                <table class="valign">
+
+                                    <tbody><tr>
+                                        <td width="15%">Enrollment Id</td>
+                                        <td width="30%"><input type="text" name="enrollmentId" size="22" id="enrollmentId" class="text" style="margin-bottom: 5px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDigO/bwqsQAAAfNJREFUOMvNkz1ok2EQx3/39umHmpZWMUVaUEEUpWlQ0QyiCDooFhwcFN2lgqhTEMKTDwsZCw4SQQNOLh20KBgQRZ0kIK2LlBaqtNKhfkRqbHnfvOEc0kCbD0Enb/vD8bu7/93BfxfRaLTfWnuoqq21EWttqFm+s1ZYa692dHRMiUgWEEBEJCMiE/F4PN0IYGq0JyKbgJC19ryq+iKyH0BVZxoBpFbH4/HXInIUmFbVsojsBV6mUqkTTQGxWGy74zhdpVJpxRizw3GcnIi0rFYuA+dUdVFEAr7vf0mn05PrRjDG3ASG29vb6ytUQI9FKs0aY+4Bl2tNdP51a7Lq/kFV3aqqP0QkaIwZ/yvA2kgkEs9F5CQEiAydYbC/i6VPeR7l3uM1ALTU3MEFEYmKCJFLNzg1sA186NsVZl/nAvnp738+JGA34EOQPTs3UP6YY/T2KC8WymwJHaYHgABDw9c5G+6pB4yMjNzyPC8My/zyoKVvkEj4OAO9lUZbAdjI5t5ugp2tzY1JJpOavv9M55ZcVd9VV1XVndE3s8u6Plxtsr42jp0+QvfPCTJ3xvkKeHNT5J88IJsdY74M3yafksncrfuF6kvw9tUHDlyMcOVaBFbmeTj2jqIHxUIJF3A/z7K4WKhfY3WEaieBnjaKhWLTcX8DATq/EhizV6kAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;" autocomplete="off"></td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="12%">Partner Name</td>
+                                        <td width="30%"><input type="text" name="partnerName" size="22" id="partnerName" class="text" style="margin-bottom:5px;"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td width="15%">Program Name</td>
+                                        <td width="30%">
+
+                                            <select name="programName" onchange="RepopulateTrackList(this.value,'trkFilter');" id="prgfilter" style="width:auto;margin-bottom:4px;"><option value="0">Select</option>
+                                                <option value="21">APAC Avant Garde Initiative</option>
+                                                <option value="335">Architecture Partnership Program</option>
+                                                <option value="106">Assessment Incentive Program - AIP</option>
+                                                <option value="66">Avant Garde</option>
+                                                <option value="460">Avant Garde - FY12</option>
+                                                <option value="142">Avant Garde Canada</option>
+                                                <option value="3">Avant Garde Plus</option>
+                                                <option value="144">Avant Garde START FY11</option>
+                                                <option value="768">CCRE-old</option>
+                                                <option value="796">CMSP</option>
+                                                <option value="898">CMSP Cloud Comp FastStart MOU</option>
+                                                <option value="1015">CMSP Cloud Compensation</option>
+                                                <option value="783">CMSP Simplified Pricing</option>
+                                                <option value="93">CSI7</option>
+                                                <option value="1228">CSR_BEGEO</option>
+                                                <option value="85">CSSP</option>
+                                                <option value="858">CUWP-ECS</option>
+                                                <option value="578">Challenge and Reward -2</option>
+                                                <option value="42">Challenge and Reward Plus Program</option>
+                                                <option value="41">Challenge and Reward Program</option>
+                                                <option value="1116">Channel Financing</option>
+                                                <option value="1348">Channel Financing FY16</option>
+                                                <option value="680">Cisco Build and Price</option>
+                                                <option value="780">Cisco Certified Refurbished Equipment</option>
+                                                <option value="22">Cisco Entrepreneur Institute Bundles Program</option>
+                                                <option value="50">Cisco Incentive Program 6</option>
+                                                <option value="1426">Cisco Intercloud Services Partner Resale</option>
+                                                <option value="1337">Cisco One Partner Accelerator Program</option>
+                                                <option value="1315">Cisco OpenStack Private Cloud</option>
+                                                <option value="1218">Cisco Referral Program</option>
+                                                <option value="440">Cisco Rewards - APAC</option>
+                                                <option value="437">Cisco Rewards - Euro</option>
+                                                <option value="441">Cisco Rewards - US</option>
+                                                <option value="570">Cisco Rewards Canada</option>
+                                                <option value="438">Cisco Rewards Emerging</option>
+                                                <option value="439">Cisco Rewards GC Company Managed</option>
+                                                <option value="434">Cisco Rewards JP</option>
+                                                <option value="511">Cisco Rewards JP Company Managed</option>
+                                                <option value="512">Cisco Rewards LATAM</option>
+                                                <option value="513">Cisco Rewards LATAM Company Managed</option>
+                                                <option value="232">Cisco Services Incentive Program</option>
+                                                <option value="405">Cisco Services Partner Program</option>
+                                                <option value="990">Cisco Services Software Partner Prgm Plt</option>
+                                                <option value="484">Cisco Shared Support Program</option>
+                                                <option value="754">Cisco Smart Care Services</option>
+                                                <option value="4">Cisco Technology Migration program</option>
+                                                <option value="57">Cisco Unified Workspace for Partners</option>
+                                                <option value="1197">Cloud Aggregator</option>
+                                                <option value="461">Cloud Partner Program - App Integrator</option>
+                                                <option value="463">Cloud Partner Program - Cloud Builder</option>
+                                                <option value="523">Cloud Provider</option>
+                                                <option value="744">Cloud Provider MDF</option>
+                                                <option value="622">Cloud Services Reseller</option>
+                                                <option value="821">Collaboration Enterprise Agreement</option>
+                                                <option value="48">Commercial Partner Development Funds</option>
+                                                <option value="566">Consultant Referral Program</option>
+                                                <option value="722">Content Security Rebate Program 2</option>
+                                                <option value="528">Content Security Rebate Program-Ironport</option>
+                                                <option value="29">Core Accelerator Promotion - APAC</option>
+                                                <option value="26">Core Accelerator Promotion - Canada</option>
+                                                <option value="23">Core Accelerator Promotion - EMER</option>
+                                                <option value="24">Core Accelerator Promotion - EURO</option>
+                                                <option value="25">Core Accelerator Promotion - Japan</option>
+                                                <option value="14">Core Accelerator Promotion - US</option>
+                                                <option value="1393">Customer Financing Incentive Program</option>
+                                                <option value="133">DC Accelerator1</option>
+                                                <option value="27">DMR Incentive Program</option>
+                                                <option value="941">DMR Volume Buying Program</option>
+                                                <option value="229">Data Center Accelerator</option>
+                                                <option value="75">Distributor Profitability Program - APAC</option>
+                                                <option value="79">Distributor Profitability Program - EMER</option>
+                                                <option value="78">Distributor Profitability Program - EU</option>
+                                                <option value="77">Distributor Profitability Program -Japan</option>
+                                                <option value="341">Distributor Profitability Program-GCHINA</option>
+                                                <option value="76">Distributor Profitability Program-US_CAN</option>
+                                                <option value="72">Eldorado</option>
+                                                <option value="902">Enterprise License Agreement</option>
+                                                <option value="1291">FIRP</option>
+                                                <option value="31">GPN</option>
+                                                <option value="30">GSA</option>
+                                                <option value="413">Global IAS</option>
+                                                <option value="414">Global IAS - Invitation </option>
+                                                <option value="5">Global Partner Network</option>
+                                                <option value="809">HCS Migration Program</option>
+                                                <option value="1226">HCS Partner Pricing Program</option>
+                                                <option value="1335">HCS WebEx Subscriptions</option>
+                                                <option value="1164">Integrated Infrastructure Pilot</option>
+                                                <option value="1145">Intercloud Partner Enrollment Program</option>
+                                                <option value="1046">IoT MBO Program</option>
+                                                <option value="170">Japan Public Sector Partner Program</option>
+                                                <option value="1353">LTE as a Service Promotion</option>
+                                                <option value="631">Leads and Prospects</option>
+                                                <option value="443">Learning Partner Lab Promotion</option>
+                                                <option value="445">Legacy Tandberg Pricing Agreements</option>
+                                                <option value="410">Local IAS</option>
+                                                <option value="487">MSCP</option>
+                                                <option value="221">MSCP Next Gen FY11</option>
+                                                <option value="58">MSCP-Next Gen</option>
+                                                <option value="1261">MSR_BEGEO</option>
+                                                <option value="39">Managed Services Channel Program</option>
+                                                <option value="740">Managed Services Reseller</option>
+                                                <option value="1431">Metapod</option>
+                                                <option value="411">Multinational IAS</option>
+                                                <option value="412">Multinational IAS - Invitation</option>
+                                                <option value="231">Not For Resale NFR Program</option>
+                                                <option value="83">OIP</option>
+                                                <option value="1">Outsourcing Channel Program</option>
+                                                <option value="234">PDF Cash Back</option>
+                                                <option value="239">PDF Cash Back Accelerator</option>
+                                                <option value="235">PDF Commercial UC</option>
+                                                <option value="236">PDF Plus</option>
+                                                <option value="1127">POE-Growth Acceleration Program</option>
+                                                <option value="321">PSPP JPY</option>
+                                                <option value="572">Partner 2 Partner</option>
+                                                <option value="467">Partner Development Funds</option>
+                                                <option value="621">Partner Plus FY12</option>
+                                                <option value="677">Partner Plus FY13</option>
+                                                <option value="678">Partner Plus FY13 LATAM-EMEAR</option>
+                                                <option value="824">Partner Plus FY14</option>
+                                                <option value="829">Partner Plus FY14 LATAM-EMEAR</option>
+                                                <option value="1101">Partner Plus FY15 Aspire</option>
+                                                <option value="1102">Partner Plus FY15 Aspire LATAM EMEAR</option>
+                                                <option value="1092">Partner Plus FY15 Elite</option>
+                                                <option value="1093">Partner Plus FY15 Elite LATAM EMEAR</option>
+                                                <option value="1094">Partner Plus FY15 Prestige</option>
+                                                <option value="1095">Partner Plus FY15 Prestige LATAM EMEAR</option>
+                                                <option value="1376">Partner Plus FY16 Aspire</option>
+                                                <option value="1381">Partner Plus FY16 Aspire LATAM EMEAR</option>
+                                                <option value="1363">Partner Plus FY16 Elite</option>
+                                                <option value="1371">Partner Plus FY16 Elite LATAM EMEAR</option>
+                                                <option value="1374">Partner Plus FY16 Prestige</option>
+                                                <option value="1375">Partner Plus FY16 Prestige LATAM EMEAR</option>
+                                                <option value="865">Partner Support Service</option>
+                                                <option value="56">Pay for Performance</option>
+                                                <option value="509">Prolific Migration</option>
+                                                <option value="8">Public Sector Partner Program</option>
+                                                <option value="86">RSA</option>
+                                                <option value="444">Remote Lab Partner Promotion</option>
+                                                <option value="45">SB PDF Cash Back Accelerator I</option>
+                                                <option value="46">SB PDF Cash Back Accelerator II</option>
+                                                <option value="18">SBPA</option>
+                                                <option value="9">SIP</option>
+                                                <option value="747">SP Incentive Program - Collaboration</option>
+                                                <option value="900">SP Incentive Program - Ent Networking</option>
+                                                <option value="595">SP Incentive Program- Borderless Network</option>
+                                                <option value="857">SP Technology Plus FY14-FY15</option>
+                                                <option value="1364">SP Technology Plus FY16</option>
+                                                <option value="13">SP Video Sales Promotion</option>
+                                                <option value="649">SPRTF Pilot Promotion</option>
+                                                <option value="1212">SaaS Subscription Resale Program</option>
+                                                <option value="1311">Security Demo Unit Promotion</option>
+                                                <option value="1409">Security Incumbency Renewal Promotion</option>
+                                                <option value="650">Service Offers</option>
+                                                <option value="1354">Simplified test</option>
+                                                <option value="43">Small Business PDF Cash Back Basic</option>
+                                                <option value="47">Small Business PDF Core</option>
+                                                <option value="49">Small Business PDF Pro</option>
+                                                <option value="233">Small Business Service Promotion</option>
+                                                <option value="479">Small Business Svc Promotion</option>
+                                                <option value="835">Smart Care</option>
+                                                <option value="813">System 1</option>
+                                                <option value="795">TIP</option>
+                                                <option value="136">Tandberg New Partner NFR Promotion</option>
+                                                <option value="609">Technology Adoption Program</option>
+                                                <option value="430">TelePresence Healthcare</option>
+                                                <option value="16">TelePresence Partner Acceleration Pilot</option>
+                                                <option value="369">Try And Buy</option>
+                                                <option value="1080">US Federal Authorization</option>
+                                                <option value="712">US Public Sector Services Value Exchange</option>
+                                                <option value="852">VIP 22 90-day grace period</option>
+                                                <option value="1048">VIP 23 90-day grace Incremental</option>
+                                                <option value="978">VIP 23 90-day grace period</option>
+                                                <option value="472">VIP-Express</option>
+                                                <option value="473">VIP-Express CBA</option>
+                                                <option value="371">Value Incentive Program</option>
+                                                <option value="147">Value Incentive Program 16 </option>
+                                                <option value="471">Value Incentive Program 18</option>
+                                                <option value="574">Value Incentive Program 19</option>
+                                                <option value="696">Value Incentive Program 20</option>
+                                                <option value="765">Value Incentive Program 21</option>
+                                                <option value="827">Value Incentive Program 22</option>
+                                                <option value="972">Value Incentive Program 23</option>
+                                                <option value="1078">Value Incentive Program 24</option>
+                                                <option value="1062">Value Incentive Program 24 90 Day</option>
+                                                <option value="1068">Value Incentive Program 24 90 Day Incr</option>
+                                                <option value="1210">Value Incentive Program 25</option>
+                                                <option value="1358">Value Incentive Program 26</option>
+                                                <option value="1017">Virtual Engineering - Canada</option>
+                                                <option value="20">WebEx Collaborative Resale Program</option>
+                                                <option value="6">Webex Commission Program</option>
+                                                <option value="114">Webex Strategic Alliance</option>
+                                                <option value="1051">easylease 0 Percent Financing EMEAR</option>
+                                                <option value="871">easylease Low Rate Finance</option>
+                                                <option value="1430">nancy test</option>
+                                                <option value="742"></option>
+                                                <option value="7"></option>
+                                                <option value="1161"></option>
+                                                <option value="500"></option>
+                                                <option value="169"></option>
+                                                <option value="415"></option></select>
+
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="12%">Track Name</td>
+                                        <td width="30%">
+                                            <select name="trackName" id="trkFilter" style="width:165px;margin-bottom:4px;"><option value="0">All</option></select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%">Start Date</td>
+                                        <td width="30%">
+                                            <table>
+                                                <tbody><tr>
+                                                    <td><input id="startDate" name="startDate" type="text" size="18" style="height:16px;margin-bottom:5px;"></td>
+                                                    <td>&nbsp;<input class="icwButton icwButtonCalendar" id="startDateBtn" type="button" value="Calendar" onclick="javascript:NewCal('startDate','MMDDYYYY')" alt="Pick a date" style="margin-bottom:5px;"></td>
+                                                </tr>
+                                                </tbody></table>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="12%">End Date</td>
+                                        <td>
+                                            <table>
+                                                <tbody><tr>
+                                                    <td><input id="endDate" name="endDate" type="text" size="18" style="height:16px;margin-bottom:5px;"></td>
+                                                    <td>&nbsp;<input class="icwButton icwButtonCalendar" id="endDateBtn" type="button" value="Calendar" onclick="javascript:NewCal('endDate','MMDDYYYY')" alt="Pick a date" style="margin-bottom:5px;"></td>
+                                                </tr>
+                                                </tbody></table>
+                                        </td>
+                                    </tr>
+
+                                    <tr id="advance">
+                                        <td width="15%">Enrollment Status</td>
+                                        <td width="30%">
+
+                                            <select name="advanceEnrollmentStatus" id="stattusfilter" style="margin-top:0px;"><option value="">Show all items</option>
+                                                <option value="APPROVAL-IN-PROGRESS">Approval In Progress</option>
+                                                <option value="APPROVED">Approved</option>
+                                                <option value="EXPIRED">Expired</option>
+                                                <option value="NEED-MORE-INFO">More Information Required</option>
+                                                <option value="NOT-SUBMITTED">Not Submitted</option>
+                                                <option value="OPTOUT">Opted Out</option>
+                                                <option value="OUT-OF-COMPLIANCE">Out Of Compliance</option>
+                                                <option value="DENIED">Reject / Denied</option>
+                                                <option value="REJECTED">Rejected</option>
+                                                <option value="SUBMITTED">Submitted</option></select>
+
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="12%">Theater</td>
+                                        <td width="30%">
+
+                                            <select name="theater" onchange="RepopulateCountryGroupList(this.value);" id="thtrfilter" style="margin-top:0px;"><option value="0">All</option>
+                                                <option value="AMERICAS">AMERICAS</option>
+                                                <option value="APJ">APJ</option>
+                                                <option value="EMEAR">EMEAR</option>
+                                                <option value="GC">GC</option></select>
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td width="15%">Country Group</td>
+                                        <td width="30%">
+                                            <select name="countryGroup" onchange="RepopulateCountryList(this.value);" id="cgpFilter" style="margin-top:0px;"><option value="0">All</option></select>
+                                        </td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="12%">Country</td>
+                                        <td width="30%">
+                                            <select name="country1" id="ctryFilter" style="margin-top:0px;"><option value="0">All</option></select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%">Next Approver</td>
+                                        <td width="30%"><input type="text" name="nextApprovr" value="" id="nextApprovr" style="height:16px;width:165px;margin-bottom:2px;"></td>
+                                        <td width="5%">&nbsp;</td>
+                                        <td width="12%">&nbsp;</td>
+                                        <td>
+                                            <input type="button" class="pppButton" id="advSearch" value="Search" onclick="getAdvanceSearchList()">
+                                            <input class="pppButton" type="button" value="Clear All" onclick="advancedReset()">
+                                        </td>
+
+                                    </tr>
+                                    </tbody></table>
+                            </form>
+                        </div>
+
+                        <script>
+                            browserApp1();
+                            function browserApp1()
+                            {
+                                var browser=navigator.appName;
+                                if(browser == 'Netscape'){
+                                    document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+                                }
+                            }
+                        </script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div></div></div>
+        </div>
+
+        <br>
+        <div id="ErrorBox"></div><br>
+        <!-- <div class="errTable" id="documen">
+              <table id="errDocTable" cellpadding="0" cellspacing="0" border="0" class="static" width="100%">
+             <caption>Errors</caption>
+             <thead>
+                     <tr>
+                         <th><strong>Validation Failed</strong></th>
+                     </tr>
+             </thead>
+             <tbody id="errContent">
+             </tbody>
+             </table>
+          </div> -->
+        <div class="icwClearFloat">
+            <div class="icwDateDocument deal" style="position: relative; width:500px;">
+                <div class="">
+                    <div class="icwModalOnly">
+                        <!--
+                            <div class="icwModalTitle">Invalid date!</div>
+                            <div class="icwInnerModalContent">
+                                    <form id="date_validation_form" name="dateForm" >
+                                        <div class="icwInnerModalContent">
+                                            <table>
+                                                <tr>
+                                                    <td valign="top"></td>
+
+                                                <tr>
+                                            </table>
+                                            <BR>
+                                            <div class="icwModalSubmit">
+                                            <input name="okAction" type="button" class="icwButton icwButtonOk" value="Ok" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="icwModalTitleIcons">
+                                          <div><a href="#linkTBD"></a>
+                                          </div>
+                                     </div>
+                                    </div>
+                        -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--
+        &nbsp;<input class="icwUtility icwUtilityExport" type="Export" value="" onClick="downLoadList();"/>
+        -->
+        <div class="searchTable" id="documen" style="margin-top:0em;">
+            <div style="overflow-x: scroll;overflow-y: scroll;WIDTH:908px;;height:430px;">
+                <table id="documentsTable" cellpadding="0" cellspacing="0" border="0" class="static icwTableCollapsible" width="100%" style="height:10px;margin-top:0.5em;margin-top:0em;">
+                    <thead>
+                    <tr>
+
+                        <th></th>
+
+                        <th style="width:10%"><strong>Enrollment Id</strong>
+                            <a href="javascript:getSortSearch('ENROLLMENT_ID','ASC')"><img align="center" src="/WWChannels/PPP/i/table/desc.gif"></a>
+                            <a href="javascript:getSortSearch('ENROLLMENT_ID','DESC')"><img align="center" src="/WWChannels/PPP/i/table/asc.gif"></a>
+                        </th>
+
+
+                        <th><strong>Partner Name</strong></th>
+
+
+                        <th style="width:10%"><strong>Theater</strong>
+                            <a href="javascript:getSortSearch('THEATER','ASC')"><img align="center" src="/WWChannels/PPP/i/table/desc.gif"></a>
+                            <a href="javascript:getSortSearch('THEATER','DESC')"><img align="center" src="/WWChannels/PPP/i/table/asc.gif"></a>
+                        </th>
+
+                        <th style="width:10%"><strong>Country Group</strong>
+                            <a href="javascript:getSortSearch('COUNTRY_GRP','ASC')"><img align="center" src="/WWChannels/PPP/i/table/desc.gif"></a>
+                            <a href="javascript:getSortSearch('COUNTRY_GRP','DESC')"><img align="center" src="/WWChannels/PPP/i/table/asc.gif"></a>
+                        </th>
+
+                        <th style="width:10%"><strong> Country</strong>
+                            <a href="javascript:getSortSearch('GEO_CD','ASC')"><img align="center" src="/WWChannels/PPP/i/table/desc.gif"></a>
+                            <a href="javascript:getSortSearch('GEO_CD','DESC')"><img align="center" src="/WWChannels/PPP/i/table/asc.gif"></a>
+                        </th>
+
+                        <th style="width:10%"><strong>Program Name</strong>
+                            <a href="javascript:getSortSearch('PROGRAM_NAME','ASC')"><img align="center" src="/WWChannels/PPP/i/table/desc.gif"></a>
+                            <a href="javascript:getSortSearch('PROGRAM_NAME','DESC')"><img align="center" src="/WWChannels/PPP/i/table/asc.gif"></a>
+                        </th>
+
+                        <th style="width:10%"><strong>Track Name / Solution Name</strong></th>
+                        <th style="width:10%"><strong>Subtrack Name</strong></th>
+
+                        <!-- Start - SIP-CR -->
+                        <th style="width:10%"><strong>Cisco Solution Category</strong></th>
+                        <th style="width:10%"><strong>Partner Solution Name</strong></th>
+                        <!-- End - SIP-CR -->
+
+                        <th style="width:10%"><strong>Submitted Date</strong></th>
+
+                        <th style="width:10%"><strong>Status</strong>
+                            <a href="javascript:getSortSearch('ENROLLMENT_STATUS','ASC')"><img align="center" src="/WWChannels/PPP/i/table/desc.gif"></a>
+                            <a href="javascript:getSortSearch('ENROLLMENT_STATUS','DESC')"><img align="center" src="/WWChannels/PPP/i/table/asc.gif"></a>
+                        </th>
+
+                        <th style="width:10%"><strong>Next Approver</strong></th>
+                        <th style="width:10%"><strong>Auto Enrolled</strong></th>		<!-- Q1FY13 -->
+                    </tr>
+                    </thead>
+
+                    <tbody id="docContent">
+                    <tr id="noData">
+                        <td colspan="10"><strong>No Data found</strong></td>
+                    </tr>
+                    </tbody>
+                </table></div>
+            <table cellpadding="0" cellspacing="0" border="0" class="static icwTableCollapsible" style="width:102%;height:10px;margin-top:0.5em;margin-top:0em;">
+                <tfoot id="docFoot">
+                <tr id="myId"></tr>
+                <tr>
+                    <td width="25%"><input id="exportbutton" type="button" class="pppButton" value="&nbsp;Export&nbsp;" onclick="downLoadList();"></td>
+
+                    <td width="38%" align="left"> <b>Override Start Date</b>
+                        <input type="text" size="10" name="orStartDate" id="orStartDate">
+                        <input class="icwButton icwButtonCalendar" id="orStartDateCalendarBtn" type="button" value="Calendar" onclick="NewCal('orStartDate','MMDDYYYY')">
+                        &nbsp;<input type="button" class="pppButton" id="orDateSubmit" value="Update" onclick="updateStartDate();">
+                    </td>
+
+
+
+                    <td width="37%">&nbsp;&nbsp;</td>
+
+                </tr>
+                </tfoot>
+            </table>
+            <img id="icwLoadingImageId" src="/WWChannels/PPP/i/icn/loading.gif" style="position: absolute; top: 685.5px; left: 713px;"></div>
+        <br>
+
+        <!--  <div id ="export">
+              <table >
+             <tr>
+             <td>&nbsp;
+             <input id="exportbutton" type="button"  value="Export" onClick="downLoadList();"/>
+             <input class="icwUtility icwUtilityExport" type="Export" value="Export" onClick="downLoadList();"/>
+             </td>
+             </tr>
+             </table>
+          </div> -->
+
+        <div id="showProgress"></div>
+
+    </div> <!-- /.icwWrapper /.icwOrder -->
+
+</div>

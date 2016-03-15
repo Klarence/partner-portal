@@ -1,0 +1,67 @@
+[
+    {
+      "title": "Commerce",
+      "titleHover": "Cisco Commerce Workspace",
+      "Link": "/commerce",
+      "selectedClass": "COMM",
+      "id": "showCommerceSub",
+      "access": true,
+      "dropDowns": []
+    }, {
+      "title": "Onboarding & Administration",
+      "titleHover": "Onboarding & Administration",
+      "Link": "/onboarding",
+      "selectedClass": "ONBOARD",
+      "id": "showOnboardingAdminSub",
+      "access": true,
+      "dropDowns": []
+    }, {
+      "title": "Software",
+      "titleHover": "Cisco Software",
+      "Link": "/software",
+      "selectedClass": "SOFT",
+      "id": "showSoftwareSub",
+      "access": true,
+      "dropDowns": []
+    }, {
+      "title": "SalesConnect",
+      "titleHover": "Cisco SalesConnect",
+      "Link": "/sales-connect",
+      "selectedClass": "SC",
+      "id": "showSalesConnectSub",
+      "access": true,
+      "dropDowns": []
+    }, {
+      "title": "Sales & Marketing",
+      "titleHover": "Sales & Marketing",
+      "Link": "/sales",
+      "selectedClass": "MARKET",
+      "id": "showSalesMarketingSub",
+      "access": true,
+      "dropDowns": []
+    } , {
+      "title": "Programs & Payments",
+      "titleHover": "Programs & Payments",
+      "Link": "/programs",
+      "selectedClass": "PROGRAM",
+      "id": "showProgramsPaymentsSub",
+      "access": true,
+      "dropDowns": []
+    }, {
+      "title": "Distributor Central",
+      "titleHover": "Cisco Distributor Central",
+      "Link": "/disti",
+      "selectedClass": "DISTI",
+      "id": "showDistiCentralSub",
+      "access": true,
+      "dropDowns": []
+    }, {
+      "title": "Internal",
+      "titleHover": "Cisco Internal",
+      "Link": "/internal",
+      "selectedClass": "INTERNAL",
+      "id": "showInternalSub",
+      "access": true,
+      "dropDowns": []
+    }
+]

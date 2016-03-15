@@ -1,0 +1,70 @@
+[
+    {
+      "title": "Czech - Čeština",
+      "countryCode": "cs"
+    },
+    {
+      "title": "English",
+      "countryCode": "en"
+    },
+    {
+      "title": "French - Français",
+      "countryCode": "fr"
+    },
+    {
+      "title": "French Canadian - Français",
+      "countryCode": "fr-CA"
+    },
+    {
+      "title": "German - Deutsch",
+      "countryCode": "de"
+    },
+    {
+      "title": "Italian - Italiano",
+      "countryCode": "it"
+    },
+    {
+      "title": "Japanese - 日本語",
+      "countryCode": "ja"
+    },
+    {
+      "title": "Korean - 한국어",
+      "countryCode": "ko"
+    },
+    {
+      "title": "Polish - Polski",
+      "countryCode": "pl"
+    },
+    {
+      "title": "português - Portuguese",
+      "countryCode": "pt"
+    },
+    {
+      "title": "Russian - Русский",
+      "countryCode": "ru"
+    },
+    {
+      "title": "Simplified Chinese - 简体中文",
+      "countryCode": "zh-Hans"
+    },
+    {
+      "title": "Spanish (LATAM) - Español",
+      "countryCode": "es"
+    },
+    {
+      "title": "Spanish - Español",
+      "countryCode": "es-ES"
+    },
+    {
+      "title": "Traditional Chinese - 繁體中文",
+      "countryCode": "zh-Hant"
+    },
+    {
+      "title": "Turkish - Türkçe",
+      "countryCode": "tr"
+    },
+    {
+      "title": "Vietnamese - Tiếng Việt",
+      "countryCode": "vi"
+    }
+]

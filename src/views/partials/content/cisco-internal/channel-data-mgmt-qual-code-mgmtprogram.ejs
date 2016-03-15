@@ -1,0 +1,247 @@
+<article class="artworklist">
+  <h1>Artwork on display</h1>
+  <p>While you attend the conference, head over to our gallery where you can check out some of the work from our speakers.</p>
+  <div class="pixgrid">
+    <% if (artwork.length > 0) { %>
+      <% for (i=0; i<artwork.length; i++) { %>
+        <img src="/images/artwork/<%= artwork[i] %>" alt="Artwork <%= i %>">
+      <% } %>
+    <% } %>
+  </div>
+</article>
+<table border="0" width="100%" cellspacing="0" bgcolor="#ffffff" bordercolor="#99CC99">
+    <tbody><tr>
+        <td colspan="2">
+
+
+
+            <script type="text/javascript" src="https://www.cisco.com/web/fw/j/global.js"></script><style>.showForJs{display:block;}.showInlineForJs{display:inline;}.hideForJs{display:none;}</style>
+            <script type="text/javascript" src="https://www.cisco.com/web/fw/j/sitewide_tools.js"></script>
+            <script type="text/javascript" src="../../../js/appsui_detect.js"></script><link rel="stylesheet" type="text/css" href="../../../../swa/c/appsNs_1.css">
+            <script type="text/javascript" src="../../../js/appsui.js"></script><script type="text/javascript" src="../../../js/appsui_1.js"></script>
+            <script type="text/javascript" src="https://www.cisco.com/swa/j/calendar.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://www.cisco.com/web/fw/c/libra.css">
+            <link rel="Stylesheet" href="../../../swa/c/apps_1.css" type="text/css">
+            <link rel="stylesheet" type="text/css" media="print" href="https://www.cisco.com/web/fw/c/global_print.css">
+            <link rel="Stylesheet" href="https://www.cisco.com/swa/c/cdc.css" type="text/css">
+            <script type="text/javascript" src="/wwchannels/cpApp/Admin/PDB_BE_Admin/js/jquery.js"> </script>
+
+            <style type="text/css">
+                body {
+                    background-color:WHITE;
+                    font-size: 	12px;
+                    }
+            </style>
+
+
+
+            <script language="javascript">
+                function checkUsername(){
+                    if('Klarence OuYang'==''){
+                        var actionUrl = "/wwchannels/cpApp/Admin/PDB_BE_Admin/codemgr/setUserInSession.do";
+                        $.ajax({
+                            type: 		"POST",
+                            url: 		actionUrl,
+                            async: 		true,
+                            success:	function(jsonString){
+                                var user = 'Klarence OuYang';
+                                $('#usernameId').text(user);
+                            }
+                        });
+                    }
+                }
+            </script>
+
+            <!--googleoff: index-->
+
+            <div id="framework-base-banner">
+                <div id="framework-logo">
+                    <a href="http://www.cisco.com/en/US/partner/hmpgs/index.html"><img src="https://www.cisco.com/web/fw/i/logo.gif" alt="Cisco Systems, Inc. ®" width="110" height="73"></a>
+                </div>
+                <div id="framework-header">
+                    <div class="nav-secondary">
+				<span class="region-selector">
+					<span class="region">Worldwide</span>
+					[<a href="http://www.cisco.com/en/US/swassets/sw274/sitewide_country_language_selector.html" onclick="global_openCdcPopup('https://www.cisco.com/en/US/swassets/sw274/sitewide_country_language_selector.html',643,468);return false;" title="">change</a>]
+				</span>
+				<span class="link-delimiter">
+					Welcome,
+					<span class="loggedin">
+						<label id="usernameId" for="Klarence OuYang">Klarence OuYang</label>
+					</span>
+				</span>
+                        <span class="link-delimiter">|</span><a href="http://tools.cisco.com/RPF/profile/profile_management.do">Profile</a>
+                        <span class="link-delimiter">|</span><a href="https://www.cisco.com/web/about/index.html">About Cisco</a>
+                    </div>
+                    <div class="search">
+                        <a name="search"></a>
+                        <form method="get" action="https://www.cisco.com/cgi-bin/search/search.pl" name="sitewidesearch">
+                            <input id="searchPhrase" name="searchPhrase" type="text" value="Search" onfocus="checkClear(this,'Search ')" tabindex="1">
+                            <input type="submit" id="go" style="width:80px;" value="Go"><br>
+                            <label for="searchPhrase" accesskey="3">Search</label>
+                            <input name="Search All Cisco.com" value="cisco.com" type="hidden">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <table id="framework-wrapper" cellspacing="0" cellpadding="0" border="0" summary="">
+                <tbody><tr>
+                    <td>
+                        <div class="cdc-rc-container" id="cdc-nav-module">
+                            <span class="corner-top"><span class="corner-left"></span></span>
+                            <table border="0" cellpadding="0" cellspacing="0" width="90%" class="nav-container">
+                                <tbody>
+                                <tr>
+                                    <td class="nav">
+                                        <a href="https://www.cisco.com/en/US/partner/netsol/index.html">Solutions</a></td>
+                                    <td class="nav">
+                                        <a href="https://www.cisco.com/en/US/partner/products/index.html">Products &amp; Services</a></td>
+                                    <td class="nav">
+                                        <a href="http://www.cisco.com/en/US/partner/ordering/index.shtml">Ordering</a></td>
+                                    <td class="nav">
+                                        <a href="http://www.cisco.com/en/US/partner/support/index.html">Support</a></td>
+                                    <td class="nav">
+                                        <a href="http://www.cisco.com/web/learning/index.html">Training &amp; Events</a></td>
+                                    <td class="nav">
+                                        <a href="http://www.cisco.com/web/partners/index.html">Partner Central</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="mb-title-nav-bar" class="clearfix">
+                            <div id="framework-content-titles">
+                                <h1 class="title-section" style="padding-left:5px;">Partner Central</h1>
+                                <h2 class="title-page" style="padding-left:5px;">Qual Code Management Program</h2>
+                            </div>
+                        </div><table id="framework-base-main" cellspacing="0" cellpadding="0" border="0" summary="">
+                            <tbody><tr>
+                                <td style="padding-left:5px;"></td>
+                                <td id="framework-column-left" valign="top"><a name="hinav"></a>
+                                    <!-- CDC-DM: Hinav Start -->
+                                    <div class="hinav">
+                                        <h3>???en_US.csapp.hierarchical.navigation???</h3>
+                                        <ul class="outer">
+                                            <li><a href="/wwchannels/cpApp/Admin/PDB_BE_Admin/codemgr/manageQualCode.do" class="parent">HOME</a>
+                                                <ul>
+                                                    <li><a href="https://www.cisco.com/web/partners/index.html" class="parent">PARTNER CENTRAL</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="http://www.cisco.com/web/partners/support/index.html" class="parent">GET PARTNER SUPPORT</a>
+                                                                <ul>
+                                                                    <li><a href="http://www.cisco.com/web/partners/tools/index.html" class="parent">PARTNER TOOLS</a>
+                                                                        <ul>
+                                                                            <li><strong><a href="/wwchannels/cpApp/Admin/PDB_BE_Admin/codemgr/manageQualCode.do" class="child">Qual Code Management Program</a></strong>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- CDC-DM: Hinav End -->
+                                </td>
+
+                                <td id="framework-column-center">
+                                    <table cellspacing="0" id="framework-base-content">
+                                        <tbody><tr>
+                                            <td id="framework-column-main">
+                                                <div id="framework-content-main"><a name="content"></a>
+
+                                                </div></td>
+                                        </tr>
+                                        <tr>
+
+                                        </tr><tr>
+                                            <td valign="top" align="left" width="100%">
+
+
+
+
+                                                <link rel="Stylesheet" href="/wwchannels/cpApp/Admin/PDB_BE_Admin/swa/c/qcm.css" type="text/css">
+
+
+
+                                                <form name="qualCdAttributesForm" action="/wwchannels/cpApp/Admin/PDB_BE_Admin/codemgr/selectQualification.do?actionType=add&amp;addActionType=addQualCode" type="com.cisco.is.qualcdmgmt.forms.QualCodeAttributesForm" method="POST">
+                                                    <table class="curvedHdrBorder">
+                                                        <tbody><tr bgcolor="#F4F4F4">
+                                                            <td class="oneTabPadding"><h3>Qualification Group</h3></td>
+                                                        </tr>
+                                                        </tbody></table><br><br>
+
+                                                    <table width="100%">
+                                                        <tbody><tr>
+                                                            <td>
+                                                                <table align="left" width="30%">
+                                                                    <tbody><tr>
+                                                                        <td align="left" class="threeTabPadding"><input type="radio" name="qualType" value="AUTH" checked="checked"></td>
+                                                                        <td align="left">ATP-Authorization</td>
+                                                                    </tr>
+                                                                    <tr><td>&nbsp;</td></tr>
+
+                                                                    <tr>
+                                                                        <td align="left" class="threeTabPadding"><input type="radio" name="qualType" value="OTHER_QUAL"></td>
+                                                                        <td align="left">Other Qualifications <font color="#336666">**</font> </td>
+                                                                    </tr>
+                                                                    <tr><td>&nbsp;</td></tr>
+
+                                                                    <tr>
+                                                                        <td align="left" class="threeTabPadding"><input type="radio" name="qualType" value="OTHER_GROUP"></td>
+                                                                        <td align="left">Manage Qual Group</td>
+                                                                    </tr>
+                                                                    <tr><td>&nbsp;</td></tr>
+                                                                    <tr><td>&nbsp;</td></tr>
+                                                                    <tr><td>&nbsp;</td></tr>
+
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td align="left">
+                                                                            <input type="button" name="button" value="Cancel" onclick="javascript:self.close();">&nbsp; &nbsp;
+                                                                            <input type="submit" name="submit" value="Next">
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr><td>&nbsp;</td></tr>
+                                                                    <tr><td>&nbsp;</td></tr>
+                                                                    <tr><td>&nbsp;</td></tr>
+                                                                    </tbody></table>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <table align="center" width="100%" class="disclaimerBorder">
+                                                                    <tbody><tr><td>&nbsp;</td></tr>
+                                                                    <tr><td><font color="#336666">**</font> Other Qualifications - Partner Qualifications other than ATP-Authorization, Certification and Specialization.</td></tr>
+                                                                    </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody></table>
+                                                </form>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2">
+                                                <br><br>
+
+                                            </td>
+                                            <td style="padding-left:167px;"></td>
+                                        </tr>
+                                        </tbody></table>
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </td>
+                </tr>
+                </tbody></table>
+
+            <a name="pagefooter"></a><!--googleoff: index-->
+        </td>
+    </tr>
+    </tbody></table>

@@ -1,0 +1,550 @@
+    <!--<div class="branding">-->
+        <!--<a href="//www.cisco.com">-->
+            <!--<img src="/img/logos/cisco-logo.svg" alt="Cisco Systems Logo">-->
+        <!--</a>-->
+    <!--</div>&lt;!&ndash; branding &ndash;&gt;-->
+    <!--<div>-->
+        <!--<i class=""></i>-->
+        <!--<span class="hamburger small-caps">Menu</span>-->
+    <!--</div>-->
+    <!--<nav>-->
+    <!--<ul>-->
+    <!--<li><a href="http://www.cisco.com/web/partners/index.html">Partners</a></li>-->
+    <!--<li data-ng-repeat=""><a></a></li>-->
+    <!--</ul>-->
+    <!--</nav>-->
+  <nav class="navigation uix center aligned contained block" data-ng-class="{maxWidth : obj.toggleMaxWidth == true} ">
+          <!-- partner application-master-header -->
+          <div id="partnerAppMasterHeader"
+               data-ng-init="settingsFlag = true;">
+
+              <!-- title bar -->
+              <a href="http://www.cisco.com">
+                  <i class="WorkspaceIcon--cisco-icon"></i>
+              </a>
+              <div class="Navbar__titlebar">
+                  <!-- headings -->
+                  <div class="ApplicationTitleSection">
+
+                      <h1 class="ApplicationTitle">
+                          <i class="WorkspaceIcon Onboarding-icon" data-ng-click="NavListSpaces = !NavListSpaces"></i>
+                          <a href="http://rdr-ams-001-p/partner/pregsm/preg_mockup.html">
+                              Onboarding &amp; Administration
+                          </a>
+                      </h1>
+                      <h4 class="ApplicationSubtitle"></h4>
+                  </div>
+                  <!-- /headings -->
+
+                  <!-- widget-toggles -->
+                  <div class="Navlist">
+                      <a id="navbarFold"
+                         class="Navbar__fold active"
+                         data-ng-class="{'active':navbarFlag==true}"
+                         data-ng-click="navbarFlag=!navbarFlag;">
+                          <i class="Navlist__item--icon-bars"></i>
+                      </a>
+                      <!--
+                 <a id="navbarFold"
+                     class="Navbar__fold active"
+                     data-ng-class="{'active':navbarFlag}"
+                     data-ng-click="navbarFlag=!navbarFlag;">
+                    Need to add a controller. http://plnkr.co/edit/EdiNmaQYbVSftTuvNVpG?p=preview
+                    <i class="icon-minus" data-ng-class="true: 'icon-minus', false: 'icon-plus'}[collapsible]"></i>
+                  </a>
+      -->
+                      <!-- settings-toggle - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="contenttrigger">
+                          <a href="#"
+                             ng-click="NavListSpaces = !NavListSpaces">
+                              <i class="Navlist__item--icon-spaces" data-ng-class="{'active':NavListSpaces}"></i>
+                          </a>
+
+                          <div class=" help-Support-info2 contentpanel3"
+                               id="contentswitchpanel"
+                               ng-show="NavListSpaces">
+                              <div id="contentclosebutton"></div>
+                              <!--   -->
+                              <div class="workspace-items"> <!--<ul>-->
+                                  <div class="workspace-item"> <!--<li>-->
+                                      <a href="http://rdr-ams-001-p/partner/v2/commercev1.html"
+                                         class="closeswitch">
+                                          <i class="commerceicon"></i><span class="workspacetitle">Cisco Commerce</span></a>
+                                                               <!--<br clear="all">All your quotes and deals, all in one place.-->
+                                  </div>
+                                  <div class="workspace-item"><a href=""
+                                                                 class=" closeswitch">
+                                          <i class="onboardicon"></i><span class="workspacetitle">Onboarding &amp; Administration</span></a>
+                                      <!--<br clear="all">Detailed information about the Onboarding and Administration applications goes in here.-->
+                                  </div>
+                                  <div class="workspace-item"><a href="http://rdr-ams-001-p/partner/v2/salesmarketingv1.html"
+                                                                 class=" closeswitch">
+                                          <i class="softwareicon"></i><span class="workspacetitle">Cisco Software</span></a>
+                                      <!--<br clear="all">Detailed information about the Sales and Marketing applications goes in here.-->
+                                  </div>
+                                  <div class="workspace-item"><a href="http://rdr-ams-001-p/partner/v2/salesmarketingv1.html"
+                                                                 class=" closeswitch">
+                                          <i class="salesicon"></i><span class="workspacetitle">Cisco SalesConnect</span></a>
+                                      <!--<br clear="all">Detailed information about the Sales and Marketing applications goes in here.-->
+                                  </div>
+                                  <div class="workspace-item"><a href="http://rdr-ams-001-p/partner/v2/salesmarketingv1.html"
+                                                                 class=" closeswitch">
+                                          <i class="marketingicon"></i><span class="workspacetitle">Sales &amp; Marketing</span></a>
+                                      <!--<br clear="all">Detailed information about the Sales and Marketing applications goes in here.-->
+                                  </div>
+                                  <div class="workspace-item"><a href="http://rdr-ams-001-p/partner/v2/salesmarketingv1.html"
+                                                                 class=" closeswitch">
+                                          <i class="paymentsicon"></i><span class="workspacetitle">Programs &amp; Payments</span></a>
+                                      <!--<br clear="all">Detailed information about the Sales and Marketing applications goes in here.-->
+                                  </div>
+                                  <div class="workspace-item"><a href="http://rdr-ams-001-p/partner/v2/home-disti.html"
+                                                                 class=" closeswitch">
+                                          <i class="distiicon"></i><span class="workspacetitle">Distributor Central</span></a>
+                                      <!--<br clear="all">All your relevant Distributor links and applications, all in one place.-->
+                                  </div>
+                                  <div class="workspace-item"><a href="http://rdr-ams-001-p/partner/v2/home-internal.html"
+                                                                 class=" closeswitch">
+                                          <i class="internalicon"></i><span class="workspacetitle">Cisco Internal</span></a>
+                                      <!--<br clear="all">All your Cisco links and applications, just for Cisco Administrators!-->
+                                  </div> <!--</li>-->
+                              </div><!--</ul>-->
+                          </div>
+                      </div>
+                      <!--                <div id="ciscocirclestrigger" class="teamciscoicon hand contentnav"> <img src="images/teamciscoicon.png" width="26" height="26" alt="Team Cisco Icon" /> </div>-->
+                      <!-- /settings-toggle - widget-toggles -->
+
+                      <!--Start of Favourites (History) - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="favouritestrigger">
+                          <a href="#"
+                             ng-click="NavListFav = !NavListFav">
+                              <i class="Navlist__item--icon-history" data-ng-class="{'active':NavListFav}"></i>
+                          </a>
+                          <!--  <span class="fa fa-2x fa-star gold"></span>  -->
+                          <div class=" fav-info contentpanel3"
+                               id="favouritepanel"
+                               ng-show="NavListFav">
+                              <div id="favouriteclosebutton"
+                                   ng-click="NavListFav = !NavListFav"></div>
+                              <!--   -->
+                              <div class="commonFirstMenufav"
+                                   id="recentvisit"
+                                   style="float:right;">
+                                  <dl>
+                                      <dt>Recently Visited</dt>
+                                      <dd class="favoriteon"><span class="fa fa-star-o favoritetrigger"></span><a href="#">Registration
+                                                                                                                           Details</a>
+                                      </dd>
+                                      <dd class="favoriteon favoriteoff"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger gold"></span><a href="#">Registration
+                                                                                                                                  Details</a>
+                                      </dd>
+                                      <dd class="favoriteon2 favoriteoff2"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger2 gold"></span><a href="#">Location
+                                                                                                                                   Manager</a>
+                                      </dd>
+                                      <dd class="favoriteon2"><span class="fa fa-star-o favoritetrigger2"></span><a href="#">Location Manager</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star gold"></span><a href="#">Roles &amp; Responsibilities</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Leads &amp; Deals</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Contact Management</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Programs</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Locator</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star gold"></span><a href="#">My Training/Certification</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Accountable Contacts</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Reports</a>
+                                      </dd>
+
+                                  </dl>
+                              </div>
+                              <div class="commonFirstMenufav"
+                                   id="frequentvisit">
+                                  <dl>
+                                      <dt>Most Visited</dt>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Locator</a>
+                                      </dd>
+                                      <dd class="favoriteon2 favoriteoff2"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger2 gold"></span><a href="#">Location
+                                                                                                                                   Manager</a>
+                                      </dd>
+                                      <dd class="favoriteon2"><span class="fa fa-star-o favoritetrigger2"></span><a href="#">Location Manager</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star  gold"></span><a href="#">My Training/Certification</a>
+                                      </dd>
+                                      <dd class="favoriteon"><span class="fa fa-star-o favoritetrigger"></span><a href="#">Registration
+                                                                                                                           Details</a>
+                                      </dd>
+                                      <dd class="favoriteon favoriteoff"
+                                          style="display: none;"><span class="fa fa-star favoritetrigger gold"></span><a href="#">Registration
+                                                                                                                                  Details</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star gold"></span><a href="#">Roles &amp; Responsibilities</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Leads &amp; Deals</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Contact Management</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Accountable Contacts</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Reports</a>
+                                      </dd>
+                                      <dd><span class="fa fa-star-o"></span><a href="#">Partner Programs</a>
+                                      </dd>
+                                  </dl>
+                              </div>
+                              <div class="commonLastMenufav"
+                                   id="favouritevisit">
+                                  <dl>
+                                      <dt>Favorites</dt>
+                                      <dd class="favoriteon favoriteoff"
+                                          style="display: none;">
+                                          <span class="fa fa-star  gold favoritetrigger"></span>
+                                          <a href="#">Registration Details</a>
+                                      </dd>
+                                      <dd class="favoriteon2 favoriteoff2"
+                                          style="display: none;">
+                                          <span class="fa fa-star  gold favoritetrigger2"></span>
+                                          <a href="#">Location Manager</a>
+                                      </dd>
+                                      <dd>
+                                          <span class="fa fa-star  gold"></span>
+                                          <a href="#">Roles &amp; Responsibilities</a>
+                                      </dd>
+                                      <dd>
+                                          <span class="fa fa-star  gold"></span>
+                                          <a href="#">My Training/Certification</a>
+                                      </dd>
+                                  </dl>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- End of Favourites - widget-toggles -->
+
+                      <!-- Start of Teamcisco - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="teamcisco-trigger"
+                           data-ng-class="{'active':selectedItem === 'STREAM'}">
+                          <a href="#"
+                             ng-click="selectedItem = 'STREAM'"
+                             id="streamtrigger">
+                              <i class="Navlist__item--icon-Info" data-ng-class="{'active':NavListTeamCisco}"></i>
+                          </a>
+                    <span id="streamcount"
+                          class="Navlist__item--count">3</span>
+                      </div>
+                      <!-- End of Teamcisco - widget-toggles -->
+
+                      <!-- Start of Navbar Help - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="help-trigger"
+                           data-ng-class="{'active':selectedItem === 'HELP'}">
+                          <a href="#"
+                             ng-click="NavListHelp = !NavListHelp"
+                             id="helptrigger2">
+                              <!--ng-click="selectedItem = 'HELP'"-->
+                              <i class="Icon__Question--circle" data-ng-class="{'active':NavListHelp}">
+                              </i>
+                          </a>
+                          <div class="uix helpbox2"
+                               id="helpboxbox"
+                               ng-show="NavListHelp">
+                              <p class="uix helptxt">
+                                  <span class="uix uparrow2"></span>
+                                  This navigation bar is a better way to navigate from one application to another for our partner users. You will only see the options relevant to you on navigation bar. In the near future more capabilities, applications, tools and processes will be added.
+                                  <br>
+                              </p>
+                              <!--<p class="uix helptxt">&nbsp;</p>-->
+                              <p class="uix helptxt">
+                                  <i class="uix fa fa-home fixed width home icon white"></i>
+                                  - The 'Home' icon will show all the activity streams from various applications to allow you to quickly view all the critical updates. Currently updates related to partner information have been enabled, soon in the same place you will see more updates from other process areas. </p>
+                              <!--<p class="uix helptxt">&nbsp;</p>-->
+                              <p class="uix helptxt"> Watch this space for information and new features soon.</p>
+							<span>
+								<button class="uix favclosebutton"
+                                        id="favclosebutton"
+                                        ng-click="NavListHelp = !NavListHelp">Close</button>
+							</span>
+                          </div>
+                      </div>
+                      <!-- End of Navbar Help - widget-toggles -->
+
+                      <!-- Start of Navbar ChangeLanguage  - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="changeLanguage-trigger"
+                           data-ng-class="{'active':selectedItem === 'CHANGELANGUAGE'}">
+                          <a href=""
+                             ng-click="obj.changeLanguage = !obj.changeLanguage;"
+                             id="changeLanguage-trigger2">
+                              <i class="Icon__ChangeLanguage" data-ng-class="{'active':obj.changeLanguage}">
+                              </i>
+                          </a>
+                          <div class="uix"
+                               id="changelanguagepanel"
+                               ng-show="obj.changeLanguage">
+                              <p><label>
+                                      Choose a Language
+                                      <!--</label></p>-->
+                                      <!--<p><label>-->
+                                      <br>
+                                      <select>
+                                          <option value="">Select One ...</option>
+                                          <option value="en">English</option>
+                                          <option value="es">Spanish</option>
+                                          <option value="fr">French</option>
+                                          <option value="se">Swedish</option>
+                                          <option value="ch-ma">Mandarin Chinese</option>
+                                          <option value="hi">Hindi</option>
+                                      </select>
+                                  </label></p>
+                        <span>
+                            <button class="uix closebutton"
+                                    ng-click="obj.changeLanguage = !obj.changeLanguage">Close</button>
+                        </span>
+                          </div>
+                      </div>
+                      <!-- End of Navbar ChangeLanguage - widget-toggles -->
+
+                      <!-- Start of Navbar ChangeWidth - widget-toggles -->
+                      <div class="Navlist__item"
+                           id="toggleMaxWidth-trigger"
+                           data-ng-class="{'active':selectedItem === 'TOGGLEWIDTH'}">
+                          <a href=""
+                             ng-click="obj.toggleMaxWidth = !obj.toggleMaxWidth;"
+                             id="toggleMaxWidth-trigger2">
+                              <i class="Icon__ToggleWidth" data-ng-class="{'active':obj.toggleMaxWidth}">
+                              </i>
+                          </a>
+                      </div>
+                      <!-- End of Navbar ChangeWidth - widget-toggles -->
+                  </div>
+                  <!-- /widget-toggles -->
+              </div>
+              <!-- /title bar -->
+
+              <!-- navbar -->
+              <div class="Navbar unfolded"
+                   data-ng-class="{'unfolded':navbarFlag}"
+                   data-ng-init="selectedItem = 'PREG'"
+                   ng-hide="NavListMinimize">
+                  <div class="Navbar__items--home">
+                      <div class="Navbar__item--home"
+                           data-ng-class="{active: selectedGroupName == 'Home'}">
+                          <a href="#" id="hometrigger">
+                              <!--ng-click="NavListMinimize = !NavListMinimize"-->
+
+                              <i class="Navbar__item--icon-home"></i>
+                              <!--            <span class=".appheader__workspacetitle">Onboarding &amp; Administration</span>-->
+                          </a>
+                      </div>
+                      <!-- <li data-ng-class="{'active':selectedItem === 'STREAM'}" ><a href="#" ng-click="selectedItem = 'STREAM'" id="streamtrigger"><i class="uix fixed width info-circle icon" ></i></a>
+                          <span id="streamcount" class="">6</span>
+                        </li>-->
+                  </div>
+                  <div class="Navbar__items"><!--<ul>-->
+                      <div class="Navbar__item"
+                           data-ng-class="{'active':selectedItem === 'PREG'}"
+                           id="partinfosubtrigger"><!--<li>-->
+                          <i class="fa no-hover fa-chevron-right" ng-class="showPartnerUserProfileSub ? 'fa-chevron-down' : 'fa-chevron-right'" ng-click="showPartnerUserProfileSub = !showPartnerUserProfileSub"></i>
+                          <a href="#" title="Partner &amp; User Profile">Partner &amp; User Profile
+                          </a><!--						<div class="commonSubNav" id="partnerinfoSubMenu" style="display: none;">-->
+
+                          <div class="Navbar__subitems" ng-show="showPartnerUserProfileSub"><!--<ul>-->
+                              <div class="Navbar__subitem"><!--<li>-->
+                                  <a href="#"
+                                     data-ng-click="selectedItem = 'PREG'"
+                                     id="pregtrigger">Registration Details</a>
+                              </div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     data-ng-click="selectedItem = 'PREG'"
+                                     id="companydetailstrigger2">Company Details</a>
+                              </div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="locationtrigger"
+                                     data-ng-click="selectedItem = 'PREG'">Location Management</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="contactmanagetrigger"
+                                     data-ng-click="selectedItem = 'PREG'">Contact Management</a>
+                              </div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="rolestrigger"
+                                     data-ng-click="selectedItem = 'PREG'">Roles &amp; Responsibilities</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="myprofiletrigger"
+                                     data-ng-click="selectedItem = 'PREG'">My Profile</a>
+                              </div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     class="mytrainingtrigger"
+                                     data-ng-click="selectedItem = 'PREG'">My Training/Certification</a>
+                              </div>
+                                                                                            <!--</li>-->
+                          </div>
+                                                   <!--</ul>-->
+                      </div>
+                                             <!--</li>-->
+                      <div class="Navbar__item"
+                           data-ng-class="{'active':selectedItem === 'CSAPP'}"
+                           id="partnerprogsubtrigger"><!--<li>-->
+                          <i class="fa no-hover fa-chevron-right" ng-class="showSubMenuTab2 ? 'fa-chevron-down' : 'fa-chevron-right'" ng-click="showSubMenuTab2 = !showSubMenuTab2"></i>
+                          <a href="#">Partner Programs
+                          </a>
+                                                      <!--						<div class="commonSubNav" id="partnerprogSubMenu" style="display: block;">-->
+                                                      <!-- data-ng-if="navBar.childList.length != 0"   -->
+                          <div class="Navbar__subitems" ng-show="showSubMenuTab2"><!--<ul>-->
+                              <div class="Navbar__subitem"><!--<li>-->
+                                  <a href="#"
+                                     data-ng-click="selectedItem = 'CSAPP'"
+                                     id="csapptrigger">Certification</a>
+                              </div>
+                                                                                  <!--   class="trigger serviceContactNav"  -->
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'CSAPP'"
+                                                              id="specialtrigger">Specialization</a>
+                              </div>
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'CSAPP'"
+                                                              id="authtrigger">Authorization</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'CSAPP'"
+                                                              id="ppetrigger">Program Enrollment</a>
+                              </div>
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'CSAPP'"
+                                                              id="proginteltrigger">Program Intelligence</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'CSAPP'"
+                                                              id="custsatissurvtrigger">Customer Satisfaction Surveys</a>
+                              </div>
+                                                                                  <!--</li>-->
+                          </div>
+                                                      <!--</ul>-->
+                      </div>
+                                             <!--</li>-->
+                      <div class="Navbar__item"
+                           data-ng-class="{'active':selectedItem === 'TRAIN'}"
+                           id="partnertrainsubtrigger"><!--<li>-->
+                          <i class="fa no-hover fa-chevron-right" ng-class="showSubMenuTab3 ? 'fa-chevron-down' : 'fa-chevron-right'" ng-click="showSubMenuTab3 = !showSubMenuTab3"></i>
+                          <a href="#">Training &amp; Events
+                          </a>
+
+                          <div class="Navbar__subitems" ng-show="showSubMenuTab3"><!--<ul>-->
+                              <div class="Navbar__subitem"><!--<li>-->
+                                  <a href="#"
+                                     data-ng-click="selectedItem = 'TRAIN'"
+                                     class="traintrigger">Find a Training</a>
+                              </div>
+                                                                                  <!--   class="trigger serviceContactNav"  -->
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'TRAIN'"
+                                                              class="enroltraintrigger">Enroll for a Training</a>
+                              </div>
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'TRAIN'"
+                                                              class="requesttraintrigger">Request for a Training</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem"><a href="#"
+                                                              data-ng-click="selectedItem = 'TRAIN'"
+                                                              class="mytrainingtrigger">My Training/Certification</a>
+                              </div>
+                                                                                  <!--</li>-->
+                          </div>
+                                                       <!--</ul>-->
+                      </div>
+                                             <!--</li>-->
+                      <div class="Navbar__item"
+                           data-ng-class="{'active':selectedItem === 'PLOC'}"
+                           id="partlocsubtrigger"><!--<li>-->
+                          <i class="fa no-hover fa-chevron-right" ng-class="showSubMenuTab4 ? 'fa-chevron-down' : 'fa-chevron-right'" ng-click="showSubMenuTab4 = !showSubMenuTab4"></i>
+                          <a href="http://www.google.com">Resource Locator
+                          </a>
+
+                          <div class="Navbar__subitems" ng-show="showSubMenuTab4"><!--<ul>-->
+                              <div class="Navbar__subitem"><!--<li>-->
+                                  <a href="http://www.google.com"
+                                     id="ploctrigger"
+                                     data-ng-click="selectedItem = 'PLOC'">Find a Cisco Partner</a>
+                              </div>
+                                                                                  <!--   class="trigger serviceContactNav"  -->
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="distitrigger"
+                                     data-ng-click="selectedItem = 'PLOC'">Find a Cisco Distributor</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="camloctrigger"
+                                     data-ng-click="selectedItem = 'PLOC'">Find your Channel Account Manager</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="samloctrigger"
+                                     data-ng-click="selectedItem = 'PLOC'">Find a Sales Account Manager</a>
+                              </div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="trainloctrigger"
+                                     data-ng-click="selectedItem = 'PLOC'">Find a Training</a>
+                              </div>
+                              <div class="commonSeperator"></div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="kamloctrigger"
+                                     data-ng-click="selectedItem = 'PLOC'">Korean AM Locator</a>
+                              </div>
+                              <div class="Navbar__subitem">
+                                  <a href="#"
+                                     id="JCPloctrigger"
+                                     data-ng-click="selectedItem = 'PLOC'">Japan Certified Partner Locator</a>
+                              </div>
+                                                                                  <!--</li>-->
+                          </div>                        <!--     -->
+                                                  <!--</ul>-->
+                      </div>
+                                             <!--</li>-->
+                                             <!-- /navbar -->
+
+                                             <!--        <div class="horizontal divider hidden" data-ng-class="{'hidden':navbarFlag}"></div>-->
+                  </div>
+                  <!--</ul>-->
+                  <!-- /partner application-master-header -->
+
+              </div>
+              <!-- /navbar -->
+              <!-- /UIX-Centered Box -->
+
+              <!--<div class="clear"></div>-->
+
+              <div class="center left aligned contained block clears-on-both"
+                   style="max-width: 1024px; margin: 0 auto; padding: 0;"
+                   ng-style="{'width-auto': widthValue == 'auto', 'width-1024': widthValue == '1024px'}">
+                  <section id="mainContentArea"
+                           class="center left aligned contained block"
+                           ng-swipe-right="isSidebarCollapsed = false">
+                  </section>
+              </div>
+          </div>
+  </nav><!-- navigation -->

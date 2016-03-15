@@ -1,0 +1,2923 @@
+<article class="">
+  <h2>Company Reports</h2>
+  <p>extracted on
+    <time datetime="2016-03-02 05:01:52+08:00">03/02/2016 05:01:52 PST</time>
+  </p>
+  <p>
+    Legends:<br/>
+    AMERICAS - The Americas<br/>
+    APJ - Asia Pacific and Japan<br/>
+    EMEAR - Europe, Middle East, Africa, and Russia<br/>
+    GC - Greater China<br/>
+  </p>
+  <h3>Company Counts</h3>
+  <table>
+    <tbody>
+    <tr bgcolor="#99CC99">
+      <td height="2"
+          colspan="7"><font size="3"
+                            face="Arial, Helvetica, sans-serif">
+          <strong>Certified Contact Counts</strong></font>
+      </td>
+    </tr>
+    <tr bgcolor="#CCCCCC">
+
+
+      <td height="2"
+          colspan="3"
+          bgcolor="#CCFFCC">
+        <font size="2"
+              face="Arial, Helvetica, sans-serif">
+          <strong>
+
+            By Partner Name and Geography
+
+          </strong>
+        </font>
+      </td>
+
+
+      <td height="2"
+          colspan="4">
+        <font size="2"
+              face="Arial, Helvetica, sans-serif">
+          <strong>
+
+            <a href="./reports/action/viewReport.do?type=certified_contacts&amp;subtype=byqual">
+              By Partner Qualification
+            </a>
+
+          </strong>
+        </font>
+      </td>
+
+
+    </tr>
+
+    <tr>
+      <td height="2"
+          colspan="7"
+          bgcolor="#FFFFFF">
+
+
+        <table width="500"
+               bgcolor="#98CC98"
+               cellspacing="1"
+               cellpadding="1"
+               border="0">
+
+          <tbody>
+          <tr>
+            <td width="500"
+                valign="top"
+                bgcolor="#FFFFFF"
+                bordercolor="#FFFFFF"
+                align="left"
+                height="262">
+
+              <table width="100%"
+                     border="0"
+                     cellpadding="3"
+                     cellspacing="1"
+                     bgcolor="#CCCCCC">
+                <tbody>
+                <tr>
+                  <td height="2"
+                      colspan="7"
+                      bgcolor="#FFFFFF">
+                    <form name="cnByGeoReportForm"
+                          method="post"
+                          action="/wwchannels/cpApp/Admin/PDB_BE_Admin/reports/action/viewCnGeoReport.do">
+                      <input type="hidden"
+                             name="type"
+                             value="certified_contacts">
+                      <input type="hidden"
+                             name="subtype"
+                             value="bygeo">
+                      <input type="hidden"
+                             name="partnerList"
+                             value="">
+
+                      <table width="100%"
+                             border="0"
+                             cellpadding="0"
+                             cellspacing="0">
+                        <tbody>
+                        <tr>
+                          <td colspan="2"></td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+
+
+                        <tr>
+                          <td width="100"
+                              height="3">
+                            <font size="2"
+                                  face="Arial, Helvetica, sans-serif">
+                              <strong>Theater:</strong></font>
+                          </td>
+                          <td>
+
+
+                            <select name="theater"
+                                    onchange="setCountryGroup()">
+                              <option value="ALL"
+                                      selected="selected">ALL
+                              </option>
+                              <option value="AMERICAS">AMERICAS</option>
+                              <option value="APJ">APJ</option>
+                              <option value="EMEAR">EMEAR</option>
+                              <option value="GC">GC</option>
+                            </select>
+                          </td>
+                        </tr>
+
+
+                        <tr>
+                          <td width="100"
+                              height="3">
+                            <font size="2"
+                                  face="Arial, Helvetica, sans-serif">
+                              <strong>Geography:</strong>
+                            </font>
+                          </td>
+                          <td height="3">
+                            <select name="ctryGroup"
+                                    onchange="setCountry()">
+                              <option value="ALL"
+                                      selected="selected">ALL
+                              </option>
+                            </select>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td width="100"
+                              height="3">
+                            <font size="2"
+                                  face="Arial, Helvetica, sans-serif">
+                              <strong>Country:</strong></font>
+                          </td>
+                          <td height="3">
+
+                            <select name="country"
+                                    onchange="setState()">
+                              <option value="ALL"
+                                      selected="selected">ALL
+                              </option>
+                            </select>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td width="100"
+                              height="3">
+                            <font size="2"
+                                  face="Arial, Helvetica, sans-serif">
+                              <strong>State: </strong>
+                            </font>
+                          </td>
+                          <td height="3">
+                            <select name="state">
+                              <option value="ALL"
+                                      selected="selected">ALL
+                              </option>
+                            </select>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td nowrap=""
+                              height="3">
+                            <font size="2"
+                                  face="Arial, Helvetica, sans-serif">
+                              <strong>Partner Name:</strong>
+                            </font></td>
+                          <td><input type="text"
+                                     name="partnerName"
+                                     value=""
+                                     onkeypress="return noenter()"></td>
+                        </tr>
+
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td><input type="button"
+                                     name="Submit"
+                                     value="Submit"
+                                     onclick="submitCnByGeoReportForm();"></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">&nbsp;</td>
+                        </tr>
+
+
+                        </tbody>
+                      </table>
+                    </form>
+
+                  </td>
+                </tr>
+
+
+                <tr bgcolor="#99CC99">
+                  <td height="1"
+                      colspan="7"></td>
+                </tr>
+                <tr>
+                  <td bgcolor="#99CC99"><font size="3"
+                                              face="Arial, Helvetica, sans-serif">
+                      <strong>Contact Certification Type</strong></font>
+                    <div align="center"><font size="3"
+                                              face="Arial, Helvetica, sans-serif"></font></div>
+                  </td>
+                  <td height="2"
+                      colspan="6"
+                      bgcolor="#99CC99">
+                    <div align="center"><font size="3"
+                                              face="Arial, Helvetica, sans-serif">
+                        <strong>
+                          Theater
+                        </strong></font></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#FFFFFF">&nbsp;</td>
+
+
+                  <td width="50"
+                      bgcolor="#FFFFFF">
+                    <div align="center">
+                      <font size="3"
+                            face="Arial, Helvetica, sans-serif">
+                        APJ
+                      </font>
+                    </div>
+                  </td>
+
+
+                  <td width="50"
+                      bgcolor="#FFFFFF">
+                    <div align="center">
+                      <font size="3"
+                            face="Arial, Helvetica, sans-serif">
+                        GC
+                      </font>
+                    </div>
+                  </td>
+
+
+                  <td width="50"
+                      bgcolor="#FFFFFF">
+                    <div align="center">
+                      <font size="3"
+                            face="Arial, Helvetica, sans-serif">
+                        EMEAR
+                      </font>
+                    </div>
+                  </td>
+
+
+                  <td width="50"
+                      bgcolor="#FFFFFF">
+                    <div align="center">
+                      <font size="3"
+                            face="Arial, Helvetica, sans-serif">
+                        AMERICAS
+                      </font>
+                    </div>
+                  </td>
+
+
+                  <td width="50"
+                      bgcolor="#FFFFFF">
+                    <div align="center">
+                      <font size="3"
+                            face="Arial, Helvetica, sans-serif">
+                        TOTAL
+                      </font>
+                    </div>
+                  </td>
+
+
+                </tr>
+                <tr>
+                  <td height="1"
+                      bgcolor="#99CC99"
+                      colspan="7"></td>
+                </tr>
+
+
+                <tr>
+                  <td height="2"
+                      colspan="7"
+                      bgcolor="#FFFFFF">
+                    <div align="left">
+                      <font size="2"
+                            face="Arial, Helvetica, sans-serif">
+                        <strong>Associates (CCNA, CCDA)</strong>
+                      </font>
+                    </div>
+                  </td>
+                </tr>
+
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCDA');"
+                         )="">
+                        CCDA
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      3862
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      937
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      9108
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      8529
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      22436
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCNA');"
+                         )="">
+                        CCNA
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      14252
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2963
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      29954
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      25882
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      73051
+                    </font>
+                  </td>
+
+
+                </tr>
+
+
+                <tr>
+                  <td height="2"
+                      colspan="7"
+                      bgcolor="#FFFFFF">
+                    <div align="left">
+                      <font size="2"
+                            face="Arial, Helvetica, sans-serif">
+                        <strong>Experts (CCIE)</strong>
+                      </font>
+                    </div>
+                  </td>
+                </tr>
+
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE');"
+                         )="">
+                        CCIE
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      0
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      0
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      0
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-C/S');"
+                         )="">
+                        CCIE-C/S
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      299
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      255
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      657
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      383
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1594
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-ISP');"
+                         )="">
+                        CCIE-ISP
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      0
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      10
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      6
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      18
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-R/S');"
+                         )="">
+                        CCIE-R/S
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1747
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1118
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      3282
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2337
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      8484
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-S');"
+                         )="">
+                        CCIE-S
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      266
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      338
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      586
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      436
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1626
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-SNA');"
+                         )="">
+                        CCIE-SNA
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      3
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      4
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      10
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-SRG');"
+                         )="">
+                        CCIE-SRG
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      3
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      0
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      14
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      29
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      46
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-V');"
+                         )="">
+                        CCIE-V
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      149
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      140
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      232
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      350
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      871
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIE-WAN');"
+                         )="">
+                        CCIE-WAN
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      3
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      4
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      7
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      10
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      24
+                    </font>
+                  </td>
+
+
+                </tr>
+
+
+                <tr>
+                  <td height="2"
+                      colspan="7"
+                      bgcolor="#FFFFFF">
+                    <div align="left">
+                      <font size="2"
+                            face="Arial, Helvetica, sans-serif">
+                        <strong>Professionals (CCNP, CCDP, CCIP,CCSP,CCVP)</strong>
+                      </font>
+                    </div>
+                  </td>
+                </tr>
+
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCDP');"
+                         )="">
+                        CCDP
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2034
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      298
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      4517
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      3678
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      10527
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCIP');"
+                         )="">
+                        CCIP
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      137
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      22
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      395
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      195
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      749
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCNP');"
+                         )="">
+                        CCNP
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      7323
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1587
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      16038
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      11578
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      36526
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCSP');"
+                         )="">
+                        CCSP
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      12
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      48
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      43
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      104
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CCVP');"
+                         )="">
+                        CCVP
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      0
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      0
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      5
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      7
+                    </font>
+                  </td>
+
+
+                </tr>
+
+
+                <tr>
+                  <td height="2"
+                      colspan="7"
+                      bgcolor="#FFFFFF">
+                    <div align="left">
+                      <font size="2"
+                            face="Arial, Helvetica, sans-serif">
+                        <strong>Sales Experts (CSA,CSE)</strong>
+                      </font>
+                    </div>
+                  </td>
+                </tr>
+
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CSA');"
+                         )="">
+                        CSA
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      9
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1060
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      65
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1135
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CSE');"
+                         )="">
+                        CSE
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2472
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1213
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      6804
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      9634
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      20123
+                    </font>
+                  </td>
+
+
+                </tr>
+
+
+                <tr>
+                  <td height="2"
+                      colspan="7"
+                      bgcolor="#FFFFFF">
+                    <div align="left">
+                      <font size="2"
+                            face="Arial, Helvetica, sans-serif">
+                        <strong>Specialist (CQS)</strong>
+                      </font>
+                    </div>
+                  </td>
+                </tr>
+
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-AIPCSS');"
+                         )="">
+                        CQS-AIPCSS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      16
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      15
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      33
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      45
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      109
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-ARSAM');"
+                         )="">
+                        CQS-ARSAM
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      35
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      11
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      125
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      117
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      288
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-ARSFE');"
+                         )="">
+                        CQS-ARSFE
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      110
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      37
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      290
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      234
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      671
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-ASAM');"
+                         )="">
+                        CQS-ASAM
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      63
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      29
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      240
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      124
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      456
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-AWLANA');"
+                         )="">
+                        CQS-AWLANA
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      39
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      21
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      67
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      90
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      217
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-AWLNFE');"
+                         )="">
+                        CQS-AWLNFE
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      32
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      34
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      84
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      98
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      248
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-AWLNSE');"
+                         )="">
+                        CQS-AWLNSE
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      44
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      13
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      113
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      115
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      285
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-CRMCS');"
+                         )="">
+                        CQS-CRMCS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      73
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      36
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      202
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      221
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      532
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-CUSS');"
+                         )="">
+                        CQS-CUSS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      79
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      38
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      214
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      297
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      628
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-DS');"
+                         )="">
+                        CQS-DS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      64
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      23
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      187
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      245
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      519
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-FDS');"
+                         )="">
+                        CQS-FDS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      114
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      57
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      297
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      248
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      716
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-FSPS');"
+                         )="">
+                        CQS-FSPS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      123
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      71
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      286
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      271
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      751
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-IPCCE');"
+                         )="">
+                        CQS-IPCCE
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      111
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      39
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      267
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      318
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      735
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-IPCCX');"
+                         )="">
+                        CQS-IPCCX
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      48
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      11
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      203
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      164
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      426
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-IPCXAM');"
+                         )="">
+                        CQS-IPCXAM
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      6
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      2
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      19
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      23
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      50
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-RSSSE');"
+                         )="">
+                        CQS-RSSSE
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      87
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      33
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      277
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      232
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      629
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('CQS-SSDS');"
+                         )="">
+                        CQS-SSDS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      142
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      49
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      438
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      281
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      910
+                    </font>
+                  </td>
+
+
+                </tr>
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      <a href="javascript:getDetails('OTHERS');"
+                         )="">
+                        OTHERS
+                      </a>
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      1305
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      614
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      4562
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      3672
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      10153
+                    </font>
+                  </td>
+
+
+                </tr>
+
+
+                <tr>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF">
+
+
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      TOTAL
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      35062
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      10013
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      80622
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      69958
+                    </font>
+                  </td>
+
+
+                  <td height="2"
+                      bgcolor="#FFFFFF"
+                      align="right">
+
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">
+                      195655
+                    </font>
+                  </td>
+
+
+                </tr>
+                <tr bgcolor="#99CC99">
+                  <td height="2"
+                      colspan="7">
+                    <input name="Download"
+                           type="button"
+                           id="Download"
+                           onclick="getExcelDownload();"
+                           value="Download">
+                    <font size="2"
+                          face="Arial, Helvetica, sans-serif">Download this table
+                                                              into an excel format.</font></td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td width="509"
+                valign="top"
+                bgcolor="#FFFFFF"
+                bordercolor="#FFFFFF"
+                align="left">
+              *Total number of certified contacts by theater.<br><br>
+              The Counts reflect unique badges per certification category (not individuals).<br>
+              <ul>
+                <li>This information is Cisco Confidential. For security reasons a<br>
+                    detailed
+                </li>
+                report of the certified contacts is not provided.<br>
+                <li>Send in your comments / questions to <a href="http://www.cisco.com/go/cs"> Cisco Customer Service Team</a>.</li>
+                <!--<table bgcolor="#FFFFFF" bordercolor="#FFFFFF"  border="1"  cellspacing="0" cellpadding="0">
+            <tr><td>Legends:</td></tr>
+            <tr><td>APJ - Asia Pacific and Japan : GC - Greater China : EMEAR - Europe, Middle East, Africa and Russia : AMERICAS - The Americas
+            </td></tr>
+            </table>-->
+              </ul>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <p>This information is Cisco Confidential. For security reasons a detailed report of the certified contacts is not provided.</p>
+  <p>Send in your comments/questions to <a href="http://www.cisco.com/go/cs"> Cisco Customer Service Team</a>.</p>
+</article>
+<script>
+
+</script>
+

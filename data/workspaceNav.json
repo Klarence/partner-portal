@@ -1,0 +1,62 @@
+[
+  {
+    "Link": "//www.cisco.com",
+    "PageClass": "cisco",
+    "Text": "Cisco.com",
+    "IconClass": "ciscoicon"
+  },
+  {
+    "Link": "/",
+    "PageClass": "portal",
+    "Text": "Cisco Partner Portal",
+    "IconClass": "partnerportalicon"
+  },
+  {
+    "Link": "/onboarding",
+    "PageClass": "onboarding",
+    "Text": "Onboarding & Administration",
+    "IconClass": "onboardicon"
+  },
+  {
+    "Link": "/programs",
+    "PageClass": "programs-payments",
+    "Text": "Cisco Programs & Payments",
+    "IconClass": "paymentsicon"
+  },
+  {
+    "Link": "/commerce",
+    "PageClass": "commerce",
+    "Text": "Cisco Commerce Workspace",
+    "IconClass": "commerceicon"
+  },
+  {
+    "Link": "//salesconnect.cisco.com/#/",
+    "PageClass": "sales-connect",
+    "Text": "Cisco SalesConnect",
+    "IconClass": "salesicon"
+  },
+  {
+    "Link": "/sales",
+    "PageClass": "sales-marketing",
+    "Text": "Sales & Marketing",
+    "IconClass": "marketingicon"
+  },
+  {
+    "Link": "/software",
+    "PageClass": "software",
+    "Text": "Cisco Software",
+    "IconClass": "softwareicon"
+  },
+  {
+    "Link": "/disti",
+    "PageClass": "disti",
+    "Text": "Cisco Distributor Central",
+    "IconClass": "distiicon"
+  },
+  {
+    "Link": "/internal",
+    "PageClass": "internal",
+    "Text": "Cisco Internal",
+    "IconClass": "internalicon"
+  }
+]

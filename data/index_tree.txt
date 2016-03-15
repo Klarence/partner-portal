@@ -1,0 +1,94 @@
+root
+- - workspaces
+. . . . subspaces (partnerbar tabs)
+_ _ _ _ _ _ dropdowns
+
+
+CISCO PARTNER PORTAL
+- - Cisco Commerce Workspace
+- - Onboarding and Administration
+. . . . Partnership Information ???
+. . . . Partner & User Profile
+_ _ _ _ _ _ Registration Details
+_ _ _ _ _ _ Company Details
+_ _ _ _ _ _ Location Management
+_ _ _ _ _ _ Contact Management
+_ _ _ _ _ _ Roles & Responsibilities
+_ _ _ _ _ _ My Profile
+_ _ _ _ _ _ My Training/Certification (Dup)
+. . . . Partner Programs (Certification & Specialization)
+_ _ _ _ _ _ Certification
+_ _ _ _ _ _ Specialization
+_ _ _ _ _ _ Authorization
+_ _ _ _ _ _ Program Enrollment
+_ _ _ _ _ _ Program Intelligence
+_ _ _ _ _ _ Customer Satisfaction Surveys
+. . . . Program Enrollment ???
+. . . . Training & Events ???
+_ _ _ _ _ _ Enroll for a Training
+_ _ _ _ _ _ Request for a Training
+_ _ _ _ _ _ My Training/Certification (Dup)
+. . . . Resource Locator (Partner Locator)
+_ _ _ _ _ _ Find a Cisco Partner
+_ _ _ _ _ _ Find a Cisco Distributor
+_ _ _ _ _ _ Find your Channel Account Manager
+_ _ _ _ _ _ Find a Sales Account Manager
+_ _ _ _ _ _ Find a Training
+_ _ _ _ _ _ Korean Account Manager Locator
+_ _ _ _ _ _ Japan Certified Partner Locator
+- - Cisco Software
+- - Cisco SalesConnect
+- - Sales & Marketing
+- - Program & Payments
+. . . . Total Program View (TPV)
+_ _ _ _ _ _ Portfolio
+_ _ _ _ _ _ Program
+_ _ _ _ _ _ VIP
+_ _ _ _ _ _ CSPP
+_ _ _ _ _ _ Cloud
+_ _ _ _ _ _ Partner Plus
+_ _ _ _ _ _ Payment
+_ _ _ _ _ _ Program Calendar
+_ _ _ _ _ _ Metrics
+_ _ _ _ _ _ Detailed Reports
+_ _ _ _ _ _ Help & Training
+- - Cisco Distributor Central
+- - Cisco Internal (Channel Data Management)
+. . . . Partners Database Reports
+_ _ _ _ _ _ Partners Database Reports
+. . . . Territory Management
+_ _ _ _ _ _ Channel Territory Tool
+. . . . Channel Data Management
+_ _ _ _ _ _ BE Grouping
+_ _ _ _ _ _ Partner Info Management Admin Portal
+_ _ _ _ _ _ BE Attribute Tool
+_ _ _ _ _ _ BE Assignment Tool (BAT)
+_ _ _ _ _ _ Channels Enterprise Data Administration
+_ _ _ _ _ _ Qual Code Management Program
+_ _ _ _ _ _ Partner Locator-Keyword Mapping UI
+. . . . Direct Partners
+_ _ _ _ _ _ Direct Partner Policy
+
+
+
+
+
+
+
+
+{
+  "partnerPortal": {
+    "workspaces": [
+         "Cisco Commerce Workspace": {
+                "subSpaces": ["GML", "XML"]
+           },"Onboarding and Administration": [
+   ], "Cisco Software": [
+   ],"Cisco SalesConnect": [
+   ],"Sales & Marketing": [
+   ],"Program & Payments": [
+   ],"Cisco Distributor Central": [
+   ],"Cisco Internal": [
+   ]
+ ]
+  }
+}

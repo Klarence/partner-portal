@@ -1,0 +1,108 @@
+[
+    {
+      "title": "Partner Reports",
+      "titleHover": "Partner Reports",
+      "Link": "/internal/partner-reports",
+      "selectedClass": "PREG",
+      "id": "showPartnerReportsSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "Partner Database Reports",
+        "Link": "/internal/partner-reports",
+        "selectedClass": "PREG",
+        "id": "pregtrigger",
+        "access": true
+      }]
+    }, {
+      "title": "Territory Management",
+      "titleHover": "Territory Management",
+      "Link": "/internal/territory-mgmt",
+      "selectedClass": "CSAPP",
+      "id": "showTerritoryMgmtSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "Channels Territory tool ",
+        "Link": "/internal/territory-mgmt/channels-territory-tool",
+        "selectedClass": "CSAPP",
+        "id": "csapptrigger",
+        "access": true
+      }]
+    }, {
+      "title": "Channel Data Management",
+      "titleHover": "Channel Data Management",
+      "Link": "/internal/channel-data-mgmt",
+      "selectedClass": "TRAINING",
+      "id": "showChannelDataMgmtSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "BE Grouping",
+        "Link": "/internal/channel-data-mgmt/be-grouping",
+        "selectedClass": "TRAINING",
+        "id": "begroupingtrigger",
+        "access": true
+      },{
+        "title": "Partner Info Management Admin Portal",
+        "Link": "/internal/channel-data-mgmt/be-mgmt-links",
+        "selectedClass": "TRAINING",
+        "id": "begroupingtrigger",
+        "access": true
+      },{
+        "title": "BE Attribute Tool ",
+        "Link": "/internal/channel-data-mgmt/be-attribute-tool",
+        "selectedClass": "TRAINING",
+        "id": "begroupingtrigger",
+        "access": true
+      },{
+        "title": "BE Assignment Tool (BAT) ",
+        "Link": "/internal/channel-data-mgmt/be-assign-tool",
+        "selectedClass": "TRAINING",
+        "id": "begroupingtrigger",
+        "access": true
+      },{
+        "title": "Channels Enterprise Data Adminstration",
+        "Link": "/internal/channel-data-mgmt/channels-enterprise-data-admin",
+        "selectedClass": "TRAINING",
+        "id": "begroupingtrigger",
+        "access": true
+      },{
+        "title": "Qual Code Management Program",
+        "Link": "/internal/channel-data-mgmt/qual-code-mgmt-program",
+        "selectedClass": "TRAINING",
+        "id": "begroupingtrigger",
+        "access": true
+      },{
+        "title": "Partner Locator-Keyword Mapping UI ",
+        "Link": "/internal/channel-data-mgmt/partner-locator-keyword-mapping",
+        "selectedClass": "TRAINING",
+        "id": "begroupingtrigger",
+        "access": true
+      }, {
+        "title": "Request for a Training",
+        "Link": "/internal/partner-user-profile/specialization",
+        "selectedClass": "TRAINING",
+        "id": "requesttraintrigger",
+        "access": true
+      }, {
+        "title": "My Training/Certification",
+        "Link": "/internal/partner-user-profile/authorization",
+        "selectedClass": "TRAINING",
+        "id": "mytrainingtrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }]
+    }, {
+      "title": "Direct Partners",
+      "titleHover": "Direct Partners",
+      "Link": "/internal/direct-partners",
+      "selectedClass": "PLOC",
+      "id": "showDirectPartnersSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "Direct Partner Policy",
+        "Link": "/internal/direct-partners/direct-partner-policy",
+        "selectedClass": "PLOC",
+        "id": "ploctrigger",
+        "access": true
+      }]
+    }
+]

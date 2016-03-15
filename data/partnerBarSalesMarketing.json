@@ -1,0 +1,181 @@
+[
+  {
+      "title": "Partner & User Profile",
+      "titleHover": "Partner & User Profile",
+      "Link": "/partner-user-profile",
+      "selectedClass": "PREG",
+      "id": "showPartnerUserProfileSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "Registration Details",
+        "Link": "/partner-user-profile/reg-details",
+        "selectedClass": "PREG",
+        "id": "pregtrigger",
+        "access": true
+      }, {
+        "title": "Company Details",
+        "Link": "/partner-user-profile/company-details",
+        "selectedClass": "PREG",
+        "id": "companydetailstrigger2",
+        "access": true
+      }, {
+        "title": "Location Management",
+        "Link": "/partner-user-profile/location-mgmt",
+        "selectedClass": "PREG",
+        "id": "locationtrigger",
+        "access": true
+      }, {
+        "title": "Contact Management",
+        "Link": "/partner-user-profile/contact-mgmt",
+        "selectedClass": "PREG",
+        "id": "contactmanagetrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }, {
+        "title": "Roles & Responsibilities",
+        "Link": "/partner-user-profile/contact-mgmt",
+        "selectedClass": "PREG",
+        "id": "rolestrigger",
+        "access": true
+      }, {
+        "title": "My Profile",
+        "Link": "/partner-user-profile/my-profile",
+        "selectedClass": "PREG",
+        "id": "myprofiletrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }, {
+        "title": "My Training/Certification",
+        "Link": "/partner-user-profile/contact-mgmt",
+        "selectedClass": "PREG",
+        "id": "mytrainingtrigger",
+        "access": true
+      }]
+    }, {
+      "title": "Partner Programs",
+      "titleHover": "Partner Programs",
+      "Link": "/partner-programs",
+      "selectedClass": "CSAPP",
+      "id": "showPartnerProgramsSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "Certification",
+        "Link": "/partner-user-profile/certification",
+        "selectedClass": "CSAPP",
+        "id": "csapptrigger",
+        "access": true
+      }, {
+        "title": "Specialization",
+        "Link": "/partner-user-profile/specialization",
+        "selectedClass": "CSAPP",
+        "id": "specialtrigger",
+        "access": true
+      }, {
+        "title": "Authorization",
+        "Link": "/partner-user-profile/authorization",
+        "selectedClass": "CSAPP",
+        "id": "authtrigger",
+        "access": true
+      }, {
+        "title": "Program Enrollment",
+        "Link": "/partner-user-profile/program-enrollment",
+        "selectedClass": "CSAPP",
+        "id": "ppetrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }, {
+        "title": "Program Intelligence",
+        "Link": "/partner-user-profile/program-intelligence",
+        "selectedClass": "CSAPP",
+        "id": "proginteltrigger",
+        "access": true
+      }, {
+        "title": "Customer Satisfaction Surveys",
+        "Link": "/partner-user-profile/customer-satisfaction-survey",
+        "selectedClass": "CSAPP",
+        "id": "custsatissurvtrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }]
+    }, {
+      "title": "Training & Events",
+      "titleHover": "Training & Events",
+      "Link": "/training-events",
+      "selectedClass": "TRAINING",
+      "id": "showTrainingEventsSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "Enroll for a Training",
+        "Link": "/partner-user-profile/enroll-training",
+        "selectedClass": "TRAINING",
+        "id": "enrolltraintrigger",
+        "access": true
+      }, {
+        "title": "Request for a Training",
+        "Link": "/partner-user-profile/specialization",
+        "selectedClass": "TRAINING",
+        "id": "requesttraintrigger",
+        "access": true
+      }, {
+        "title": "My Training/Certification",
+        "Link": "/partner-user-profile/authorization",
+        "selectedClass": "TRAINING",
+        "id": "mytrainingtrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }]
+    }, {
+      "title": "Resource Locator",
+      "titleHover": "Resource Locator",
+      "Link": "/resource-locator",
+      "selectedClass": "PLOC",
+      "id": "showResourceLocatorSub",
+      "access": true,
+      "dropDowns": [{
+        "title": "Find a Cisco Partner",
+        "Link": "/partner-user-profile/find-partner",
+        "selectedClass": "PLOC",
+        "id": "ploctrigger",
+        "access": true
+      }, {
+        "title": "Find a Cisco Distributor",
+        "Link": "/partner-user-profile/find-disti",
+        "selectedClass": "PLOC",
+        "id": "distitrigger",
+        "access": true
+      }, {
+        "title": "Find your Channel Account Manager",
+        "Link": "/partner-user-profile/find-channel-am",
+        "selectedClass": "PLOC",
+        "id": "camloctrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }, {
+        "title": "Find a Sales Account Manager",
+        "Link": "/partner-user-profile/find-sales-am",
+        "selectedClass": "PLOC",
+        "id": "samloctrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }, {
+        "title": "Find a Training",
+        "Link": "/partner-user-profile/find-training",
+        "selectedClass": "PLOC",
+        "id": "trainloctrigger",
+        "access": true
+      }, {
+        "title": "Korean AM Locator",
+        "Link": "/partner-user-profile/korean-am-locator",
+        "selectedClass": "PLOC",
+        "id": "kamloctrigger",
+        "separator": "commonSeparator",
+        "access": true
+      }, {
+        "title": "Japan Certified Partner Locator",
+        "Link": "/partner-user-profile/japan-cert-partner-locator",
+        "selectedClass": "PLOC",
+        "id": "JCPloctrigger",
+        "access": true
+      }]
+    }
+]

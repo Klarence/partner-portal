@@ -1,0 +1,156 @@
+<article class="">
+  <h2>Partner Reports</h2>
+  <p>
+    Legends:<br/>
+    AMERICAS - The Americas<br/>
+    APJ - Asia Pacific and Japan<br/>
+    EMEAR - Europe, Middle East, Africa, and Russia<br/>
+    GC - Greater China<br/>
+  </p>
+  <h3>Partner</h3>
+  <table>
+    <tbody>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><font size="2"
+                            face="Arial, Helvetica, sans-serif">
+
+
+          <input type="radio"
+                 name="selectedReportType"
+                 value="New Partner Report"
+                 checked="checked"
+                 id="New Partner Report">
+          New Partner Report&nbsp;
+
+
+          <input type="radio"
+                 name="selectedReportType"
+                 value="CSPP Report"
+                 id="CSPP Report">
+          CSPP Report&nbsp;
+        </font>
+      </td>
+
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+
+
+    <tr>
+      <td width="100"
+          height="3">
+        <font size="2"
+              face="Arial, Helvetica, sans-serif">
+          <strong>Theater:</strong></font>
+      </td>
+      <td>
+
+
+        <select name="theater"
+                onchange="setCountry()">
+          <option value="ALL"
+                  selected="selected">ALL
+          </option>
+          <option value="AMERICAS">AMERICAS</option>
+          <option value="APJ">APJ</option>
+          <option value="EMEAR">EMEAR</option>
+          <option value="GC">GC</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+
+
+    <tr>
+      <td width="100"
+          height="3">
+        <font size="2"
+              face="Arial, Helvetica, sans-serif">
+          <strong>Country:</strong></font>
+      </td>
+      <td height="3">
+
+        <select name="country">
+          <option value="ALL"
+                  selected="selected">ALL
+          </option>
+        </select>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td nowrap=""
+          height="3">
+        <font size="2"
+              face="Arial, Helvetica, sans-serif">
+          <strong>From Date:<font color="red">*</font></strong>
+        </font></td>
+      <td><input type="text"
+                 name="fromDate"
+                 size="20"
+                 value="">
+        <a href="#"
+           onclick="cal.select(document.forms['partnerForm'].fromDate,'anchor1','MM/dd/yyyy');return false;"
+           name="anchor1"
+           id="anchor1"> <img src="/wwchannels/cpApp/Admin/PDB_BE_Admin/images/cal.gif"
+                              width="16"
+                              height="16"
+                              border="0"></a> &nbsp;</td>
+
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap=""
+          height="3">
+        <font size="2"
+              face="Arial, Helvetica, sans-serif">
+          <strong>To Date:</strong>
+        </font></td>
+
+      <td><input type="text"
+                 name="toDate"
+                 size="20"
+                 value="">
+        <a href="#"
+           onclick="cal.select(document.forms['partnerForm'].toDate,'anchor2','MM/dd/yyyy');return false;"
+           name="anchor2"
+           id="anchor2"> <img src="/wwchannels/cpApp/Admin/PDB_BE_Admin/images/cal.gif"
+                              width="16"
+                              height="16"
+                              border="0"></a> &nbsp;</td>
+
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="button"
+                 name="download"
+                 value="Download"
+                 onclick="getExcelDownload();"></td>
+    </tr>
+
+
+    </tbody>
+  </table>
+  <small>Note: New Partner Report gives newly created Indirect Partners only</small>
+</article>
+<script>
+
+</script>
+

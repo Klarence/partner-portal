@@ -1,0 +1,250 @@
+/*
+http://wikicentral.cisco.com/display/DMSE/Legal+Footer+Specs
+
+Base to Small
+  Container Width: 100%
+
+Horizontal Line
+  1px, #cccccc
+  Top Spacing (Before HR): 22px min.   [44px M-to-XL]
+  Bottom Spacing (After HR): 17px      [11px M-to-XL]
+  Left/Right Spacing (before browser): 10px
+
+Links
+  Font Size: 12px    [11px M-to-XL]
+  Font Color: #007fc5
+  Pipe: #999999
+  Line Spacing: 16px   [12px M-to-XL]
+  Bottom Spacing: 24px min.    [16px M-to-XL]
+  Hover Style: Underline
+  [Left/Right Spacing: 10px M-to-XL]
+*/
+
+/* Legal Footer Start */
+
+.uix.legalfooter {
+    width: 100%;
+    max-width: 1024px;
+    margin: 22px auto 24px auto;
+    /*margin-top: 22px;*/
+    /*margin-bottom: 24px;*/
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    clear: both;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 17px;
+    }
+
+/*Copyright Text*/
+.uix.legalfooter .small {
+    clear: both;
+    color: #444444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    padding-top: 6px;
+    padding-left: 14px;
+    }
+
+/*Links*/
+.uix.legalfooter a {
+    color: #007fc5;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 16px;
+    }
+
+.uix.legalfooter a:hover {
+    text-decoration: underline;
+    }
+.uix.legalfooter a:visited {
+    text-decoration: none;
+    }
+
+.uix.legalfooter ul {
+    width: auto;
+    height: 100%;
+    list-style: none;
+    color: #007FC5;
+    /*font-size: .875rem;*/
+    font-size: 11px;
+    padding-left: 0;
+    margin-left: 7px;
+    /*    overflow: auto;*/
+    float: left;
+    }
+
+.uix.legalfooter ul + ul {
+    margin-right: 0;
+    padding-right: 0;
+    float: left;
+    }
+.uix.legalfooter ul + ul li:last-child {
+    margin-right: 10px;
+    }
+
+.uix.legalfooter ul li {
+    border-right: 1px solid #999;
+    font-size: 12px;
+    text-indent: 0;
+    line-height: inherit;
+    float: left;
+    display: inline-block;
+    /*padding-bottom: 0.7em;*/
+    padding: 0 7px 0 7px;
+    margin: 0;
+    position: relative;
+    word-wrap: break-word;
+    white-space: normal;
+    }
+
+.uix.legalfooter ul li a{
+    white-space: normal;
+    text-decoration: none;
+    }
+
+.uix.legalfooter .feedback:before {
+    display: inline-block;
+    content:  url(http://www.cisco.com/etc/designs/cdc/fw/i/sm_0000EE_oo1.gif);
+    /*content:  url(../../../img/gif/plus-in-brackets.gif);*/
+    padding-right: 3px;
+    }
+
+/*Pipe*/
+.uix.legalfooter ul li:after {
+    /*    content: "|";*/
+    position: absolute;
+    right: 7px;
+    top: 0;
+    color: #999;
+    /*font-size: 11px;*/
+    }
+.uix.legalfooter ul li:last-child:after {
+    content: "";
+    }
+
+/*Left/Right Spacing*/
+.uix.legalfooter ul li:first-child {
+    clear: both;
+    padding-left: 0;
+    }
+
+.uix.legalfooter ul li.hiddenonmobile a {
+    display: none;
+    }
+
+.uix.legalfooter {
+    margin-top: 44px;
+    margin-bottom: 16px;
+    padding-top: 11px;
+    }
+
+.uix.legalfooter a {
+    font-size: 11px;
+    line-height: 12px;
+    padding: 0;
+    }
+
+/*.uix.legalfooter ul li.hiddenonmobile a {*/
+/*display: inline;*/
+/*}*/
+
+.uix.legalfooter ul li.terms a span, .uix.legalfooter ul li.privacy a span, .uix.legalfooter ul li.cookies a span {
+    display: none;
+    }
+
+.uix.legalfooter ul + ul li:first-child {
+    /*    content: "|";*/
+    border-right: 1px solid #999;
+    font-size: 11px;
+    padding-right: 7px;
+    }
+.uix.legalfooter ul li:first-child.contact{
+    padding-left: 7px;
+    }
+
+.uix.legalfooter ul li:last-child {
+    border-right: none;
+    }
+
+/***************************/
+/*    MEDIUM TO X-LARGE    */
+/***************************/
+
+@media (min-width: 48em) {
+    .uix.legalfooter {
+        margin-top: 44px;
+        margin-bottom: 16px;
+        padding-top: 11px;
+        }
+
+    .uix.legalfooter a {
+        font-size: 11px;
+        line-height: 12px;
+        padding: 0;
+        }
+
+    .uix.legalfooter ul li.hiddenonmobile a {
+        display: inline;
+        }
+
+    .uix.legalfooter ul li.terms a span, .uix.legalfooter ul li.privacy a span, .uix.legalfooter ul li.cookies a span {
+        display: none;
+        }
+
+    /*
+        .uix.legalfooter ul li.terms a:after {
+            content: 'Terms & Conditions';
+        }
+        .uix.legalfooter ul li.privacy a:after {
+            content: 'Privacy Statement';
+        }
+        .uix.legalfooter ul li.cookies a:after {
+            content: 'Cookies Policy';
+        }
+    */
+    .uix.legalfooter ul + ul {
+        /*    margin-top: 0;*/
+        }
+    .uix.legalfooter ul + ul li:first-child {
+        /*    content: "|";*/
+        border-right: 1px solid #999;
+        font-size: 11px;
+        padding-right: 7px;
+        }
+    .uix.legalfooter ul li:first-child.contacts{
+        padding-left: 14px;
+        }
+    }
+
+/**********************************************************************/
+/*  Removed as below items are presentational. Set with CSS not HTML  */
+/**********************************************************************/
+
+/*
+.uix.legalfooter hr {
+    width: 100%;
+    max-width: 960px;
+    color: #CCCCCC;
+    margin: 0 10px 17px 10px;
+}
+*/
+/*Feedback GIF*/
+/*
+.uix.legalfooter ul li img {
+    padding-right: 5px;
+}
+*/
+/*Horizontal Rule Medium to X-Large*/
+/*
+.uix.legalfooter {
+    padding: 44px 0 0 0;
+}
+*/
+/*
+.uix.legalfooter hr {
+    padding: 0 10px;
+    margin-bottom: 11px;
+}
+*/

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head><% include ../template/head.ejs %></head>
+  <body class="<%= page %>" data-ng-app="ptBarApp">
+    <% include ../template/header.ejs %>
+    <% include ../template/alerts.ejs %>
+    <section class="uix center aligned contained block" data-ng-class="{maxWidth : obj.toggleMaxWidth == true}">
+      <header><h1><%= title %></h1></header>
+        <p>Welcome the the Onboarding an Administration Workspace. Common actions in this workspace are 1, 2 and 3.</p>
+        <div class="primary">
+
+          <div>
+              <div data-ng-view=""></div>
+          </div>
+      </div><!-- primary -->
+    </section><!-- layout -->
+    <% include ../template/footer.ejs %>
+    <% include ../template/jsdefaults.ejs %>
+    <script src="/js/onboardingPssApp.js"></script>
+    <script>
+//        navLocation=Onboarding;
+    </script>
+  </body>
+</html>

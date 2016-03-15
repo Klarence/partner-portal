@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><% include partials/template/head.ejs %></head>
+<body class="<%= workspaceNav.PageClass %>" data-ng-app="ptBarApp">
+<% include partials/template/system-alerts.ejs%>
+<% include partials/template/header.ejs %>
+<% include partials/template/alerts.ejs %>
+<section class="uix center aligned contained block" data-ng-class="{maxWidth : obj.toggleMaxWidth == true}">
+    <header><h1><%= title %></h1></header>
+    <!--<p>Welcome to the Cisco Software Workspace. Common actions in this workspace are 1, 2 and 3.</p>-->
+    <div class="primary">
+        <div>
+            <div data-ng-view="">
+                <!--TODO: (This gets replaced)-->
+                Welcome to the Cisco Software Workspace.
+            </div>
+        </div>
+    </div><!-- primary -->
+</section><!-- uix center aligned contained block -->
+<% include partials/template/footer.ejs %>
+<% include partials/template/jsdefaults.ejs %>
+          <!--<script src="/js/onboardingApp.js"></script>-->
+<script>
+    //        navLocation=Onboarding;
+</script>
+</body>
+</html>

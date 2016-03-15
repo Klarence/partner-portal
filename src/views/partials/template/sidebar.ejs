@@ -1,0 +1,48 @@
+<% if (hasSidebar === true) { %>
+<!--sidebarNavList.length > 0-->
+<!-- sidebar -->
+
+<!--<div class="clear"></div>-->
+<!--<div class="center left aligned contained block clears-on-both"-->
+     <!--style="max-width: 1024px; margin: 0 auto; padding: 0;"-->
+     <!--ng-style="{'width-auto': widthValue == 'auto', 'width-1024': widthValue == '1024px'}">-->
+    <!--<section id="sideBarNavList" class="toggleSidebar" style="display: block;" data-ng-swipe-right="isSidebarCollapsed = false" data-ng-swipe-right="isSidebarCollapsed = true">-->
+    <!--<i data-ng-click="isSidebarCollapsed = !isSidebarCollapsed" class="sidebarNavIcon fa fa-angle-left"></i>-->
+    <div style="position: relative;">
+        <i  id="sideBarNavListShow" onclick="toggleSidebar('sideBarNavList')" class="sidebarNavIcon fa fa-angle-right" style="display: none;"></i>
+    </div>
+<!--TODO: Add XHR request, No Frameworks -->
+    <section id="sideBarNavList" class="toggle-sidebar" >
+    <i onclick="toggleSidebar('sideBarNavList')" class="sidebarNavIcon fa fa-angle-left"></i>
+        <!--<section id="sideBarNavList" class="Book1" type="checkbox" checked onchange="ShowHide(this)" >-->
+    <!--<i class="Book1 sidebarNavIcon fa fa-angle-left" type="checkbox" checked onchange="ShowHide(this)"></i>-->
+        <nav class="sidebarNav" role="navigation">
+            <ul class="nav">
+                <li class="active"><a href="/internal/partner-reports">Home</a></li>
+                <li><a href="/internal/partner-reports/company">Company Reports</a></li>
+                <li><a href="/internal/partner-reports/cert">Certification Reports</a></li>
+                <li><a href="/internal/partner-reports/data-mapping">Data Mapping Reports</a></li>
+            </ul>
+        </nav>
+    </section>
+<!--</div>-->
+
+<script>
+    function toggleSidebar(id) {
+        var e = document.getElementById(id);
+        var f = document.getElementById(id+"Show");
+
+        if(e.style.display == 'block')
+        {
+            e.style.display = 'none';
+            f.style.display = 'inline-block';
+        }
+        else
+        {
+            e.style.display = 'block';
+            f.style.display = 'none';
+        }
+    }
+</script>
+<!-- /sidebar -->
+<% } %>
